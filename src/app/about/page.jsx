@@ -345,7 +345,7 @@ export default function Page() {
           <div className="mx-auto flex max-w-7xl flex-col gap-4 border-t border-white/10 pt-6 text-sm text-white/30 sm:flex-row sm:items-center sm:justify-between">
             <p>© {new Date().getFullYear()} Mayank.</p>
 
-            <p>Designed & built by Mayank.</p>
+            <p>Designed & built by Mayank Dadhich.</p>
           </div>
         </footer>
       </main>
