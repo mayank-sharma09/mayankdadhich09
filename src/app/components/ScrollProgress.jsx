@@ -8,17 +8,17 @@ export default function ScrollProgress() {
   const [label, setLabel] = useState("WELCOME");
 
   useEffect(() => {
-    const sections = document.querySelectorAll(
-      "[data-theme][data-label]"
+    const sections = Array.from(
+      document.querySelectorAll("[data-theme][data-label]")
     );
 
     if (!sections.length) return;
 
-    /* =========================
-       SCROLL PROGRESS
-    ========================== */
+    const updateProgress = () => {
+      /* =========================
+         SCROLL PROGRESS
+      ========================== */
 
-    const handleScroll = () => {
       const scrollTop = window.scrollY;
 
       const documentHeight =
@@ -33,71 +33,54 @@ export default function ScrollProgress() {
       setProgress(
         Math.min(100, Math.max(0, currentProgress))
       );
+
+      /* =========================
+         SECTION DETECTION
+      ========================== */
+
+      const viewportMiddle =
+        window.scrollY + window.innerHeight / 2;
+
+      let currentSection = sections[0];
+
+      sections.forEach((section) => {
+        const sectionTop =
+          section.getBoundingClientRect().top +
+          window.scrollY;
+
+        if (sectionTop <= viewportMiddle) {
+          currentSection = section;
+        }
+      });
+
+      setTheme(currentSection.dataset.theme);
+      setLabel(currentSection.dataset.label);
     };
 
-    /* =========================
-       SECTION DETECTION
-    ========================== */
+    /* Run immediately */
+    updateProgress();
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visibleSections = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort(
-            (a, b) =>
-              b.intersectionRatio - a.intersectionRatio
-          );
-
-        if (visibleSections.length > 0) {
-          const section = visibleSections[0].target;
-
-          setTheme(section.dataset.theme);
-          setLabel(section.dataset.label);
-        }
-      },
-      {
-        root: null,
-
-        /*
-          Only consider the middle
-          portion of the screen.
-        */
-        rootMargin: "-40% 0px -40% 0px",
-
-        threshold: [0, 0.1, 0.25, 0.5, 0.75, 1],
-      }
-    );
-
-    sections.forEach((section) => {
-      observer.observe(section);
-    });
-
-    window.addEventListener("scroll", handleScroll, {
+    /* Update while scrolling */
+    window.addEventListener("scroll", updateProgress, {
       passive: true,
     });
 
-    handleScroll();
+    /* Recalculate if viewport changes */
+    window.addEventListener("resize", updateProgress);
 
     return () => {
-      observer.disconnect();
-
-      window.removeEventListener(
-        "scroll",
-        handleScroll
-      );
+      window.removeEventListener("scroll", updateProgress);
+      window.removeEventListener("resize", updateProgress);
     };
   }, []);
 
   const isDark = theme === "dark";
 
   return (
-    <div
-      className={`fixed right-6 top-1/2 z-50 hidden -translate-y-1/2 md:block`}
-    >
+    <div className="fixed right-6 top-1/2 z-50 hidden -translate-y-1/2 md:block">
       <div className="flex w-40 flex-col gap-3">
 
         {/* LABEL + PERCENTAGE */}
-
         <div className="flex items-center justify-between">
           <span
             className={`text-[10px] font-medium tracking-[0.16em] transition-colors duration-500 ${
@@ -121,7 +104,6 @@ export default function ScrollProgress() {
         </div>
 
         {/* PROGRESS BAR */}
-
         <div
           className={`h-[2px] w-full overflow-hidden rounded-full transition-colors duration-500 ${
             isDark
