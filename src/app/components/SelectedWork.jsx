@@ -36,762 +36,265 @@ const projects = [
   },
 ];
 
-/* =========================================================
-   FLOATING SHAPE
-========================================================= */
-
 function Shape({ className = "", children }) {
   return (
     <div
-      className={`pointer-events-none absolute ${className}`}
+      className={`pointer-events-none absolute select-none ${className}`}
+      aria-hidden="true"
     >
       {children}
     </div>
   );
 }
 
-/* =========================================================
-   ABSTRACT BACKGROUND
-========================================================= */
-
 function FloatingShapes({ theme }) {
-  const isCay = theme === "cay";
-  const isFocus = theme === "focus";
-  const isFuture = theme === "future";
-
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden">
-      {/* =================================================
-          LARGE ORGANIC SHAPES
-      ================================================= */}
+      {/* Large organic shape */}
+      <Shape className="left-[-120px] top-[80px] h-[260px] w-[260px] rounded-full bg-white/30 blur-3xl animate-[floatOne_12s_ease-in-out_infinite]" />
 
-      <Shape
-        className={`
-          left-[-8%]
-          top-[5%]
-          h-[360px]
-          w-[360px]
-          rounded-full
-          blur-[2px]
+      {/* Large soft blob */}
+      <Shape className="right-[-120px] top-[120px] h-[300px] w-[300px] rounded-full bg-white/35 blur-3xl animate-[floatTwo_15s_ease-in-out_infinite]" />
 
-          ${
-            isCay
-              ? "bg-[#DCD7FF]/55"
-              : isFocus
-              ? "bg-[#DCE8FF]/65"
-              : "bg-black/[0.025]"
-          }
+      {/* Orbit rings */}
+      <Shape className="right-[8%] top-[10%] h-[180px] w-[180px] rounded-full border border-black/[0.035] animate-[slowSpin_30s_linear_infinite]" />
 
-          animate-[driftOne_14s_ease-in-out_infinite]
-        `}
-      />
+      <Shape className="right-[5%] top-[6%] h-[230px] w-[230px] rounded-full border border-black/[0.025] animate-[slowSpinReverse_40s_linear_infinite]" />
 
-      <Shape
-        className={`
-          right-[-8%]
-          bottom-[-15%]
-          h-[420px]
-          w-[420px]
-          rounded-[45%_55%_60%_40%]
+      {/* Left orbit */}
+      <Shape className="left-[-60px] bottom-[15%] h-[180px] w-[180px] rounded-full border border-black/[0.035] animate-[slowSpinReverse_35s_linear_infinite]" />
 
-          ${
-            isCay
-              ? "bg-[#E9E5FF]/55"
-              : isFocus
-              ? "bg-[#E5EEFF]/65"
-              : "bg-black/[0.02]"
-          }
+      {/* Floating circles */}
+      <Shape className="left-[12%] top-[18%] h-5 w-5 rounded-full bg-white/50 blur-[1px] animate-[floatThree_8s_ease-in-out_infinite]" />
 
-          animate-[morph_17s_ease-in-out_infinite]
-        `}
-      />
+      <Shape className="right-[18%] top-[42%] h-8 w-8 rounded-full bg-white/45 blur-[1px] animate-[floatOne_10s_ease-in-out_infinite]" />
 
-      {/* =================================================
-          BIG ORBIT
-      ================================================= */}
+      <Shape className="left-[6%] bottom-[25%] h-3 w-3 rounded-full bg-black/[0.04] animate-[floatTwo_9s_ease-in-out_infinite]" />
 
-      <Shape
-        className={`
-          right-[3%]
-          top-[2%]
-          h-[330px]
-          w-[330px]
-          rounded-full
-          border
+      {/* Diamonds */}
+      <Shape className="left-[28%] top-[12%] h-7 w-7 rotate-45 rounded-[6px] border border-black/[0.045] animate-[driftOne_14s_ease-in-out_infinite]" />
 
-          ${
-            isCay
-              ? "border-[#7D72DF]/20"
-              : isFocus
-              ? "border-[#739BFF]/20"
-              : "border-black/[0.07]"
-          }
+      <Shape className="right-[30%] bottom-[16%] h-5 w-5 rotate-45 rounded-[5px] border border-black/[0.04] animate-[driftOne_12s_ease-in-out_infinite]" />
 
-          animate-[slowSpin_28s_linear_infinite]
-        `}
-      />
+      {/* Cubes */}
+      <Shape className="right-[12%] bottom-[20%] h-10 w-10 rotate-12 rounded-[8px] border border-black/[0.04] bg-white/15 animate-[floatThree_13s_ease-in-out_infinite]" />
 
-      <Shape
-        className={`
-          right-[8%]
-          top-[10%]
-          h-[250px]
-          w-[390px]
-          rounded-[50%]
-          border
-          rotate-[28deg]
+      <Shape className="left-[20%] bottom-[10%] h-7 w-7 -rotate-12 rounded-[6px] border border-black/[0.04] animate-[floatOne_11s_ease-in-out_infinite]" />
 
-          ${
-            isCay
-              ? "border-[#8C82E8]/15"
-              : isFocus
-              ? "border-[#7198FF]/15"
-              : "border-black/[0.05]"
-          }
-
-          animate-[slowSpinReverse_22s_linear_infinite]
-        `}
-      />
-
-      <Shape
-        className={`
-          right-[16%]
-          top-[19%]
-          h-[150px]
-          w-[270px]
-          rounded-[50%]
-          border
-          -rotate-[20deg]
-
-          ${
-            isCay
-              ? "border-[#8C82E8]/10"
-              : isFocus
-              ? "border-[#7198FF]/10"
-              : "border-black/[0.04]"
-          }
-        `}
-      />
-
-      {/* =================================================
-          LEFT ORBIT
-      ================================================= */}
-
-      <Shape
-        className={`
-          left-[-8%]
-          bottom-[5%]
-          h-[250px]
-          w-[430px]
-          rounded-[50%]
-          border
-          rotate-[-25deg]
-
-          ${
-            isCay
-              ? "border-[#8C82E8]/15"
-              : isFocus
-              ? "border-[#7198FF]/12"
-              : "border-black/[0.05]"
-          }
-
-          animate-[slowSpinReverse_32s_linear_infinite]
-        `}
-      />
-
-      {/* =================================================
-          FLOATING CIRCLES
-      ================================================= */}
-
-      <Shape
-        className={`
-          left-[20%]
-          top-[9%]
-          h-5
-          w-5
-          rounded-full
-
-          ${
-            isCay
-              ? "bg-[#8378E7]/30"
-              : isFocus
-              ? "bg-[#6E98FF]/30"
-              : "bg-black/10"
-          }
-
-          animate-[floatOne_7s_ease-in-out_infinite]
-        `}
-      />
-
-      <Shape
-        className={`
-          left-[7%]
-          bottom-[20%]
-          h-3
-          w-3
-          rounded-full
-
-          ${
-            isCay
-              ? "bg-[#9D91FF]/25"
-              : isFocus
-              ? "bg-[#6E98FF]/25"
-              : "bg-black/10"
-          }
-
-          animate-[floatTwo_8s_ease-in-out_infinite]
-        `}
-      />
-
-      <Shape
-        className={`
-          right-[30%]
-          bottom-[13%]
-          h-4
-          w-4
-          rounded-full
-
-          ${
-            isCay
-              ? "bg-[#7569D8]/25"
-              : isFocus
-              ? "bg-[#6E98FF]/25"
-              : "bg-black/10"
-          }
-
-          animate-[floatThree_9s_ease-in-out_infinite]
-        `}
-      />
-
-      <Shape
-        className="
-          left-[47%]
-          top-[8%]
-          h-2
-          w-2
-          rounded-full
-          bg-black/10
-          animate-[floatOne_6s_ease-in-out_infinite]
-        "
-      />
-
-      {/* =================================================
-          DIAMOND 01
-      ================================================= */}
-
-      <Shape
-        className={`
-          left-[11%]
-          top-[27%]
-          h-14
-          w-14
-          rotate-45
-          rounded-[12px]
-          border
-          backdrop-blur-sm
-
-          ${
-            isCay
-              ? "border-[#8176E2]/15 bg-[#EEEAFE]/25"
-              : isFocus
-              ? "border-[#7198FF]/15 bg-[#EAF1FF]/30"
-              : "border-black/[0.06] bg-white/20"
-          }
-
-          animate-[floatTwo_10s_ease-in-out_infinite]
-        `}
-      />
-
-      {/* =================================================
-          DIAMOND 02
-      ================================================= */}
-
-      <Shape
-        className={`
-          right-[5%]
-          bottom-[27%]
-          h-20
-          w-20
-          rotate-12
-          rounded-[22px]
-          border
-
-          ${
-            isCay
-              ? "border-[#8176E2]/12 bg-white/20"
-              : isFocus
-              ? "border-[#7198FF]/12 bg-white/20"
-              : "border-black/[0.05]"
-          }
-
-          animate-[floatThree_11s_ease-in-out_infinite]
-        `}
-      />
-
-      {/* =================================================
-          SMALL CUBES
-      ================================================= */}
-
-      <Shape
-        className={`
-          left-[31%]
-          bottom-[5%]
-          h-12
-          w-12
-          rotate-[18deg]
-          rounded-[10px]
-          border
-
-          ${
-            isCay
-              ? "border-[#8B80E7]/15"
-              : isFocus
-              ? "border-[#7198FF]/15"
-              : "border-black/[0.06]"
-          }
-
-          animate-[floatOne_12s_ease-in-out_infinite]
-        `}
-      />
-
-      <Shape
-        className={`
-          right-[35%]
-          top-[5%]
-          h-9
-          w-9
-          rotate-[35deg]
-          rounded-[9px]
-          border
-
-          ${
-            isCay
-              ? "border-[#8B80E7]/12"
-              : isFocus
-              ? "border-[#7198FF]/12"
-              : "border-black/[0.05]"
-          }
-
-          animate-[floatTwo_9s_ease-in-out_infinite]
-        `}
-      />
-
-      {/* =================================================
-          CROSS 01
-      ================================================= */}
-
-      <Shape
-        className={`
-          left-[38%]
-          top-[24%]
-          h-7
-          w-7
-
-          ${
-            isCay
-              ? "text-[#8277E4]/20"
-              : isFocus
-              ? "text-[#7198FF]/20"
-              : "text-black/10"
-          }
-
-          animate-[floatThree_8s_ease-in-out_infinite]
-        `}
-      >
-        <span className="absolute left-1/2 top-0 h-full w-px bg-current" />
-        <span className="absolute left-0 top-1/2 h-px w-full bg-current" />
+      {/* Crosses */}
+      <Shape className="right-[38%] top-[18%] text-2xl font-light text-black/[0.06] animate-[floatTwo_11s_ease-in-out_infinite]">
+        +
       </Shape>
 
-      {/* =================================================
-          CROSS 02
-      ================================================= */}
-
-      <Shape
-        className={`
-          right-[22%]
-          bottom-[22%]
-          h-5
-          w-5
-
-          ${
-            isCay
-              ? "text-[#8277E4]/15"
-              : isFocus
-              ? "text-[#7198FF]/15"
-              : "text-black/10"
-          }
-        `}
-      >
-        <span className="absolute left-1/2 top-0 h-full w-px bg-current" />
-        <span className="absolute left-0 top-1/2 h-px w-full bg-current" />
+      <Shape className="left-[42%] bottom-[20%] text-xl font-light text-black/[0.05] animate-[floatThree_9s_ease-in-out_infinite]">
+        +
       </Shape>
 
-      {/* =================================================
-          FLOATING PILLS
-      ================================================= */}
+      {/* Pills */}
+      <Shape className="left-[8%] top-[48%] h-3 w-16 rotate-[-25deg] rounded-full bg-black/[0.025] animate-[driftOne_16s_ease-in-out_infinite]" />
 
-      <Shape
-        className={`
-          left-[16%]
-          bottom-[12%]
-          h-3
-          w-20
-          rotate-[-20deg]
-          rounded-full
+      <Shape className="right-[10%] top-[65%] h-3 w-20 rotate-[30deg] rounded-full bg-white/40 animate-[driftOne_15s_ease-in-out_infinite]" />
 
-          ${
-            isCay
-              ? "bg-[#8A80E7]/12"
-              : isFocus
-              ? "bg-[#7198FF]/12"
-              : "bg-black/[0.05]"
-          }
-        `}
-      />
+      {/* Constellation dots */}
+      <Shape className="right-[25%] top-[12%]">
+        <div className="flex gap-2 opacity-40">
+          <span className="h-1 w-1 rounded-full bg-black/20" />
+          <span className="mt-3 h-1 w-1 rounded-full bg-black/15" />
+          <span className="mt-1 h-1 w-1 rounded-full bg-black/20" />
+        </div>
+      </Shape>
 
-      <Shape
-        className={`
-          right-[17%]
-          top-[32%]
-          h-2
-          w-14
-          rotate-[35deg]
-          rounded-full
+      {/* Connecting line */}
+      <Shape className="left-[15%] top-[30%] h-px w-[140px] rotate-[20deg] bg-black/[0.04]" />
 
-          ${
-            isCay
-              ? "bg-[#8A80E7]/15"
-              : isFocus
-              ? "bg-[#7198FF]/15"
-              : "bg-black/[0.05]"
-          }
-        `}
-      />
-
-      {/* =================================================
-          CONSTELLATION
-      ================================================= */}
-
-      <div className="absolute left-[27%] top-[17%] flex gap-3">
-        {[1, 2, 3].map((dot) => (
-          <span
-            key={dot}
-            className={`
-              h-1.5
-              w-1.5
-              rounded-full
-
-              ${
-                isCay
-                  ? "bg-[#8277E4]/20"
-                  : isFocus
-                  ? "bg-[#7198FF]/20"
-                  : "bg-black/10"
-              }
-            `}
-          />
-        ))}
-      </div>
-
-      {/* =================================================
-          CONNECTING LINE
-      ================================================= */}
-
-      <Shape
-        className={`
-          left-[20%]
-          top-[34%]
-          h-px
-          w-[180px]
-          rotate-[18deg]
-
-          ${
-            isCay
-              ? "bg-[#8277E4]/10"
-              : isFocus
-              ? "bg-[#7198FF]/10"
-              : "bg-black/[0.04]"
-          }
-        `}
-      />
-
-      {/* =================================================
-          CAYTUNES EXTRA SHAPE
-      ================================================= */}
-
-      {isCay && (
+      {/* CayTunes extra shapes */}
+      {theme === "cay" && (
         <>
-          <Shape
-            className="
-              right-[25%]
-              bottom-[10%]
-              h-10
-              w-10
-              rounded-full
-              bg-[#A79EFF]/15
-              blur-md
-              animate-[floatOne_8s_ease-in-out_infinite]
-            "
-          />
+          <Shape className="left-[45%] top-[8%] h-24 w-24 rounded-full border border-purple-500/[0.04] animate-[slowSpin_25s_linear_infinite]" />
 
-          <Shape
-            className="
-              left-[50%]
-              bottom-[8%]
-              h-24
-              w-24
-              rounded-full
-              border
-              border-[#8176E2]/10
-              animate-[slowSpin_20s_linear_infinite]
-            "
-          />
+          <Shape className="right-[5%] bottom-[8%] h-28 w-28 rounded-full border border-purple-500/[0.035] animate-[slowSpinReverse_28s_linear_infinite]" />
+
+          <Shape className="left-[60%] bottom-[12%] h-4 w-4 rounded-full bg-purple-500/[0.05] animate-[floatTwo_10s_ease-in-out_infinite]" />
         </>
       )}
 
-      {/* =================================================
-          FOCUSLIST EXTRA SHAPE
-      ================================================= */}
-
-      {isFocus && (
+      {/* FocusList extra shapes */}
+      {theme === "focus" && (
         <>
-          <Shape
-            className="
-              left-[13%]
-              top-[17%]
-              h-7
-              w-7
-              rounded-full
-              bg-[#E7B18A]/20
-              blur-[1px]
-              animate-[floatTwo_7s_ease-in-out_infinite]
-            "
-          />
+          <Shape className="left-[48%] top-[6%] h-20 w-20 rounded-full border border-blue-500/[0.035] animate-[slowSpin_26s_linear_infinite]" />
 
-          <Shape
-            className="
-              right-[40%]
-              bottom-[7%]
-              h-24
-              w-24
-              rounded-[28px]
-              border
-              border-[#7198FF]/10
-              rotate-[-15deg]
-              animate-[floatOne_10s_ease-in-out_infinite]
-            "
-          />
+          <Shape className="right-[6%] bottom-[10%] h-32 w-32 rounded-full border border-blue-500/[0.03] animate-[slowSpinReverse_32s_linear_infinite]" />
+
+          <Shape className="left-[68%] bottom-[15%] h-3 w-3 rounded-full bg-blue-500/[0.05] animate-[floatThree_9s_ease-in-out_infinite]" />
         </>
       )}
 
-      {/* =================================================
-          FUTURE EXTRA SHAPES
-      ================================================= */}
-
-      {isFuture && (
+      {/* Future extra shapes */}
+      {theme === "future" && (
         <>
-          <Shape
-            className="
-              left-[42%]
-              top-[5%]
-              h-28
-              w-28
-              rounded-full
-              border-[12px]
-              border-black/[0.025]
-              animate-[slowSpin_25s_linear_infinite]
-            "
-          />
+          <Shape className="left-[50%] top-[10%] h-24 w-24 rounded-full border border-black/[0.025] animate-[slowSpin_30s_linear_infinite]" />
 
-          <Shape
-            className="
-              right-[20%]
-              top-[40%]
-              h-14
-              w-14
-              rounded-full
-              border
-              border-black/[0.07]
-              animate-[floatTwo_9s_ease-in-out_infinite]
-            "
-          />
+          <Shape className="right-[12%] bottom-[15%] h-24 w-24 rounded-full border border-black/[0.025] animate-[slowSpinReverse_35s_linear_infinite]" />
         </>
       )}
     </div>
   );
 }
 
-/* =========================================================
-   MAIN COMPONENT
-========================================================= */
-
 export default function SelectedWork() {
   const [activeProject, setActiveProject] = useState(null);
   const [activeMobile, setActiveMobile] = useState(0);
 
-  /* =======================================================
-     MOBILE CENTER DETECTION
-  ======================================================= */
-
+  /*
+   * MOBILE ACTIVE CARD
+   *
+   * Instead of IntersectionObserver, we check which card is
+   * closest to the center of the screen while scrolling.
+   *
+   * This prevents the active arrow from disappearing when
+   * a card reaches the center of the viewport.
+   */
   useEffect(() => {
-    const cards = document.querySelectorAll(
-      "[data-project-card]"
-    );
+    const cards = document.querySelectorAll("[data-project-card]");
 
     if (!cards.length) return;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visibleCards = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => {
-            const aDistance = Math.abs(
-              a.boundingClientRect.top +
-                a.boundingClientRect.height / 2 -
-                window.innerHeight / 2
-            );
+    const updateActiveCard = () => {
+      // Only run this behavior on mobile.
+      if (window.innerWidth >= 768) return;
 
-            const bDistance = Math.abs(
-              b.boundingClientRect.top +
-                b.boundingClientRect.height / 2 -
-                window.innerHeight / 2
-            );
+      const viewportCenter = window.innerHeight / 2;
 
-            return aDistance - bDistance;
-          });
+      let closestIndex = 0;
+      let closestDistance = Infinity;
 
-        if (visibleCards.length > 0) {
-          const closestCard = visibleCards[0];
+      cards.forEach((card) => {
+        const rect = card.getBoundingClientRect();
 
-          setActiveMobile(
-            Number(closestCard.target.dataset.index)
-          );
+        // Ignore cards completely outside the viewport.
+        if (rect.bottom <= 0 || rect.top >= window.innerHeight) {
+          return;
         }
-      },
-      {
-        threshold: [0.4, 0.6, 0.8],
-        rootMargin: "-20% 0px -20% 0px",
-      }
-    );
 
-    cards.forEach((card) => observer.observe(card));
+        const cardCenter = rect.top + rect.height / 2;
+
+        const distance = Math.abs(cardCenter - viewportCenter);
+
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestIndex = Number(card.dataset.index);
+        }
+      });
+
+      setActiveMobile(closestIndex);
+    };
+
+    // Run once immediately.
+    updateActiveCard();
+
+    window.addEventListener("scroll", updateActiveCard, {
+      passive: true,
+    });
+
+    window.addEventListener("resize", updateActiveCard);
 
     return () => {
-      observer.disconnect();
+      window.removeEventListener("scroll", updateActiveCard);
+      window.removeEventListener("resize", updateActiveCard);
     };
   }, []);
 
-  /* =======================================================
-     DESKTOP / MOBILE ACTIVE PROJECT
-  ======================================================= */
-
   const activeIndex =
-    activeProject !== null
-      ? activeProject
-      : activeMobile;
+    activeProject !== null ? activeProject : activeMobile;
 
-  const activeTheme =
-    activeIndex !== null
-      ? projects[activeIndex].theme
-      : null;
-
-  /* =======================================================
-     BACKGROUND COLORS
-  ======================================================= */
+  const activeTheme = projects[activeIndex]?.theme || "future";
 
   const backgroundColor =
     activeTheme === "cay"
       ? "#EEEAFE"
       : activeTheme === "focus"
       ? "#EEF4FF"
-      : activeTheme === "future"
-      ? "#F1F1EF"
-      : "#F7F7F5";
+      : "#F1F1EF";
 
   return (
     <section
+      id="selected-work"
       className="relative overflow-hidden px-6 py-20 transition-colors duration-700 ease-out md:px-10 md:py-24 lg:px-16"
-      style={{
-        backgroundColor,
-      }}
+      style={{ backgroundColor }}
       onMouseLeave={() => {
-        setActiveProject(null);
+        if (typeof window !== "undefined" && window.innerWidth >= 768) {
+          setActiveProject(null);
+        }
       }}
     >
-      {/* =================================================
-          ABSTRACT BACKGROUND
-      ================================================= */}
+      {/* Ambient background */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#F7F7F5] to-transparent" />
 
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#F7F7F5] to-transparent" />
+
+        <div className="absolute left-1/2 top-1/2 h-[80%] w-[70%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/20 blur-[100px]" />
+      </div>
+
+      {/* Floating decorative shapes */}
       <FloatingShapes theme={activeTheme} />
 
       {/* Soft readability layer */}
-
       <div className="pointer-events-none absolute inset-0 bg-white/[0.18]" />
 
-      {/* =================================================
-          CONTENT
-      ================================================= */}
-
+      {/* Content */}
       <div className="relative z-10 mx-auto max-w-7xl">
-        {/* =================================================
-            HEADER
-        ================================================= */}
+        {/* Header */}
+        <div className="mb-12 max-w-2xl md:mb-16">
+          <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-black/45">
+            Selected Work
+          </p>
 
-        <div className="mb-12 flex flex-col gap-4 md:mb-16 md:flex-row md:items-end md:justify-between">
-          <div>
-            <p className="text-xs font-medium uppercase tracking-[0.2em] text-black/35">
-              Selected Work
-            </p>
+          <h2 className="text-4xl font-medium tracking-[-0.04em] text-[#111111] md:text-5xl lg:text-6xl">
+            A few things
+            <br />
+            I&apos;ve been building.
+          </h2>
 
-            <h2 className="mt-4 text-4xl font-semibold tracking-[-0.045em] md:text-5xl">
-              Things I&apos;ve designed.
-            </h2>
-          </div>
-
-          <p className="max-w-sm text-sm leading-6 text-black/45">
-            A collection of products, interfaces, and experiments
-            where design meets technology.
+          <p className="mt-6 max-w-xl text-base leading-7 text-black/55 md:text-lg">
+            A collection of products and experiences where I explored
+            problems, designed solutions, and brought ideas closer to
+            reality.
           </p>
         </div>
 
-        {/* =================================================
-            PROJECT CARDS
-        ================================================= */}
-
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+        {/* Projects */}
+        <div className="grid gap-5 md:grid-cols-3">
           {projects.map((project, index) => {
-            const isActive =
-              activeIndex === index;
+            const isActive = activeIndex === index;
 
             return (
               <Link
                 href={project.href}
                 key={project.number}
-                onMouseEnter={() => {
-                  setActiveProject(index);
-                }}
                 className="group"
+                onMouseEnter={() => {
+                  if (
+                    typeof window !== "undefined" &&
+                    window.innerWidth >= 768
+                  ) {
+                    setActiveProject(index);
+                  }
+                }}
               >
                 <article
                   data-project-card
                   data-index={index}
                   className={`
-                    relative
-                    min-h-[330px]
-                    overflow-hidden
-                    rounded-[28px]
-                    border
-                    border-black/[0.06]
-                    p-6
-                    backdrop-blur-xl
-
-                    transition-all
-                    duration-500
-                    ease-out
+                    relative min-h-[330px]
+                    overflow-hidden rounded-[28px]
+                    border border-black/[0.06]
+                    p-6 backdrop-blur-xl
+                    transition-all duration-500 ease-out
 
                     ${
                       isActive
-                        ? "bg-white/85 shadow-[0_30px_80px_rgba(0,0,0,0.08)]"
+                        ? "bg-white/85 shadow-[0_30px_80px_rgba(0,0,0,0.08)] md:scale-[1.01]"
                         : "bg-white/65"
                     }
 
@@ -800,30 +303,21 @@ export default function SelectedWork() {
                     md:hover:shadow-[0_30px_80px_rgba(0,0,0,0.07)]
                   `}
                 >
-                  {/* =================================================
-                      TOP
-                  ================================================= */}
-
+                  {/* Card number */}
                   <div className="flex items-start justify-between">
-                    <span className="text-xs font-medium text-black/30">
+                    <span className="text-xs font-medium tracking-[0.15em] text-black/35">
                       {project.number}
                     </span>
 
+                    {/* Arrow */}
                     <span
                       className={`
-                        flex
-                        h-9
-                        w-9
-                        items-center
-                        justify-center
+                        flex h-9 w-9 items-center justify-center
                         rounded-full
-                        border
-                        border-black/[0.07]
+                        border border-black/[0.07]
                         bg-white/60
                         text-sm
-
-                        transition-all
-                        duration-300
+                        transition-all duration-300
 
                         ${
                           isActive
@@ -840,87 +334,45 @@ export default function SelectedWork() {
                     </span>
                   </div>
 
-                  {/* =================================================
-                      PROJECT CONTENT
-                  ================================================= */}
-
-                  <div className="mt-16">
-                    <p className="mb-3 text-[10px] font-medium uppercase tracking-[0.18em] text-black/35">
+                  {/* Card content */}
+                  <div className="mt-20">
+                    <p className="mb-3 text-xs font-medium uppercase tracking-[0.15em] text-black/40">
                       {project.category}
                     </p>
 
-                    <h3 className="text-3xl font-semibold tracking-[-0.04em]">
+                    <h3 className="text-3xl font-medium tracking-[-0.04em] text-[#111111]">
                       {project.title}
                     </h3>
 
-                    <p className="mt-4 max-w-sm text-sm leading-6 text-black/50">
+                    <p className="mt-4 max-w-sm text-sm leading-6 text-black/55">
                       {project.description}
                     </p>
                   </div>
 
-                  {/* =================================================
-                      TAGS
-                  ================================================= */}
-
-                  <div className="absolute bottom-6 left-6 flex flex-wrap gap-2">
+                  {/* Tags */}
+                  <div className="absolute bottom-6 left-6 right-6 flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-full border border-black/[0.06] bg-white/60 px-3 py-1.5 text-[10px] font-medium text-black/45 backdrop-blur-sm"
+                        className="rounded-full border border-black/[0.06] bg-white/45 px-3 py-1.5 text-[11px] text-black/50"
                       >
                         {tag}
                       </span>
                     ))}
                   </div>
 
-                  {/* =================================================
-                      MOBILE ACTIVE GLOW
-                  ================================================= */}
-
+                  {/* Mobile active indicator */}
                   <div
                     className={`
-                      pointer-events-none
-                      absolute
-                      -right-12
-                      -top-12
-                      h-36
-                      w-36
-                      rounded-full
-                      bg-white/70
-                      blur-3xl
-
-                      transition-opacity
-                      duration-500
-
-                      ${
-                        isActive
-                          ? "opacity-100"
-                          : "opacity-0"
-                      }
-
-                      md:group-hover:opacity-100
-                    `}
-                  />
-
-                  {/* =================================================
-                      MOBILE ACTIVE INDICATOR
-                  ================================================= */}
-
-                  <div
-                    className={`
-                      absolute
-                      bottom-0
-                      left-1/2
-                      h-[2px]
+                      absolute bottom-0 left-1/2 h-[2px]
                       -translate-x-1/2
                       rounded-full
                       bg-black
-                      transition-all
-                      duration-500
+                      transition-all duration-500
 
                       ${
                         isActive
-                          ? "w-16 opacity-20"
+                          ? "w-12 opacity-100"
                           : "w-0 opacity-0"
                       }
 
@@ -932,75 +384,75 @@ export default function SelectedWork() {
             );
           })}
         </div>
+
+        {/* Bottom hint */}
+        <div className="mt-10 flex items-center justify-between text-xs text-black/35 md:mt-12">
+          <span>More work coming soon.</span>
+
+          <span className="hidden md:block">
+            Hover to explore
+          </span>
+
+          <span className="md:hidden">
+            Scroll to explore
+          </span>
+        </div>
       </div>
 
-      {/* =================================================
-          ANIMATIONS
-      ================================================= */}
-
+      {/* Animations */}
       <style jsx>{`
         @keyframes floatOne {
           0%,
           100% {
-            transform: translate3d(0, 0, 0) rotate(0deg);
+            transform: translate3d(0, 0, 0);
           }
 
           50% {
-            transform: translate3d(10px, -18px, 0) rotate(4deg);
+            transform: translate3d(20px, -18px, 0);
           }
         }
 
         @keyframes floatTwo {
           0%,
           100% {
-            transform: translate3d(0, 0, 0) rotate(0deg);
+            transform: translate3d(0, 0, 0);
           }
 
           50% {
-            transform: translate3d(-14px, 12px, 0) rotate(-5deg);
+            transform: translate3d(-22px, 18px, 0);
           }
         }
 
         @keyframes floatThree {
           0%,
           100% {
-            transform: translate3d(0, 0, 0) rotate(0deg);
+            transform: translate3d(0, 0, 0);
           }
 
           50% {
-            transform: translate3d(8px, 10px, 0) rotate(7deg);
+            transform: translate3d(10px, -12px, 0);
           }
         }
 
         @keyframes driftOne {
           0%,
           100% {
-            transform: translate3d(0, 0, 0) scale(1);
+            transform: translate3d(0, 0, 0) rotate(0deg);
           }
 
           50% {
-            transform: translate3d(25px, -15px, 0)
-              scale(1.06);
+            transform: translate3d(18px, -14px, 0) rotate(8deg);
           }
         }
 
         @keyframes morph {
           0%,
           100% {
-            border-radius: 45% 55% 60% 40%;
-            transform: translate(0, 0) rotate(0deg);
+            border-radius: 45% 55% 60% 40% / 50% 45% 55% 50%;
           }
 
-          33% {
-            border-radius: 60% 40% 45% 55%;
-            transform: translate(-18px, -10px)
-              rotate(5deg);
-          }
-
-          66% {
-            border-radius: 40% 60% 55% 45%;
-            transform: translate(10px, 15px)
-              rotate(-4deg);
+          50% {
+            border-radius: 60% 40% 45% 55% / 40% 55% 45% 60%;
           }
         }
 
