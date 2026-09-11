@@ -133,7 +133,7 @@ export default function StoriesPage() {
           </p>
 
           <h1>
-            STORIES
+            STORYTELLING
           </h1>
 
           <p className="hero-line">
