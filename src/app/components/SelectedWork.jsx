@@ -12,7 +12,7 @@ const projects = [
       "A social music experience designed around listening, chatting, and sharing moments through music.",
     tags: ["UX/UI", "Product Design", "Prototype"],
     href: "/design/caytunes",
-    theme: "#EEEAFE",
+    theme: "cay",
   },
   {
     number: "02",
@@ -22,7 +22,7 @@ const projects = [
       "A focused task management experience built to make planning feel simple, clear, and personal.",
     tags: ["UI/UX", "Frontend", "React"],
     href: "/design/focuslist",
-    theme: "#EEF4FF",
+    theme: "focus",
   },
   {
     number: "03",
@@ -32,445 +32,587 @@ const projects = [
       "Another thoughtful digital experience is currently in progress.",
     tags: ["UX/UI"],
     href: "#",
-    theme: "#F1F1EF",
+    theme: "future",
   },
 ];
 
-function Shape({ className = "", style = {}, children }) {
+/* =========================================================
+   FLOATING SHAPE
+========================================================= */
+
+function Shape({ className = "", children }) {
   return (
     <div
       className={`pointer-events-none absolute ${className}`}
-      style={style}
     >
       {children}
     </div>
   );
 }
 
+/* =========================================================
+   ABSTRACT BACKGROUND
+========================================================= */
+
 function FloatingShapes({ theme }) {
-  const isCayTunes = theme === "#EEEAFE";
-  const isFocusList = theme === "#EEF4FF";
+  const isCay = theme === "cay";
+  const isFocus = theme === "focus";
+  const isFuture = theme === "future";
 
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden">
-      {/* =====================================================
-          LARGE ORGANIC BLOBS
-      ===================================================== */}
+      {/* =================================================
+          LARGE ORGANIC SHAPES
+      ================================================= */}
 
       <Shape
-        className="
+        className={`
           left-[-8%]
-          top-[8%]
-          h-[280px]
-          w-[280px]
+          top-[5%]
+          h-[360px]
+          w-[360px]
           rounded-full
-          blur-[70px]
-          opacity-50
-          transition-all
-          duration-1000
-          md:h-[420px]
-          md:w-[420px]
-        "
-        style={{
-          background: isCayTunes
-            ? "#DCD2FF"
-            : isFocusList
-            ? "#D9E7FF"
-            : "#E8E8E4",
-          animation: "floatOne 14s ease-in-out infinite",
-        }}
+          blur-[2px]
+
+          ${
+            isCay
+              ? "bg-[#DCD7FF]/55"
+              : isFocus
+              ? "bg-[#DCE8FF]/65"
+              : "bg-black/[0.025]"
+          }
+
+          animate-[driftOne_14s_ease-in-out_infinite]
+        `}
       />
 
       <Shape
-        className="
+        className={`
           right-[-8%]
-          top-[25%]
-          h-[240px]
-          w-[240px]
-          rounded-full
-          blur-[65px]
-          opacity-40
-          transition-all
-          duration-1000
-          md:h-[360px]
-          md:w-[360px]
-        "
-        style={{
-          background: isCayTunes
-            ? "#E4DBFF"
-            : isFocusList
-            ? "#DCEBFF"
-            : "#E6E6E2",
-          animation: "floatTwo 17s ease-in-out infinite",
-        }}
+          bottom-[-15%]
+          h-[420px]
+          w-[420px]
+          rounded-[45%_55%_60%_40%]
+
+          ${
+            isCay
+              ? "bg-[#E9E5FF]/55"
+              : isFocus
+              ? "bg-[#E5EEFF]/65"
+              : "bg-black/[0.02]"
+          }
+
+          animate-[morph_17s_ease-in-out_infinite]
+        `}
       />
 
-      <Shape
-        className="
-          bottom-[-12%]
-          left-[35%]
-          h-[260px]
-          w-[260px]
-          rounded-full
-          blur-[80px]
-          opacity-35
-          md:h-[380px]
-          md:w-[380px]
-        "
-        style={{
-          background: isCayTunes
-            ? "#DDD7FF"
-            : isFocusList
-            ? "#DCE8FF"
-            : "#E5E5E1",
-          animation: "floatThree 19s ease-in-out infinite",
-        }}
-      />
-
-      {/* =====================================================
-          ORBIT RINGS
-      ===================================================== */}
+      {/* =================================================
+          BIG ORBIT
+      ================================================= */}
 
       <Shape
-        className="
-          left-[5%]
-          top-[22%]
-          h-[170px]
-          w-[170px]
+        className={`
+          right-[3%]
+          top-[2%]
+          h-[330px]
+          w-[330px]
           rounded-full
           border
-          border-black/[0.06]
-          opacity-50
-          md:h-[250px]
-          md:w-[250px]
-        "
-        style={{
-          animation: "slowSpin 24s linear infinite",
-        }}
+
+          ${
+            isCay
+              ? "border-[#7D72DF]/20"
+              : isFocus
+              ? "border-[#739BFF]/20"
+              : "border-black/[0.07]"
+          }
+
+          animate-[slowSpin_28s_linear_infinite]
+        `}
       />
 
       <Shape
-        className="
-          left-[7%]
-          top-[24%]
-          h-[130px]
-          w-[130px]
-          rounded-full
+        className={`
+          right-[8%]
+          top-[10%]
+          h-[250px]
+          w-[390px]
+          rounded-[50%]
           border
-          border-black/[0.05]
-          opacity-40
-          md:h-[210px]
-          md:w-[210px]
-        "
-        style={{
-          animation: "slowSpinReverse 18s linear infinite",
-        }}
+          rotate-[28deg]
+
+          ${
+            isCay
+              ? "border-[#8C82E8]/15"
+              : isFocus
+              ? "border-[#7198FF]/15"
+              : "border-black/[0.05]"
+          }
+
+          animate-[slowSpinReverse_22s_linear_infinite]
+        `}
       />
 
       <Shape
-        className="
-          right-[4%]
-          bottom-[18%]
-          h-[190px]
-          w-[190px]
-          rounded-full
+        className={`
+          right-[16%]
+          top-[19%]
+          h-[150px]
+          w-[270px]
+          rounded-[50%]
           border
-          border-black/[0.06]
-          opacity-45
-          md:h-[270px]
-          md:w-[270px]
-        "
-        style={{
-          animation: "slowSpinReverse 27s linear infinite",
-        }}
+          -rotate-[20deg]
+
+          ${
+            isCay
+              ? "border-[#8C82E8]/10"
+              : isFocus
+              ? "border-[#7198FF]/10"
+              : "border-black/[0.04]"
+          }
+        `}
       />
 
-      {/* =====================================================
+      {/* =================================================
+          LEFT ORBIT
+      ================================================= */}
+
+      <Shape
+        className={`
+          left-[-8%]
+          bottom-[5%]
+          h-[250px]
+          w-[430px]
+          rounded-[50%]
+          border
+          rotate-[-25deg]
+
+          ${
+            isCay
+              ? "border-[#8C82E8]/15"
+              : isFocus
+              ? "border-[#7198FF]/12"
+              : "border-black/[0.05]"
+          }
+
+          animate-[slowSpinReverse_32s_linear_infinite]
+        `}
+      />
+
+      {/* =================================================
           FLOATING CIRCLES
-      ===================================================== */}
+      ================================================= */}
 
       <Shape
-        className="
-          left-[12%]
-          top-[16%]
+        className={`
+          left-[20%]
+          top-[9%]
+          h-5
+          w-5
+          rounded-full
+
+          ${
+            isCay
+              ? "bg-[#8378E7]/30"
+              : isFocus
+              ? "bg-[#6E98FF]/30"
+              : "bg-black/10"
+          }
+
+          animate-[floatOne_7s_ease-in-out_infinite]
+        `}
+      />
+
+      <Shape
+        className={`
+          left-[7%]
+          bottom-[20%]
           h-3
           w-3
           rounded-full
-          bg-black/15
-          md:h-4
-          md:w-4
-        "
-        style={{
-          animation: "driftOne 8s ease-in-out infinite",
-        }}
+
+          ${
+            isCay
+              ? "bg-[#9D91FF]/25"
+              : isFocus
+              ? "bg-[#6E98FF]/25"
+              : "bg-black/10"
+          }
+
+          animate-[floatTwo_8s_ease-in-out_infinite]
+        `}
       />
 
       <Shape
-        className="
-          right-[18%]
-          top-[13%]
+        className={`
+          right-[30%]
+          bottom-[13%]
           h-4
           w-4
           rounded-full
-          bg-black/10
-          md:h-5
-          md:w-5
-        "
-        style={{
-          animation: "driftOne 10s ease-in-out infinite reverse",
-        }}
+
+          ${
+            isCay
+              ? "bg-[#7569D8]/25"
+              : isFocus
+              ? "bg-[#6E98FF]/25"
+              : "bg-black/10"
+          }
+
+          animate-[floatThree_9s_ease-in-out_infinite]
+        `}
       />
 
       <Shape
         className="
-          left-[26%]
-          bottom-[18%]
+          left-[47%]
+          top-[8%]
           h-2
           w-2
           rounded-full
-          bg-black/15
-        "
-        style={{
-          animation: "driftOne 7s ease-in-out infinite",
-        }}
-      />
-
-      <Shape
-        className="
-          right-[28%]
-          bottom-[12%]
-          h-3
-          w-3
-          rounded-full
           bg-black/10
+          animate-[floatOne_6s_ease-in-out_infinite]
         "
-        style={{
-          animation: "driftOne 11s ease-in-out infinite reverse",
-        }}
       />
 
-      {/* =====================================================
-          DIAMONDS
-      ===================================================== */}
+      {/* =================================================
+          DIAMOND 01
+      ================================================= */}
 
       <Shape
-        className="
-          left-[28%]
-          top-[12%]
+        className={`
+          left-[11%]
+          top-[27%]
+          h-14
+          w-14
+          rotate-45
+          rounded-[12px]
+          border
+          backdrop-blur-sm
+
+          ${
+            isCay
+              ? "border-[#8176E2]/15 bg-[#EEEAFE]/25"
+              : isFocus
+              ? "border-[#7198FF]/15 bg-[#EAF1FF]/30"
+              : "border-black/[0.06] bg-white/20"
+          }
+
+          animate-[floatTwo_10s_ease-in-out_infinite]
+        `}
+      />
+
+      {/* =================================================
+          DIAMOND 02
+      ================================================= */}
+
+      <Shape
+        className={`
+          right-[5%]
+          bottom-[27%]
+          h-20
+          w-20
+          rotate-12
+          rounded-[22px]
+          border
+
+          ${
+            isCay
+              ? "border-[#8176E2]/12 bg-white/20"
+              : isFocus
+              ? "border-[#7198FF]/12 bg-white/20"
+              : "border-black/[0.05]"
+          }
+
+          animate-[floatThree_11s_ease-in-out_infinite]
+        `}
+      />
+
+      {/* =================================================
+          SMALL CUBES
+      ================================================= */}
+
+      <Shape
+        className={`
+          left-[31%]
+          bottom-[5%]
+          h-12
+          w-12
+          rotate-[18deg]
+          rounded-[10px]
+          border
+
+          ${
+            isCay
+              ? "border-[#8B80E7]/15"
+              : isFocus
+              ? "border-[#7198FF]/15"
+              : "border-black/[0.06]"
+          }
+
+          animate-[floatOne_12s_ease-in-out_infinite]
+        `}
+      />
+
+      <Shape
+        className={`
+          right-[35%]
+          top-[5%]
+          h-9
+          w-9
+          rotate-[35deg]
+          rounded-[9px]
+          border
+
+          ${
+            isCay
+              ? "border-[#8B80E7]/12"
+              : isFocus
+              ? "border-[#7198FF]/12"
+              : "border-black/[0.05]"
+          }
+
+          animate-[floatTwo_9s_ease-in-out_infinite]
+        `}
+      />
+
+      {/* =================================================
+          CROSS 01
+      ================================================= */}
+
+      <Shape
+        className={`
+          left-[38%]
+          top-[24%]
           h-7
           w-7
-          rotate-45
-          rounded-[5px]
-          border
-          border-black/[0.08]
-          bg-white/20
-          backdrop-blur-sm
-        "
-        style={{
-          animation: "morph 10s ease-in-out infinite",
-        }}
-      />
 
-      <Shape
-        className="
-          right-[30%]
-          bottom-[20%]
-          h-8
-          w-8
-          rotate-45
-          rounded-[6px]
-          border
-          border-black/[0.06]
-          bg-white/25
-          backdrop-blur-sm
-        "
-        style={{
-          animation: "morph 13s ease-in-out infinite reverse",
-        }}
-      />
+          ${
+            isCay
+              ? "text-[#8277E4]/20"
+              : isFocus
+              ? "text-[#7198FF]/20"
+              : "text-black/10"
+          }
 
-      {/* =====================================================
-          CROSSES
-      ===================================================== */}
-
-      <Shape
-        className="
-          right-[13%]
-          top-[32%]
-          h-7
-          w-7
-          opacity-40
-        "
-        style={{
-          animation: "driftOne 9s ease-in-out infinite",
-        }}
+          animate-[floatThree_8s_ease-in-out_infinite]
+        `}
       >
-        <div className="absolute left-1/2 top-0 h-full w-[1px] -translate-x-1/2 bg-black/20" />
-        <div className="absolute left-0 top-1/2 h-[1px] w-full -translate-y-1/2 bg-black/20" />
+        <span className="absolute left-1/2 top-0 h-full w-px bg-current" />
+        <span className="absolute left-0 top-1/2 h-px w-full bg-current" />
       </Shape>
 
+      {/* =================================================
+          CROSS 02
+      ================================================= */}
+
       <Shape
-        className="
-          left-[10%]
-          bottom-[30%]
+        className={`
+          right-[22%]
+          bottom-[22%]
           h-5
           w-5
-          opacity-30
-        "
-        style={{
-          animation: "driftOne 12s ease-in-out infinite reverse",
-        }}
+
+          ${
+            isCay
+              ? "text-[#8277E4]/15"
+              : isFocus
+              ? "text-[#7198FF]/15"
+              : "text-black/10"
+          }
+        `}
       >
-        <div className="absolute left-1/2 top-0 h-full w-[1px] -translate-x-1/2 bg-black/20" />
-        <div className="absolute left-0 top-1/2 h-[1px] w-full -translate-y-1/2 bg-black/20" />
+        <span className="absolute left-1/2 top-0 h-full w-px bg-current" />
+        <span className="absolute left-0 top-1/2 h-px w-full bg-current" />
       </Shape>
 
-      {/* =====================================================
-          PILLS
-      ===================================================== */}
+      {/* =================================================
+          FLOATING PILLS
+      ================================================= */}
 
       <Shape
-        className="
-          right-[8%]
-          top-[12%]
-          h-3
-          w-16
-          rotate-[-25deg]
-          rounded-full
-          border
-          border-black/[0.07]
-          bg-white/20
-        "
-        style={{
-          animation: "driftOne 14s ease-in-out infinite",
-        }}
-      />
-
-      <Shape
-        className="
-          left-[18%]
+        className={`
+          left-[16%]
           bottom-[12%]
           h-3
           w-20
-          rotate-[18deg]
+          rotate-[-20deg]
           rounded-full
-          border
-          border-black/[0.06]
-          bg-white/20
-        "
-        style={{
-          animation: "driftOne 12s ease-in-out infinite reverse",
-        }}
+
+          ${
+            isCay
+              ? "bg-[#8A80E7]/12"
+              : isFocus
+              ? "bg-[#7198FF]/12"
+              : "bg-black/[0.05]"
+          }
+        `}
       />
 
-      {/* =====================================================
-          CONSTELLATION DOTS
-      ===================================================== */}
+      <Shape
+        className={`
+          right-[17%]
+          top-[32%]
+          h-2
+          w-14
+          rotate-[35deg]
+          rounded-full
 
-      <div className="absolute right-[20%] top-[20%] opacity-40">
-        <div className="flex gap-3">
-          <span className="h-1.5 w-1.5 rounded-full bg-black/20" />
-          <span className="mt-3 h-1.5 w-1.5 rounded-full bg-black/15" />
-          <span className="h-1.5 w-1.5 rounded-full bg-black/20" />
-        </div>
+          ${
+            isCay
+              ? "bg-[#8A80E7]/15"
+              : isFocus
+              ? "bg-[#7198FF]/15"
+              : "bg-black/[0.05]"
+          }
+        `}
+      />
 
-        <div className="ml-3 mt-2 flex gap-4">
-          <span className="h-1 w-1 rounded-full bg-black/15" />
-          <span className="h-1.5 w-1.5 rounded-full bg-black/20" />
-        </div>
+      {/* =================================================
+          CONSTELLATION
+      ================================================= */}
+
+      <div className="absolute left-[27%] top-[17%] flex gap-3">
+        {[1, 2, 3].map((dot) => (
+          <span
+            key={dot}
+            className={`
+              h-1.5
+              w-1.5
+              rounded-full
+
+              ${
+                isCay
+                  ? "bg-[#8277E4]/20"
+                  : isFocus
+                  ? "bg-[#7198FF]/20"
+                  : "bg-black/10"
+              }
+            `}
+          />
+        ))}
       </div>
 
-      {/* =====================================================
+      {/* =================================================
           CONNECTING LINE
-      ===================================================== */}
+      ================================================= */}
 
-      <svg
-        className="
-          absolute
-          right-[12%]
-          top-[20%]
-          hidden
-          h-[180px]
-          w-[220px]
-          opacity-20
-          md:block
-        "
-        viewBox="0 0 220 180"
-        fill="none"
-      >
-        <path
-          d="M20 120 C70 20, 130 160, 200 60"
-          stroke="black"
-          strokeWidth="1"
-          strokeDasharray="5 7"
-        />
-      </svg>
+      <Shape
+        className={`
+          left-[20%]
+          top-[34%]
+          h-px
+          w-[180px]
+          rotate-[18deg]
 
-      {/* =====================================================
-          THEME-SPECIFIC SHAPES
-      ===================================================== */}
+          ${
+            isCay
+              ? "bg-[#8277E4]/10"
+              : isFocus
+              ? "bg-[#7198FF]/10"
+              : "bg-black/[0.04]"
+          }
+        `}
+      />
 
-      {isCayTunes && (
+      {/* =================================================
+          CAYTUNES EXTRA SHAPE
+      ================================================= */}
+
+      {isCay && (
         <>
           <Shape
             className="
-              left-[42%]
-              top-[8%]
-              h-12
-              w-12
+              right-[25%]
+              bottom-[10%]
+              h-10
+              w-10
               rounded-full
-              border
-              border-purple-400/20
-              bg-purple-300/10
-              blur-[1px]
+              bg-[#A79EFF]/15
+              blur-md
+              animate-[floatOne_8s_ease-in-out_infinite]
             "
-            style={{
-              animation: "floatTwo 11s ease-in-out infinite",
-            }}
           />
 
           <Shape
             className="
-              right-[38%]
-              bottom-[10%]
-              h-16
-              w-16
+              left-[50%]
+              bottom-[8%]
+              h-24
+              w-24
               rounded-full
-              bg-purple-300/15
-              blur-xl
+              border
+              border-[#8176E2]/10
+              animate-[slowSpin_20s_linear_infinite]
             "
           />
         </>
       )}
 
-      {isFocusList && (
+      {/* =================================================
+          FOCUSLIST EXTRA SHAPE
+      ================================================= */}
+
+      {isFocus && (
         <>
           <Shape
             className="
-              left-[45%]
-              top-[10%]
-              h-10
-              w-10
-              rotate-12
-              rounded-[10px]
-              border
-              border-blue-400/20
-              bg-blue-300/10
+              left-[13%]
+              top-[17%]
+              h-7
+              w-7
+              rounded-full
+              bg-[#E7B18A]/20
+              blur-[1px]
+              animate-[floatTwo_7s_ease-in-out_infinite]
             "
-            style={{
-              animation: "floatThree 10s ease-in-out infinite",
-            }}
           />
 
           <Shape
             className="
               right-[40%]
-              bottom-[12%]
+              bottom-[7%]
+              h-24
+              w-24
+              rounded-[28px]
+              border
+              border-[#7198FF]/10
+              rotate-[-15deg]
+              animate-[floatOne_10s_ease-in-out_infinite]
+            "
+          />
+        </>
+      )}
+
+      {/* =================================================
+          FUTURE EXTRA SHAPES
+      ================================================= */}
+
+      {isFuture && (
+        <>
+          <Shape
+            className="
+              left-[42%]
+              top-[5%]
+              h-28
+              w-28
+              rounded-full
+              border-[12px]
+              border-black/[0.025]
+              animate-[slowSpin_25s_linear_infinite]
+            "
+          />
+
+          <Shape
+            className="
+              right-[20%]
+              top-[40%]
               h-14
               w-14
               rounded-full
-              bg-blue-300/15
-              blur-xl
+              border
+              border-black/[0.07]
+              animate-[floatTwo_9s_ease-in-out_infinite]
             "
           />
         </>
@@ -479,12 +621,22 @@ function FloatingShapes({ theme }) {
   );
 }
 
+/* =========================================================
+   MAIN COMPONENT
+========================================================= */
+
 export default function SelectedWork() {
   const [activeProject, setActiveProject] = useState(null);
   const [activeMobile, setActiveMobile] = useState(0);
 
+  /* =======================================================
+     MOBILE CENTER DETECTION
+  ======================================================= */
+
   useEffect(() => {
-    const cards = document.querySelectorAll("[data-project-card]");
+    const cards = document.querySelectorAll(
+      "[data-project-card]"
+    );
 
     if (!cards.length) return;
 
@@ -492,202 +644,238 @@ export default function SelectedWork() {
       (entries) => {
         const visibleCards = entries
           .filter((entry) => entry.isIntersecting)
-          .map((entry) => {
-            const rect = entry.target.getBoundingClientRect();
+          .sort((a, b) => {
+            const aDistance = Math.abs(
+              a.boundingClientRect.top +
+                a.boundingClientRect.height / 2 -
+                window.innerHeight / 2
+            );
 
-            const cardCenter = rect.top + rect.height / 2;
-            const viewportCenter = window.innerHeight / 2;
+            const bDistance = Math.abs(
+              b.boundingClientRect.top +
+                b.boundingClientRect.height / 2 -
+                window.innerHeight / 2
+            );
 
-            return {
-              index: Number(entry.target.dataset.index),
-              distance: Math.abs(cardCenter - viewportCenter),
-            };
-          })
-          .sort((a, b) => a.distance - b.distance);
+            return aDistance - bDistance;
+          });
 
         if (visibleCards.length > 0) {
-          setActiveMobile(visibleCards[0].index);
+          const closestCard = visibleCards[0];
+
+          setActiveMobile(
+            Number(closestCard.target.dataset.index)
+          );
         }
       },
       {
-        rootMargin: "-20% 0px -20% 0px",
         threshold: [0.4, 0.6, 0.8],
+        rootMargin: "-20% 0px -20% 0px",
       }
     );
 
     cards.forEach((card) => observer.observe(card));
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+    };
   }, []);
 
+  /* =======================================================
+     DESKTOP / MOBILE ACTIVE PROJECT
+  ======================================================= */
+
   const activeIndex =
-    activeProject !== null ? activeProject : activeMobile;
+    activeProject !== null
+      ? activeProject
+      : activeMobile;
 
   const activeTheme =
-    projects[activeIndex]?.theme || "#F7F7F5";
+    activeIndex !== null
+      ? projects[activeIndex].theme
+      : null;
+
+  /* =======================================================
+     BACKGROUND COLORS
+  ======================================================= */
+
+  const backgroundColor =
+    activeTheme === "cay"
+      ? "#EEEAFE"
+      : activeTheme === "focus"
+      ? "#EEF4FF"
+      : activeTheme === "future"
+      ? "#F1F1EF"
+      : "#F7F7F5";
 
   return (
     <section
-      className="
-        relative
-        overflow-hidden
-        px-6
-        py-24
-        transition-colors
-        duration-1000
-      "
+      className="relative overflow-hidden px-6 py-20 transition-colors duration-700 ease-out md:px-10 md:py-24 lg:px-16"
+      style={{
+        backgroundColor,
+      }}
+      onMouseLeave={() => {
+        setActiveProject(null);
+      }}
     >
-      {/* =====================================================
-          SOFT SECTION ATMOSPHERE
+      {/* =================================================
+          ABSTRACT BACKGROUND
+      ================================================= */}
 
-          This replaces the hard rectangular background.
-          The color fades naturally into the page.
-      ===================================================== */}
-
-      <div
-        className="
-          pointer-events-none
-          absolute
-          left-[-15%]
-          right-[-15%]
-          top-[-8%]
-          h-[75%]
-          rounded-[50%]
-          blur-[110px]
-          opacity-70
-          transition-all
-          duration-1000
-        "
-        style={{
-          background: `
-            radial-gradient(
-              ellipse at center,
-              ${activeTheme} 0%,
-              ${activeTheme}CC 35%,
-              transparent 72%
-            )
-          `,
-        }}
-      />
-
-      <div
-        className="
-          pointer-events-none
-          absolute
-          bottom-[-15%]
-          left-[-10%]
-          right-[-10%]
-          h-[60%]
-          rounded-[50%]
-          blur-[100px]
-          opacity-50
-          transition-all
-          duration-1000
-        "
-        style={{
-          background: `
-            radial-gradient(
-              ellipse at center,
-              ${activeTheme}99 0%,
-              transparent 70%
-            )
-          `,
-        }}
-      />
-
-      {/* Soft white center */}
-      <div
-        className="
-          pointer-events-none
-          absolute
-          inset-[5%]
-          rounded-[50%]
-          bg-white/20
-          blur-[80px]
-        "
-      />
-
-      {/* Floating shapes */}
       <FloatingShapes theme={activeTheme} />
 
-      {/* Very subtle readability layer */}
-      <div
-        className="
-          pointer-events-none
-          absolute
-          inset-0
-          bg-white/[0.10]
-          backdrop-blur-[1px]
-        "
-      />
+      {/* Soft readability layer */}
 
-      {/* =====================================================
+      <div className="pointer-events-none absolute inset-0 bg-white/[0.18]" />
+
+      {/* =================================================
           CONTENT
-      ===================================================== */}
+      ================================================= */}
 
-      <div className="relative z-10 mx-auto max-w-6xl">
+      <div className="relative z-10 mx-auto max-w-7xl">
+        {/* =================================================
+            HEADER
+        ================================================= */}
 
-        {/* Section heading */}
+        <div className="mb-12 flex flex-col gap-4 md:mb-16 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p className="text-xs font-medium uppercase tracking-[0.2em] text-black/35">
+              Selected Work
+            </p>
 
-        <div className="mb-14 max-w-2xl">
-          <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-black/45">
-            Selected Work
+            <h2 className="mt-4 text-4xl font-semibold tracking-[-0.045em] md:text-5xl">
+              Things I&apos;ve designed.
+            </h2>
+          </div>
+
+          <p className="max-w-sm text-sm leading-6 text-black/45">
+            A collection of products, interfaces, and experiments
+            where design meets technology.
           </p>
-
-          <h2 className="text-4xl font-medium tracking-[-0.04em] text-[#111111] md:text-6xl">
-            Things I’ve built
-            <br />
-            <span className="text-black/40">
-              with intention.
-            </span>
-          </h2>
         </div>
 
-        {/* =====================================================
-            PROJECT GRID
-        ===================================================== */}
+        {/* =================================================
+            PROJECT CARDS
+        ================================================= */}
 
-        <div className="grid gap-5 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => {
-            const isActive = activeIndex === index;
+            const isActive =
+              activeIndex === index;
 
             return (
               <Link
-                key={project.number}
                 href={project.href}
-                className="block"
-                onMouseEnter={() => setActiveProject(index)}
-                onMouseLeave={() => setActiveProject(null)}
+                key={project.number}
+                onMouseEnter={() => {
+                  setActiveProject(index);
+                }}
+                className="group"
               >
                 <article
                   data-project-card
                   data-index={index}
                   className={`
-                    group
                     relative
                     min-h-[330px]
                     overflow-hidden
                     rounded-[28px]
                     border
-                    border-black/[0.05]
+                    border-black/[0.06]
                     p-6
-                    backdrop-blur-2xl
+                    backdrop-blur-xl
+
                     transition-all
                     duration-500
                     ease-out
 
                     ${
                       isActive
-                        ? "bg-white/75 shadow-[0_30px_80px_rgba(0,0,0,0.08)]"
-                        : "bg-white/50"
+                        ? "bg-white/85 shadow-[0_30px_80px_rgba(0,0,0,0.08)]"
+                        : "bg-white/65"
                     }
 
                     md:hover:-translate-y-2
-                    md:hover:bg-white/75
+                    md:hover:bg-white/80
                     md:hover:shadow-[0_30px_80px_rgba(0,0,0,0.07)]
                   `}
                 >
-                  {/* Card highlight */}
+                  {/* =================================================
+                      TOP
+                  ================================================= */}
+
+                  <div className="flex items-start justify-between">
+                    <span className="text-xs font-medium text-black/30">
+                      {project.number}
+                    </span>
+
+                    <span
+                      className={`
+                        flex
+                        h-9
+                        w-9
+                        items-center
+                        justify-center
+                        rounded-full
+                        border
+                        border-black/[0.07]
+                        bg-white/60
+                        text-sm
+
+                        transition-all
+                        duration-300
+
+                        ${
+                          isActive
+                            ? "rotate-45 bg-black text-white"
+                            : ""
+                        }
+
+                        md:group-hover:rotate-45
+                        md:group-hover:bg-black
+                        md:group-hover:text-white
+                      `}
+                    >
+                      ↗
+                    </span>
+                  </div>
+
+                  {/* =================================================
+                      PROJECT CONTENT
+                  ================================================= */}
+
+                  <div className="mt-16">
+                    <p className="mb-3 text-[10px] font-medium uppercase tracking-[0.18em] text-black/35">
+                      {project.category}
+                    </p>
+
+                    <h3 className="text-3xl font-semibold tracking-[-0.04em]">
+                      {project.title}
+                    </h3>
+
+                    <p className="mt-4 max-w-sm text-sm leading-6 text-black/50">
+                      {project.description}
+                    </p>
+                  </div>
+
+                  {/* =================================================
+                      TAGS
+                  ================================================= */}
+
+                  <div className="absolute bottom-6 left-6 flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full border border-black/[0.06] bg-white/60 px-3 py-1.5 text-[10px] font-medium text-black/45 backdrop-blur-sm"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* =================================================
+                      MOBILE ACTIVE GLOW
+                  ================================================= */}
 
                   <div
                     className={`
@@ -700,89 +888,23 @@ export default function SelectedWork() {
                       rounded-full
                       bg-white/70
                       blur-3xl
+
                       transition-opacity
                       duration-500
+
                       ${
                         isActive
                           ? "opacity-100"
-                          : "opacity-50"
+                          : "opacity-0"
                       }
+
+                      md:group-hover:opacity-100
                     `}
                   />
 
-                  {/* Top row */}
-
-                  <div className="relative z-10 flex items-center justify-between">
-                    <span className="text-xs font-medium tracking-[0.12em] text-black/40">
-                      {project.number}
-                    </span>
-
-                    <div
-                      className={`
-                        flex
-                        h-10
-                        w-10
-                        items-center
-                        justify-center
-                        rounded-full
-                        border
-                        border-black/[0.08]
-                        transition-all
-                        duration-500
-                        ${
-                          isActive
-                            ? "rotate-45 bg-[#111111] text-white"
-                            : "bg-white/40 text-black/60"
-                        }
-                      `}
-                    >
-                      <span className="text-lg">
-                        ↗
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Content */}
-
-                  <div className="relative z-10 mt-16">
-                    <p className="mb-3 text-xs font-medium uppercase tracking-[0.12em] text-black/40">
-                      {project.category}
-                    </p>
-
-                    <h3 className="text-3xl font-medium tracking-[-0.04em] text-[#111111]">
-                      {project.title}
-                    </h3>
-
-                    <p className="mt-4 max-w-sm text-sm leading-6 text-black/55">
-                      {project.description}
-                    </p>
-                  </div>
-
-                  {/* Tags */}
-
-                  <div className="absolute bottom-6 left-6 right-6 z-10 flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="
-                          rounded-full
-                          border
-                          border-black/[0.05]
-                          bg-white/35
-                          px-3
-                          py-1.5
-                          text-[11px]
-                          font-medium
-                          text-black/50
-                          backdrop-blur-md
-                        "
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Mobile active indicator */}
+                  {/* =================================================
+                      MOBILE ACTIVE INDICATOR
+                  ================================================= */}
 
                   <div
                     className={`
@@ -792,15 +914,17 @@ export default function SelectedWork() {
                       h-[2px]
                       -translate-x-1/2
                       rounded-full
-                      bg-[#111111]
+                      bg-black
                       transition-all
                       duration-500
-                      md:hidden
+
                       ${
                         isActive
-                          ? "w-12 opacity-100"
+                          ? "w-16 opacity-20"
                           : "w-0 opacity-0"
                       }
+
+                      md:hidden
                     `}
                   />
                 </article>
@@ -810,65 +934,73 @@ export default function SelectedWork() {
         </div>
       </div>
 
-      {/* =====================================================
+      {/* =================================================
           ANIMATIONS
-      ===================================================== */}
+      ================================================= */}
 
       <style jsx>{`
         @keyframes floatOne {
           0%,
           100% {
-            transform: translate3d(0, 0, 0) scale(1);
+            transform: translate3d(0, 0, 0) rotate(0deg);
           }
 
           50% {
-            transform: translate3d(25px, -20px, 0) scale(1.05);
+            transform: translate3d(10px, -18px, 0) rotate(4deg);
           }
         }
 
         @keyframes floatTwo {
           0%,
           100% {
-            transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0) rotate(0deg);
           }
 
           50% {
-            transform: translate3d(-30px, 25px, 0);
+            transform: translate3d(-14px, 12px, 0) rotate(-5deg);
           }
         }
 
         @keyframes floatThree {
           0%,
           100% {
-            transform: translate3d(0, 0, 0) scale(1);
+            transform: translate3d(0, 0, 0) rotate(0deg);
           }
 
           50% {
-            transform: translate3d(20px, -30px, 0) scale(1.08);
+            transform: translate3d(8px, 10px, 0) rotate(7deg);
           }
         }
 
         @keyframes driftOne {
           0%,
           100% {
-            transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0) scale(1);
           }
 
           50% {
-            transform: translate3d(12px, -16px, 0);
+            transform: translate3d(25px, -15px, 0)
+              scale(1.06);
           }
         }
 
         @keyframes morph {
           0%,
           100% {
-            transform: rotate(45deg) scale(1);
-            border-radius: 5px;
+            border-radius: 45% 55% 60% 40%;
+            transform: translate(0, 0) rotate(0deg);
           }
 
-          50% {
-            transform: rotate(90deg) scale(1.15);
-            border-radius: 50%;
+          33% {
+            border-radius: 60% 40% 45% 55%;
+            transform: translate(-18px, -10px)
+              rotate(5deg);
+          }
+
+          66% {
+            border-radius: 40% 60% 55% 45%;
+            transform: translate(10px, 15px)
+              rotate(-4deg);
           }
         }
 
