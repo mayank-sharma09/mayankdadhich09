@@ -40,14 +40,14 @@ function AbstractBackground({ theme }) {
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden">
       {/* =================================================
-          CAYTUNES
+          CAYTUNES BACKGROUND
       ================================================= */}
 
       <div
-        className={`absolute inset-0 transition-all duration-1000 ${
+        className={`absolute inset-0 transition-all duration-700 ${
           theme === "cay"
             ? "scale-100 opacity-100"
-            : "scale-110 opacity-0"
+            : "scale-105 opacity-0"
         }`}
       >
         {/* Large organic shape */}
@@ -62,11 +62,14 @@ function AbstractBackground({ theme }) {
             rounded-[48%_52%_60%_40%]
             bg-[#DCD7FF]/55
             blur-[1px]
-            animate-[morph_12s_ease-in-out_infinite]
+            transition-transform
+            duration-[8000ms]
+            ease-in-out
+            animate-pulse
           "
         />
 
-        {/* Second shape */}
+        {/* Second circle */}
 
         <div
           className="
@@ -79,7 +82,8 @@ function AbstractBackground({ theme }) {
             border
             border-[#9D91FF]/20
             bg-[#EAE7FF]/50
-            animate-[float_8s_ease-in-out_infinite]
+            animate-pulse
+            duration-[4000ms]
           "
         />
 
@@ -116,9 +120,31 @@ function AbstractBackground({ theme }) {
 
         {/* Floating dots */}
 
-        <div className="absolute left-[25%] top-[22%] h-3 w-3 rounded-full bg-[#8C82E8]/35 animate-[float_6s_ease-in-out_infinite]" />
+        <div
+          className="
+            absolute
+            left-[25%]
+            top-[22%]
+            h-3
+            w-3
+            rounded-full
+            bg-[#8C82E8]/35
+            animate-bounce
+          "
+        />
 
-        <div className="absolute right-[30%] bottom-[20%] h-2 w-2 rounded-full bg-[#8C82E8]/40 animate-[float_7s_ease-in-out_infinite]" />
+        <div
+          className="
+            absolute
+            right-[30%]
+            bottom-[20%]
+            h-2
+            w-2
+            rounded-full
+            bg-[#8C82E8]/40
+            animate-pulse
+          "
+        />
 
         {/* Thin line */}
 
@@ -149,20 +175,20 @@ function AbstractBackground({ theme }) {
             border-[#8275E8]/15
             bg-white/20
             backdrop-blur-sm
-            animate-[float_9s_ease-in-out_infinite]
+            animate-pulse
           "
         />
       </div>
 
       {/* =================================================
-          FOCUSLIST
+          FOCUSLIST BACKGROUND
       ================================================= */}
 
       <div
-        className={`absolute inset-0 transition-all duration-1000 ${
+        className={`absolute inset-0 transition-all duration-700 ${
           theme === "focus"
             ? "scale-100 opacity-100"
-            : "scale-110 opacity-0"
+            : "scale-105 opacity-0"
         }`}
       >
         {/* Main circle */}
@@ -178,7 +204,7 @@ function AbstractBackground({ theme }) {
             border
             border-[#9CB9FF]/20
             bg-[#E9F0FF]/60
-            animate-[float_10s_ease-in-out_infinite]
+            animate-pulse
           "
         />
 
@@ -208,11 +234,11 @@ function AbstractBackground({ theme }) {
             w-[420px]
             rounded-[50%_40%_45%_55%]
             bg-[#DDE8FF]/65
-            animate-[morph_14s_ease-in-out_infinite]
+            animate-pulse
           "
         />
 
-        {/* Grid-like lines */}
+        {/* Geometric lines */}
 
         <div
           className="
@@ -240,7 +266,7 @@ function AbstractBackground({ theme }) {
           "
         />
 
-        {/* Tiny orange accent */}
+        {/* Orange accent */}
 
         <div
           className="
@@ -251,7 +277,7 @@ function AbstractBackground({ theme }) {
             w-5
             rounded-full
             bg-[#E9B58C]/30
-            animate-[float_6s_ease-in-out_infinite]
+            animate-bounce
           "
         />
 
@@ -266,7 +292,7 @@ function AbstractBackground({ theme }) {
             w-3
             rounded-full
             bg-[#6F98FF]/30
-            animate-[float_7s_ease-in-out_infinite]
+            animate-pulse
           "
         />
 
@@ -286,14 +312,14 @@ function AbstractBackground({ theme }) {
       </div>
 
       {/* =================================================
-          FUTURE PROJECT
+          FUTURE PROJECT BACKGROUND
       ================================================= */}
 
       <div
-        className={`absolute inset-0 transition-all duration-1000 ${
+        className={`absolute inset-0 transition-all duration-700 ${
           theme === "future"
             ? "scale-100 opacity-100"
-            : "scale-110 opacity-0"
+            : "scale-105 opacity-0"
         }`}
       >
         {/* Large ring */}
@@ -308,11 +334,11 @@ function AbstractBackground({ theme }) {
             rounded-full
             border-[18px]
             border-black/[0.025]
-            animate-[slowspin_25s_linear_infinite]
+            animate-spin
           "
         />
 
-        {/* Organic neutral shape */}
+        {/* Neutral organic shape */}
 
         <div
           className="
@@ -323,11 +349,11 @@ function AbstractBackground({ theme }) {
             w-[230px]
             rounded-[45%_55%_55%_45%]
             bg-black/[0.025]
-            animate-[morph_15s_ease-in-out_infinite]
+            animate-pulse
           "
         />
 
-        {/* Floating squares */}
+        {/* Floating square */}
 
         <div
           className="
@@ -341,7 +367,7 @@ function AbstractBackground({ theme }) {
             border
             border-black/[0.06]
             bg-white/30
-            animate-[float_9s_ease-in-out_infinite]
+            animate-bounce
           "
         />
 
@@ -356,15 +382,35 @@ function AbstractBackground({ theme }) {
             rounded-[12px]
             border
             border-black/[0.05]
-            animate-[float_7s_ease-in-out_infinite]
+            animate-pulse
           "
         />
 
         {/* Dots */}
 
-        <div className="absolute left-[20%] top-[30%] h-2 w-2 rounded-full bg-black/10" />
+        <div
+          className="
+            absolute
+            left-[20%]
+            top-[30%]
+            h-2
+            w-2
+            rounded-full
+            bg-black/10
+          "
+        />
 
-        <div className="absolute right-[20%] bottom-[30%] h-3 w-3 rounded-full bg-black/10" />
+        <div
+          className="
+            absolute
+            right-[20%]
+            bottom-[30%]
+            h-3
+            w-3
+            rounded-full
+            bg-black/10
+          "
+        />
       </div>
 
       {/* =================================================
@@ -383,7 +429,7 @@ function AbstractBackground({ theme }) {
               rounded-full
               border
               border-black/[0.05]
-              animate-[float_9s_ease-in-out_infinite]
+              animate-pulse
             "
           />
 
@@ -398,7 +444,7 @@ function AbstractBackground({ theme }) {
               border
               border-black/[0.04]
               rotate-12
-              animate-[float_11s_ease-in-out_infinite]
+              animate-pulse
             "
           />
         </>
@@ -422,53 +468,87 @@ export default function SelectedWork() {
         overflow-hidden
         px-6
         py-20
-
         md:px-10
         md:py-24
-
         lg:px-16
       "
       onMouseLeave={() => setActiveProject(null)}
     >
-      {/* =================================================
-          ABSTRACT BACKGROUND
-      ================================================= */}
+      {/* ABSTRACT BACKGROUND */}
 
       <AbstractBackground theme={activeTheme} />
 
-      {/* Soft overlay */}
+      {/* SOFT OVERLAY */}
 
       <div className="pointer-events-none absolute inset-0 bg-[#F7F7F5]/30" />
 
-      {/* =================================================
-          CONTENT
-      ================================================= */}
+      {/* CONTENT */}
 
       <div className="relative z-10 mx-auto max-w-7xl">
-        {/* Heading */}
+        {/* HEADING */}
 
-        <div className="mb-12 flex flex-col gap-4 md:mb-16 md:flex-row md:items-end md:justify-between">
+        <div
+          className="
+            mb-12
+            flex
+            flex-col
+            gap-4
+            md:mb-16
+            md:flex-row
+            md:items-end
+            md:justify-between
+          "
+        >
           <div>
-            <p className="text-xs font-medium uppercase tracking-[0.2em] text-black/35">
+            <p
+              className="
+                text-xs
+                font-medium
+                uppercase
+                tracking-[0.2em]
+                text-black/35
+              "
+            >
               Selected Work
             </p>
 
-            <h2 className="mt-4 text-4xl font-semibold tracking-[-0.045em] md:text-5xl">
+            <h2
+              className="
+                mt-4
+                text-4xl
+                font-semibold
+                tracking-[-0.045em]
+                md:text-5xl
+              "
+            >
               Things I&apos;ve designed.
             </h2>
           </div>
 
-          <p className="max-w-sm text-sm leading-6 text-black/45">
+          <p
+            className="
+              max-w-sm
+              text-sm
+              leading-6
+              text-black/45
+            "
+          >
             A collection of products, interfaces, and experiments where
             design meets technology.
           </p>
         </div>
 
-        {/* =================================================
-            CARDS
-        ================================================= */}
+        {/* CARDS */}
 
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div
+          className="
+            grid
+            grid-cols-1
+            gap-5
+            md:grid-cols-2
+            lg:grid-cols-3
+          "
+        >
           {projects.map((project, index) => (
             <Link
               href={project.href}
@@ -487,17 +567,15 @@ export default function SelectedWork() {
                   bg-white/65
                   p-6
                   backdrop-blur-xl
-
                   transition-all
                   duration-500
                   ease-out
-
                   hover:-translate-y-2
                   hover:bg-white/75
                   hover:shadow-[0_30px_80px_rgba(0,0,0,0.07)]
                 "
               >
-                {/* Number + Arrow */}
+                {/* NUMBER + ARROW */}
 
                 <div className="flex items-start justify-between">
                   <span className="text-xs font-medium text-black/30">
@@ -516,10 +594,8 @@ export default function SelectedWork() {
                       border-black/[0.07]
                       bg-white/60
                       text-sm
-
                       transition-all
                       duration-300
-
                       group-hover:rotate-45
                       group-hover:bg-black
                       group-hover:text-white
@@ -529,25 +605,57 @@ export default function SelectedWork() {
                   </span>
                 </div>
 
-                {/* Content */}
+                {/* CONTENT */}
 
                 <div className="mt-16">
-                  <p className="mb-3 text-[10px] font-medium uppercase tracking-[0.18em] text-black/35">
+                  <p
+                    className="
+                      mb-3
+                      text-[10px]
+                      font-medium
+                      uppercase
+                      tracking-[0.18em]
+                      text-black/35
+                    "
+                  >
                     {project.category}
                   </p>
 
-                  <h3 className="text-3xl font-semibold tracking-[-0.04em]">
+                  <h3
+                    className="
+                      text-3xl
+                      font-semibold
+                      tracking-[-0.04em]
+                    "
+                  >
                     {project.title}
                   </h3>
 
-                  <p className="mt-4 max-w-sm text-sm leading-6 text-black/50">
+                  <p
+                    className="
+                      mt-4
+                      max-w-sm
+                      text-sm
+                      leading-6
+                      text-black/50
+                    "
+                  >
                     {project.description}
                   </p>
                 </div>
 
-                {/* Tags */}
+                {/* TAGS */}
 
-                <div className="absolute bottom-6 left-6 flex flex-wrap gap-2">
+                <div
+                  className="
+                    absolute
+                    bottom-6
+                    left-6
+                    flex
+                    flex-wrap
+                    gap-2
+                  "
+                >
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
@@ -569,7 +677,7 @@ export default function SelectedWork() {
                   ))}
                 </div>
 
-                {/* Small hover glow */}
+                {/* HOVER GLOW */}
 
                 <div
                   className="
@@ -593,51 +701,6 @@ export default function SelectedWork() {
           ))}
         </div>
       </div>
-
-      {/* =================================================
-          ANIMATIONS
-      ================================================= */}
-
-      <style jsx>{`
-        @keyframes float {
-          0%,
-          100% {
-            transform: translateY(0px);
-          }
-
-          50% {
-            transform: translateY(-16px);
-          }
-        }
-
-        @keyframes morph {
-          0%,
-          100% {
-            border-radius: 48% 52% 60% 40%;
-            transform: translate(0, 0) rotate(0deg);
-          }
-
-          33% {
-            border-radius: 60% 40% 45% 55%;
-            transform: translate(12px, -8px) rotate(4deg);
-          }
-
-          66% {
-            border-radius: 40% 60% 55% 45%;
-            transform: translate(-8px, 10px) rotate(-3deg);
-          }
-        }
-
-        @keyframes slowspin {
-          from {
-            transform: rotate(0deg);
-          }
-
-          to {
-            transform: rotate(360deg);
-          }
-        }
-      `}</style>
     </section>
   );
 }
