@@ -37,91 +37,59 @@ export default function DesignPage() {
 
       <SelectedWork />
 
-      {/* =================================================
-          PROCESS
-      ================================================= */}
+ {/* =================================================
+    HOW I WORK
+================================================= */}
 
-      <section className="px-6 py-28 md:px-10 lg:px-16">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-12 md:grid-cols-2 md:gap-20">
-            {/* Left */}
+<section className="relative bg-[#F7F7F5] px-6 py-24 md:py-32 lg:px-16">
+  <div className="mx-auto max-w-4xl text-center">
 
-            <div>
-              <p className="text-xs font-medium uppercase tracking-[0.2em] text-black/35">
-                How I Work
-              </p>
+    {/* Section label */}
+    <p className="text-xs font-medium uppercase tracking-[0.2em] text-black/35">
+      How I Work
+    </p>
 
-              <h2 className="mt-5 max-w-lg text-4xl font-semibold leading-tight tracking-[-0.04em] md:text-5xl">
-                Think first.
-                <br />
-                Design with purpose.
-              </h2>
+    {/* Main statement */}
+    <h2 className="mx-auto mt-8 max-w-3xl text-4xl font-semibold leading-[1.05] tracking-[-0.045em] md:text-6xl">
+      I start with curiosity.
+    </h2>
 
-              <p className="mt-6 max-w-md text-sm leading-6 text-black/45">
-                Good design is not only about making something look good.
-                It&apos;s about understanding the problem, exploring
-                possibilities, and creating an experience that makes sense.
-              </p>
-            </div>
+    {/* Paragraph 1 */}
+    <p className="mx-auto mt-10 max-w-2xl text-base leading-8 text-black/50 md:text-lg md:leading-9">
+      Before thinking about screens or visuals, I try to understand the
+      problem, the people experiencing it, and what actually needs to be
+      solved. I ask questions, explore possibilities, and let the problem
+      shape the direction.
+    </p>
 
-            {/* Right */}
+    {/* Paragraph 2 */}
+    <p className="mx-auto mt-8 max-w-2xl text-base leading-8 text-black/50 md:text-lg md:leading-9">
+      Once I have a clearer picture, I turn those thoughts into something
+      tangible. I sketch, structure, prototype, break things, and try again.
+      I care about how an experience feels, but also about whether it makes
+      sense and genuinely helps someone.
+    </p>
 
-            <div className="border-t border-black/10">
-              {[
-                [
-                  "01",
-                  "Discover",
-                  "Understand the people, problem, and context.",
-                ],
-                [
-                  "02",
-                  "Define",
-                  "Find the real problem worth solving.",
-                ],
-                [
-                  "03",
-                  "Design",
-                  "Explore ideas and shape the experience.",
-                ],
-                [
-                  "04",
-                  "Prototype",
-                  "Turn ideas into something people can experience.",
-                ],
-                [
-                  "05",
-                  "Build",
-                  "Bring the final experience closer to reality.",
-                ],
-              ].map(([number, title, description]) => (
-                <div
-                  key={number}
-                  className="
-                    grid
-                    grid-cols-[40px_1fr]
-                    gap-4
-                    border-b
-                    border-black/10
-                    py-6
+    {/* Paragraph 3 */}
+    <p className="mx-auto mt-8 max-w-2xl text-base leading-8 text-black/50 md:text-lg md:leading-9">
+      For me, design is never really finished. I keep questioning, refining,
+      and learning from what I create. Every project is another opportunity
+      to understand people better and make something a little more meaningful.
+    </p>
 
-                    md:grid-cols-[50px_120px_1fr]
-                  "
-                >
-                  <span className="text-xs text-black/30">
-                    {number}
-                  </span>
+    {/* Small closing detail */}
+    <div className="mt-12 flex items-center justify-center gap-3">
+      <span className="h-px w-8 bg-black/15" />
 
-                  <h3 className="font-medium">{title}</h3>
+      <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-black/30">
+        Curious · Creating · Improving
+      </span>
 
-                  <p className="col-start-2 text-sm leading-6 text-black/45 md:col-start-3">
-                    {description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <span className="h-px w-8 bg-black/15" />
+    </div>
+
+  </div>
+</section>
 
       {/* =================================================
           CTA
