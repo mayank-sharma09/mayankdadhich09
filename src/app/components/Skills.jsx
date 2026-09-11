@@ -87,32 +87,33 @@ export default function Skills() {
               </div>
 
               {/* Tags */}
-              <div className="flex flex-wrap gap-3">
-                {group.skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="
-                      rounded-full
-                      border border-black/[0.08]
-                      bg-white/70
-                      px-5 py-3
-                      text-sm
-                      font-medium
-                      text-black/65
-                      transition-all
-                      duration-300
-                      hover:-translate-y-1
-                      hover:bg-white
-                      hover:text-black
-                      md:px-6
-                      md:py-3.5
-                      md:text-base
-                    "
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
+<div className="flex flex-wrap gap-2.5 md:gap-3">
+  {group.skills.map((skill) => (
+    <span
+      key={skill}
+      className="
+        rounded-full
+        border border-black/[0.08]
+        bg-white/70
+        px-4 py-2.5
+        text-sm
+        font-medium
+        leading-none
+        text-black/65
+        transition-all
+        duration-300
+        hover:-translate-y-1
+        hover:bg-white
+        hover:text-black
+        md:px-6
+        md:py-3.5
+        md:text-base
+      "
+    >
+      {skill}
+    </span>
+  ))}
+</div>
             </div>
           ))}
         </div>
