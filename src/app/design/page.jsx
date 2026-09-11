@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import SelectedWork from "../components/SelectedWork";
+// import SelectedWork from "../components/SelectedWork";
 
 export default function DesignPage() {
   return (
@@ -35,7 +35,7 @@ export default function DesignPage() {
           SELECTED WORK
       ================================================= */}
 
-      <SelectedWork />
+      {/* <SelectedWork /> */}
 
       {/* =================================================
           PROCESS
