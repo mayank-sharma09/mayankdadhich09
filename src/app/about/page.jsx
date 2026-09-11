@@ -2,6 +2,7 @@
 
 import { ArrowUpRight, Mail } from "lucide-react";
 import ScrollProgress from "../components/ScrollProgress";
+import Skills from "../components/Skills";
 
 export default function Page() {
   return (
@@ -241,7 +242,7 @@ export default function Page() {
             </div>
           </div>
         </section>
-
+       <Skills/>
         {/* =========================
             EDUCATION
         ========================== */}
