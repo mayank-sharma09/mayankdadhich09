@@ -95,7 +95,7 @@ function FloatingShapes({ theme }) {
 
       <Shape className="right-[10%] top-[65%] h-3 w-20 rotate-[30deg] rounded-full bg-white/40 animate-[driftOne_15s_ease-in-out_infinite]" />
 
-      {/* Constellation dots */}
+      {/* Constellation */}
       <Shape className="right-[25%] top-[12%]">
         <div className="flex gap-2 opacity-40">
           <span className="h-1 w-1 rounded-full bg-black/20" />
@@ -107,7 +107,7 @@ function FloatingShapes({ theme }) {
       {/* Connecting line */}
       <Shape className="left-[15%] top-[30%] h-px w-[140px] rotate-[20deg] bg-black/[0.04]" />
 
-      {/* CayTunes extra shapes */}
+      {/* CayTunes */}
       {theme === "cay" && (
         <>
           <Shape className="left-[45%] top-[8%] h-24 w-24 rounded-full border border-purple-500/[0.04] animate-[slowSpin_25s_linear_infinite]" />
@@ -118,7 +118,7 @@ function FloatingShapes({ theme }) {
         </>
       )}
 
-      {/* FocusList extra shapes */}
+      {/* FocusList */}
       {theme === "focus" && (
         <>
           <Shape className="left-[48%] top-[6%] h-20 w-20 rounded-full border border-blue-500/[0.035] animate-[slowSpin_26s_linear_infinite]" />
@@ -129,7 +129,7 @@ function FloatingShapes({ theme }) {
         </>
       )}
 
-      {/* Future extra shapes */}
+      {/* Future */}
       {theme === "future" && (
         <>
           <Shape className="left-[50%] top-[10%] h-24 w-24 rounded-full border border-black/[0.025] animate-[slowSpin_30s_linear_infinite]" />
@@ -146,50 +146,60 @@ export default function SelectedWork() {
   const [activeMobile, setActiveMobile] = useState(0);
 
   /*
-   * MOBILE ACTIVE CARD
+   * MOBILE CARD DETECTION
    *
-   * Instead of IntersectionObserver, we check which card is
-   * closest to the center of the screen while scrolling.
-   *
-   * This prevents the active arrow from disappearing when
-   * a card reaches the center of the viewport.
+   * The card closest to the center of the viewport
+   * becomes active.
    */
   useEffect(() => {
     const cards = document.querySelectorAll("[data-project-card]");
 
     if (!cards.length) return;
 
+    let ticking = false;
+
     const updateActiveCard = () => {
-      // Only run this behavior on mobile.
       if (window.innerWidth >= 768) return;
 
-      const viewportCenter = window.innerHeight / 2;
+      if (ticking) return;
 
-      let closestIndex = 0;
-      let closestDistance = Infinity;
+      ticking = true;
 
-      cards.forEach((card) => {
-        const rect = card.getBoundingClientRect();
+      window.requestAnimationFrame(() => {
+        const viewportCenter = window.innerHeight / 2;
 
-        // Ignore cards completely outside the viewport.
-        if (rect.bottom <= 0 || rect.top >= window.innerHeight) {
-          return;
-        }
+        let closestIndex = 0;
+        let closestDistance = Infinity;
 
-        const cardCenter = rect.top + rect.height / 2;
+        cards.forEach((card) => {
+          const rect = card.getBoundingClientRect();
 
-        const distance = Math.abs(cardCenter - viewportCenter);
+          // Ignore cards completely outside viewport
+          if (
+            rect.bottom <= 0 ||
+            rect.top >= window.innerHeight
+          ) {
+            return;
+          }
 
-        if (distance < closestDistance) {
-          closestDistance = distance;
-          closestIndex = Number(card.dataset.index);
-        }
+          const cardCenter = rect.top + rect.height / 2;
+
+          const distance = Math.abs(
+            cardCenter - viewportCenter
+          );
+
+          if (distance < closestDistance) {
+            closestDistance = distance;
+            closestIndex = Number(card.dataset.index);
+          }
+        });
+
+        setActiveMobile(closestIndex);
+
+        ticking = false;
       });
-
-      setActiveMobile(closestIndex);
     };
 
-    // Run once immediately.
     updateActiveCard();
 
     window.addEventListener("scroll", updateActiveCard, {
@@ -204,10 +214,17 @@ export default function SelectedWork() {
     };
   }, []);
 
+  /*
+   * Desktop = hover
+   * Mobile = center card
+   */
   const activeIndex =
-    activeProject !== null ? activeProject : activeMobile;
+    activeProject !== null
+      ? activeProject
+      : activeMobile;
 
-  const activeTheme = projects[activeIndex]?.theme || "future";
+  const activeTheme =
+    projects[activeIndex]?.theme || "future";
 
   const backgroundColor =
     activeTheme === "cay"
@@ -222,7 +239,10 @@ export default function SelectedWork() {
       className="relative overflow-hidden px-6 py-20 transition-colors duration-700 ease-out md:px-10 md:py-24 lg:px-16"
       style={{ backgroundColor }}
       onMouseLeave={() => {
-        if (typeof window !== "undefined" && window.innerWidth >= 768) {
+        if (
+          typeof window !== "undefined" &&
+          window.innerWidth >= 768
+        ) {
           setActiveProject(null);
         }
       }}
@@ -236,13 +256,10 @@ export default function SelectedWork() {
         <div className="absolute left-1/2 top-1/2 h-[80%] w-[70%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/20 blur-[100px]" />
       </div>
 
-      {/* Floating decorative shapes */}
       <FloatingShapes theme={activeTheme} />
 
-      {/* Soft readability layer */}
       <div className="pointer-events-none absolute inset-0 bg-white/[0.18]" />
 
-      {/* Content */}
       <div className="relative z-10 mx-auto max-w-7xl">
         {/* Header */}
         <div className="mb-12 max-w-2xl md:mb-16">
@@ -258,8 +275,8 @@ export default function SelectedWork() {
 
           <p className="mt-6 max-w-xl text-base leading-7 text-black/55 md:text-lg">
             A collection of products and experiences where I explored
-            problems, designed solutions, and brought ideas closer to
-            reality.
+            problems, designed solutions, and brought ideas closer
+            to reality.
           </p>
         </div>
 
@@ -272,7 +289,7 @@ export default function SelectedWork() {
               <Link
                 href={project.href}
                 key={project.number}
-                className="group"
+                className="group block"
                 onMouseEnter={() => {
                   if (
                     typeof window !== "undefined" &&
@@ -286,11 +303,16 @@ export default function SelectedWork() {
                   data-project-card
                   data-index={index}
                   className={`
-                    relative min-h-[330px]
-                    overflow-hidden rounded-[28px]
+                    relative
+                    min-h-[360px]
+                    overflow-hidden
+                    rounded-[28px]
                     border border-black/[0.06]
-                    p-6 backdrop-blur-xl
-                    transition-all duration-500 ease-out
+                    p-6
+                    backdrop-blur-xl
+                    transition-all
+                    duration-500
+                    ease-out
 
                     ${
                       isActive
@@ -298,12 +320,14 @@ export default function SelectedWork() {
                         : "bg-white/65"
                     }
 
+                    md:min-h-[330px]
+
                     md:hover:-translate-y-2
                     md:hover:bg-white/80
                     md:hover:shadow-[0_30px_80px_rgba(0,0,0,0.07)]
                   `}
                 >
-                  {/* Card number */}
+                  {/* Top row */}
                   <div className="flex items-start justify-between">
                     <span className="text-xs font-medium tracking-[0.15em] text-black/35">
                       {project.number}
@@ -312,17 +336,24 @@ export default function SelectedWork() {
                     {/* Arrow */}
                     <span
                       className={`
-                        flex h-9 w-9 items-center justify-center
+                        flex
+                        h-9
+                        w-9
+                        shrink-0
+                        items-center
+                        justify-center
                         rounded-full
-                        border border-black/[0.07]
+                        border
+                        border-black/[0.07]
                         bg-white/60
                         text-sm
-                        transition-all duration-300
+                        transition-all
+                        duration-300
 
                         ${
                           isActive
                             ? "rotate-45 bg-black text-white"
-                            : ""
+                            : "rotate-0 text-black/60"
                         }
 
                         md:group-hover:rotate-45
@@ -334,8 +365,8 @@ export default function SelectedWork() {
                     </span>
                   </div>
 
-                  {/* Card content */}
-                  <div className="mt-20">
+                  {/* Content */}
+                  <div className="mt-14 pb-20 md:mt-20 md:pb-16">
                     <p className="mb-3 text-xs font-medium uppercase tracking-[0.15em] text-black/40">
                       {project.category}
                     </p>
@@ -344,7 +375,7 @@ export default function SelectedWork() {
                       {project.title}
                     </h3>
 
-                    <p className="mt-4 max-w-sm text-sm leading-6 text-black/55">
+                    <p className="mt-4 max-w-sm text-sm leading-6 text-black/55 md:text-sm">
                       {project.description}
                     </p>
                   </div>
@@ -364,19 +395,22 @@ export default function SelectedWork() {
                   {/* Mobile active indicator */}
                   <div
                     className={`
-                      absolute bottom-0 left-1/2 h-[2px]
+                      absolute
+                      bottom-0
+                      left-1/2
+                      h-[2px]
                       -translate-x-1/2
                       rounded-full
                       bg-black
-                      transition-all duration-500
+                      transition-all
+                      duration-500
+                      md:hidden
 
                       ${
                         isActive
                           ? "w-12 opacity-100"
                           : "w-0 opacity-0"
                       }
-
-                      md:hidden
                     `}
                   />
                 </article>
@@ -442,17 +476,6 @@ export default function SelectedWork() {
 
           50% {
             transform: translate3d(18px, -14px, 0) rotate(8deg);
-          }
-        }
-
-        @keyframes morph {
-          0%,
-          100% {
-            border-radius: 45% 55% 60% 40% / 50% 45% 55% 50%;
-          }
-
-          50% {
-            border-radius: 60% 40% 45% 55% / 40% 55% 45% 60%;
           }
         }
 
