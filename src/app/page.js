@@ -341,7 +341,7 @@ export default function Home() {
           {/* CAYTUNES */}
           <a
             href="/design/caytunes"
-            className="group mt-16 block overflow-hidden rounded-[32px] bg-[#E9E7FF]"
+            className="group mt-16 block overflow-hidden rounded-[32px] bg-[#89BFED]"
           >
             <div className="grid min-h-[500px] items-stretch md:grid-cols-2">
 
