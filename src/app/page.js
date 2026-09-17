@@ -118,7 +118,7 @@ export default function Home() {
         md:text-sm
       "
               >
-                Product Designer · Creative Developer · Visual Storyteller
+                MAYANK DADHICH
               </p>
 
               {/* Main heading */}
@@ -128,7 +128,7 @@ export default function Home() {
                   className="hero-line"
                   style={{ animationDelay: "120ms" }}
                 >
-                  I've always been
+                 I'm a Product Designer & Developer,
                 </span>
 
                 <br />
@@ -137,20 +137,12 @@ export default function Home() {
                   className="hero-line"
                   style={{ animationDelay: "220ms" }}
                 >
-                  curious about how
+                 Visual Storyteller
                 </span>
 
-                <br />
+             
 
-                <span
-                  className="hero-line"
-                  style={{ animationDelay: "320ms" }}
-                >
-                  things{" "}
-                  <span className="text-black/30">
-                    come together.
-                  </span>
-                </span>
+               
 
               </h1>
 
@@ -792,8 +784,8 @@ export default function Home() {
               </h2>
 
               <p className="mt-6 max-w-md leading-relaxed text-black/50">
-                Have an idea, project or collaboration in mind?
-                I'd love to hear about it.
+                Got an idea, project, or something exciting in mind? Let’s connect.
+
               </p>
             </div>
 
