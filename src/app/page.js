@@ -9,61 +9,66 @@ import Navbar from "./components/Navbar";
       {/* =========================
           HERO
       ========================== */}
-      <section className="mx-auto max-w-7xl px-6 pb-24 pt-36 sm:px-10 md:pt-40 lg:px-16">
-        
-        <div className="grid items-end gap-12 md:grid-cols-[1.4fr_0.6fr]">
+   <section className="relative overflow-hidden bg-[#F7F7F5]">
+  <div className="mx-auto grid min-h-screen max-w-[1600px] md:grid-cols-[1.05fr_0.95fr]">
 
-          {/* TEXT */}
-          <div>
-            <p className="mb-7 text-sm font-medium uppercase tracking-[0.18em] text-black/40">
-              Product Designer · Creative Developer · Visual Storyteller
-            </p>
+    {/* VIDEO */}
+    <div className="relative order-1 min-h-[430px] md:order-2 md:min-h-screen">
+      <video
+        src="/product-designer.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+        className="h-full w-full object-cover"
+        style={{
+          maskImage:
+            "linear-gradient(to right, transparent 0%, transparent 10%, rgba(0,0,0,0.15) 25%, rgba(0,0,0,0.55) 45%, black 70%)",
+          WebkitMaskImage:
+            "linear-gradient(to right, transparent 0%, transparent 10%, rgba(0,0,0,0.15) 25%, rgba(0,0,0,0.55) 45%, black 70%)",
+        }}
+      />
+    </div>
 
-            <h1 className="max-w-5xl text-5xl font-semibold leading-[1.02] tracking-[-0.05em] sm:text-6xl md:text-7xl lg:text-[92px]">
-              I've always been
-              <br />
-              curious about how
-              <br />
-              things{" "}
-              <span className="text-black/30">
-                come together.
-              </span>
-            </h1>
+    {/* TEXT */}
+    <div className="relative order-2 flex items-center px-6 py-16 sm:px-10 sm:py-20 md:order-1 md:px-12 md:py-24 lg:px-16">
+      <div className="relative z-10 w-full">
 
-            <div className="mt-10 flex flex-wrap items-center gap-4">
-              <a
-                href="#work"
-                className="rounded-full bg-[#111111] px-6 py-3.5 text-sm font-medium text-white transition-transform duration-300 hover:-translate-y-1"
-              >
-                Explore my work ↓
-              </a>
+        <p className="mb-5 max-w-[340px] text-[10px] font-medium uppercase leading-[1.6] tracking-[0.16em] text-black/40 sm:mb-7 sm:max-w-xl sm:text-xs sm:tracking-[0.18em] md:text-sm">
+          Product Designer · Creative Developer · Visual Storyteller
+        </p>
 
-              <a
-                href="/about"
-                className="rounded-full border border-black/10 px-6 py-3.5 text-sm font-medium text-black/60 transition-colors duration-300 hover:bg-black/5 hover:text-black"
-              >
-                More about me ↗
-              </a>
-            </div>
-          </div>
+        <h1 className="max-w-4xl text-[42px] font-semibold leading-[0.98] tracking-[-0.055em] sm:text-[52px] md:text-7xl lg:text-[76px] xl:text-[88px]">
+          I've always been
+          <br />
+          curious about how
+          <br />
+          things{" "}
+          <span className="text-black/30">come together.</span>
+        </h1>
 
-          {/* PHOTO PLACEHOLDER */}
-          <div className="flex justify-start md:justify-end">
-            <div className="relative aspect-[4/5] w-full max-w-[280px] overflow-hidden rounded-[32px] bg-[#E7E7E3]">
-              
-              {/* Replace this div with your image later */}
-              <div className="flex h-full items-center justify-center">
-                <span className="text-xs font-medium uppercase tracking-[0.16em] text-black/25">
-                  Your Photo
-                </span>
-              </div>
+        <div className="mt-8 flex flex-wrap items-center gap-3 sm:mt-10">
+          <a
+            href="#work"
+            className="rounded-full bg-[#111111] px-5 py-3 text-xs font-medium text-white transition-all duration-300 hover:-translate-y-1 sm:px-6 sm:py-3.5 sm:text-sm"
+          >
+            Explore my work ↓
+          </a>
 
-            </div>
-          </div>
-
+          <a
+            href="/about"
+            className="rounded-full border border-black/10 bg-white/30 px-5 py-3 text-xs font-medium text-black/60 backdrop-blur-md transition-all duration-300 hover:border-black/20 hover:bg-white/60 hover:text-black sm:px-6 sm:py-3.5 sm:text-sm"
+          >
+            More about me ↗
+          </a>
         </div>
-      </section>
 
+      </div>
+    </div>
+
+  </div>
+</section>
 
       {/* =========================
           CREATIVE DIRECTIONS
