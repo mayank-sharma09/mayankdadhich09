@@ -16,12 +16,12 @@ const projects = [
   },
   {
     number: "02",
-    category: "Product Design + Frontend",
+    category: " Frontend",
     title: "FocusList",
     description:
       "A focused task management experience built to make planning feel simple, clear, and personal.",
-    tags: ["UI/UX", "Frontend", "React"],
-    href: "/design/focuslist",
+    tags: ["UI/UX", "Frontend", "React", "Demo"],
+    href: "https://task-list-theta-amber.vercel.app/",
     theme: "focus",
   },
   {

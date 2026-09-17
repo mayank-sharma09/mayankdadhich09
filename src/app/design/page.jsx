@@ -29,7 +29,7 @@ export default function DesignPage() {
   {/* MOBILE VIDEO */}
   <div className="absolute inset-0 block md:hidden">
     <video
-      src="/designPage-Mobile.mp4"
+      src="/designPage.mp4"
       autoPlay
       loop
       muted
