@@ -10,12 +10,12 @@ import Navbar from "./components/Navbar";
           HERO
       ========================== */}
    <section className="relative overflow-hidden bg-[#F7F7F5]">
-  <div className="mx-auto grid min-h-screen max-w-[1600px] md:grid-cols-[1.05fr_0.95fr]">
+  <div className="mx-auto grid min-h-screen max-w-[1600px] md:grid-cols-[1.02fr_0.90fr]">
 
     {/* VIDEO */}
     <div className="relative order-1 min-h-[430px] md:order-2 md:min-h-screen">
       <video
-        src="/product-designer.mp4"
+        src="/vid.mp4"
         autoPlay
         loop
         muted
@@ -33,39 +33,124 @@ import Navbar from "./components/Navbar";
 
     {/* TEXT */}
     <div className="relative order-2 flex items-center px-6 py-16 sm:px-10 sm:py-20 md:order-1 md:px-12 md:py-24 lg:px-16">
-      <div className="relative z-10 w-full">
+  <div className="relative z-10 w-full">
 
-        <p className="mb-5 max-w-[340px] text-[10px] font-medium uppercase leading-[1.6] tracking-[0.16em] text-black/40 sm:mb-7 sm:max-w-xl sm:text-xs sm:tracking-[0.18em] md:text-sm">
-          Product Designer · Creative Developer · Visual Storyteller
-        </p>
+    {/* Small intro */}
+    <p
+      className="
+        hero-fade-up
+        mb-5
+        max-w-[340px]
+        text-[10px]
+        font-medium
+        uppercase
+        leading-[1.6]
+        tracking-[0.16em]
+        text-black/40
+        sm:mb-7
+        sm:max-w-xl
+        sm:text-xs
+        sm:tracking-[0.18em]
+        md:text-sm
+      "
+    >
+      Product Designer · Creative Developer · Visual Storyteller
+    </p>
 
-        <h1 className="max-w-4xl text-[42px] font-semibold leading-[0.98] tracking-[-0.055em] sm:text-[52px] md:text-7xl lg:text-[76px] xl:text-[88px]">
-          I've always been
-          <br />
-          curious about how
-          <br />
-          things{" "}
-          <span className="text-black/30">come together.</span>
-        </h1>
+    {/* Main heading */}
+    <h1 className="max-w-4xl text-[42px] font-semibold leading-[0.98] tracking-[-0.055em] sm:text-[52px] md:text-7xl lg:text-[76px] xl:text-[88px]">
 
-        <div className="mt-8 flex flex-wrap items-center gap-3 sm:mt-10">
-          <a
-            href="#work"
-            className="rounded-full bg-[#111111] px-5 py-3 text-xs font-medium text-white transition-all duration-300 hover:-translate-y-1 sm:px-6 sm:py-3.5 sm:text-sm"
-          >
-            Explore my work ↓
-          </a>
+      <span
+        className="hero-line"
+        style={{ animationDelay: "120ms" }}
+      >
+        I've always been
+      </span>
 
-          <a
-            href="/about"
-            className="rounded-full border border-black/10 bg-white/30 px-5 py-3 text-xs font-medium text-black/60 backdrop-blur-md transition-all duration-300 hover:border-black/20 hover:bg-white/60 hover:text-black sm:px-6 sm:py-3.5 sm:text-sm"
-          >
-            More about me ↗
-          </a>
-        </div>
+      <br />
 
-      </div>
+      <span
+        className="hero-line"
+        style={{ animationDelay: "220ms" }}
+      >
+        curious about how
+      </span>
+
+      <br />
+
+      <span
+        className="hero-line"
+        style={{ animationDelay: "320ms" }}
+      >
+        things{" "}
+        <span className="text-black/30">
+          come together.
+        </span>
+      </span>
+
+    </h1>
+
+    {/* Buttons */}
+    <div
+      className="
+        hero-fade-up
+        mt-8
+        flex
+        flex-wrap
+        items-center
+        gap-3
+        sm:mt-10
+      "
+      style={{ animationDelay: "500ms" }}
+    >
+      <a
+        href="#work"
+        className="
+          rounded-full
+          bg-[#111111]
+          px-5 py-3
+          text-xs
+          font-medium
+          text-white
+          transition-all
+          duration-300
+          hover:-translate-y-1
+          sm:px-6
+          sm:py-3.5
+          sm:text-sm
+        "
+      >
+        Explore my work ↓
+      </a>
+
+      <a
+        href="/about"
+        className="
+          rounded-full
+          border
+          border-black/10
+          bg-white/30
+          px-5 py-3
+          text-xs
+          font-medium
+          text-black/60
+          backdrop-blur-md
+          transition-all
+          duration-300
+          hover:border-black/20
+          hover:bg-white/60
+          hover:text-black
+          sm:px-6
+          sm:py-3.5
+          sm:text-sm
+        "
+      >
+        More about me ↗
+      </a>
     </div>
+
+  </div>
+</div>
 
   </div>
 </section>
@@ -73,7 +158,7 @@ import Navbar from "./components/Navbar";
       {/* =========================
           CREATIVE DIRECTIONS
       ========================== */}
-      <section className="border-t border-black/10">
+      <section className=" border-black/10">
         <div className="mx-auto max-w-7xl px-6 py-24 sm:px-10 lg:px-16 lg:py-32">
 
           <div className="mb-16">
