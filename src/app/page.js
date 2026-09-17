@@ -1,5 +1,6 @@
-import Image from "next/image";
+
 import Navbar from "./components/Navbar";
+import Image from "next/image";
 
 
 export default function Home() {
@@ -293,9 +294,10 @@ export default function Home() {
             href="/design/caytunes"
             className="group mt-16 block overflow-hidden rounded-[32px] bg-[#E9E7FF]"
           >
-            <div className="grid min-h-[500px] items-end md:grid-cols-2">
+            <div className="grid min-h-[500px] items-stretch md:grid-cols-2">
 
-              <div className="p-8 sm:p-12 lg:p-16">
+              {/* TEXT */}
+              <div className="relative z-20 flex flex-col justify-end p-8 sm:p-12 lg:p-16">
                 <p className="text-sm text-black/40">
                   01 · PRODUCT DESIGN
                 </p>
@@ -314,11 +316,52 @@ export default function Home() {
                 </span>
               </div>
 
-              {/* PROJECT VISUAL PLACEHOLDER */}
-              <div className="flex h-full min-h-[300px] items-center justify-center bg-black/5">
-                <span className="text-xs font-medium uppercase tracking-[0.16em] text-black/20">
-                  Project Preview
-                </span>
+              {/* IMAGE */}
+              <div className="relative min-h-[300px] overflow-hidden md:min-h-[500px]">
+
+                {/* BLURRED EDGE */}
+                <div
+                  className="absolute inset-y-0 left-0 z-10 w-32 md:w-48"
+                  style={{
+                    backdropFilter: "blur(24px)",
+                    WebkitBackdropFilter: "blur(24px)",
+                    maskImage:
+                      "linear-gradient(to right, black 0%, rgba(0,0,0,0.8) 35%, transparent 100%)",
+                    WebkitMaskImage:
+                      "linear-gradient(to right, black 0%, rgba(0,0,0,0.8) 35%, transparent 100%)",
+                  }}
+                />
+
+                {/* MAIN IMAGE */}
+              <div className="relative min-h-[300px] overflow-hidden md:min-h-[500px]">
+
+  <Image
+    src="/caytunes.jpg"
+    alt="CayTunes project"
+    fill
+    priority
+    className="object-cover"
+    style={{
+      maskImage:
+        "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.15) 15%, rgba(0,0,0,0.55) 35%, black 60%)",
+      WebkitMaskImage:
+        "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.15) 15%, rgba(0,0,0,0.55) 35%, black 60%)",
+    }}
+  />
+
+</div>
+
+                {/* SOFT COLOR BLEND */}
+                <div
+                  className="pointer-events-none absolute inset-y-0 left-0 z-20 w-40 md:w-56"
+                  style={{
+                    background:
+                      "linear-gradient(to right, #E9E7FF 0%, rgba(233,231,255,0.75) 20%, rgba(233,231,255,0.25) 55%, transparent 100%)",
+                    filter: "blur(18px)",
+                    transform: "translateX(-30px)",
+                  }}
+                />
+
               </div>
 
             </div>
