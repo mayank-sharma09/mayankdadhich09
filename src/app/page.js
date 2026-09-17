@@ -319,9 +319,33 @@ export default function Home() {
               {/* IMAGE */}
               <div className="relative min-h-[300px] overflow-hidden md:min-h-[500px]">
 
-                {/* BLURRED EDGE */}
+                <Image
+                  src="/caytunes.jpg"
+                  alt="CayTunes project"
+                  fill
+                  priority
+                  className="
+          object-cover
+          transition-transform
+          duration-700
+          ease-out
+          group-hover:scale-[1.03]
+        "
+                />
+
+                {/* DESKTOP — LEFT EDGE BLUR */}
                 <div
-                  className="absolute inset-y-0 left-0 z-10 w-32 md:w-48"
+                  className="
+          pointer-events-none
+          absolute
+          inset-y-0
+          left-0
+          z-10
+          hidden
+          w-40
+          md:block
+          md:w-56
+        "
                   style={{
                     backdropFilter: "blur(24px)",
                     WebkitBackdropFilter: "blur(24px)",
@@ -332,33 +356,66 @@ export default function Home() {
                   }}
                 />
 
-                {/* MAIN IMAGE */}
-              <div className="relative min-h-[300px] overflow-hidden md:min-h-[500px]">
-
-  <Image
-    src="/caytunes.jpg"
-    alt="CayTunes project"
-    fill
-    priority
-    className="object-cover"
-    style={{
-      maskImage:
-        "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.15) 15%, rgba(0,0,0,0.55) 35%, black 60%)",
-      WebkitMaskImage:
-        "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.15) 15%, rgba(0,0,0,0.55) 35%, black 60%)",
-    }}
-  />
-
-</div>
-
-                {/* SOFT COLOR BLEND */}
+                {/* DESKTOP — PURPLE BLEND */}
                 <div
-                  className="pointer-events-none absolute inset-y-0 left-0 z-20 w-40 md:w-56"
+                  className="
+          pointer-events-none
+          absolute
+          inset-y-0
+          left-0
+          z-20
+          hidden
+          w-40
+          md:block
+          md:w-56
+        "
                   style={{
                     background:
                       "linear-gradient(to right, #E9E7FF 0%, rgba(233,231,255,0.75) 20%, rgba(233,231,255,0.25) 55%, transparent 100%)",
                     filter: "blur(18px)",
                     transform: "translateX(-30px)",
+                  }}
+                />
+
+                {/* MOBILE — TOP BLUR */}
+                <div
+                  className="
+          pointer-events-none
+          absolute
+          left-0
+          top-0
+          z-10
+          h-32
+          w-full
+          md:hidden
+        "
+                  style={{
+                    backdropFilter: "blur(24px)",
+                    WebkitBackdropFilter: "blur(24px)",
+                    maskImage:
+                      "linear-gradient(to bottom, black 0%, rgba(0,0,0,0.8) 35%, transparent 100%)",
+                    WebkitMaskImage:
+                      "linear-gradient(to bottom, black 0%, rgba(0,0,0,0.8) 35%, transparent 100%)",
+                  }}
+                />
+
+                {/* MOBILE — PURPLE BLEND */}
+                <div
+                  className="
+          pointer-events-none
+          absolute
+          left-0
+          top-0
+          z-20
+          h-32
+          w-full
+          md:hidden
+        "
+                  style={{
+                    background:
+                      "linear-gradient(to bottom, #E9E7FF 0%, rgba(233,231,255,0.75) 20%, rgba(233,231,255,0.25) 55%, transparent 100%)",
+                    filter: "blur(18px)",
+                    transform: "translateY(-30px)",
                   }}
                 />
 
