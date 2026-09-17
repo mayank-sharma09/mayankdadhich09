@@ -31,7 +31,7 @@ export default function Home() {
       if (response.ok) {
         form.reset();
 
-        setNotification("Message sent successfully!");
+        setNotification("Thanks for your Response!");
 
         setTimeout(() => {
           setNotification("");
@@ -341,7 +341,7 @@ export default function Home() {
           {/* CAYTUNES */}
           <a
             href="/design/caytunes"
-            className="group mt-16 block overflow-hidden rounded-[32px] bg-[#89BFED]"
+            className="group mt-16 block overflow-hidden rounded-[32px] bg-[#A1D3FF]"
           >
             <div className="grid min-h-[500px] items-stretch md:grid-cols-2">
 
@@ -616,7 +616,7 @@ export default function Home() {
     <div className="relative min-h-[300px] overflow-hidden md:min-h-[500px]">
 
       <Image
-        src="/bridgr.jpg"
+        src="/bridgr.png"
         alt="BridgR visual story"
         fill
         priority
@@ -898,9 +898,9 @@ export default function Home() {
       ========================== */}
       <footer className="border-t border-black/10 px-6 py-8 sm:px-10 lg:px-16">
         <div className="mx-auto flex max-w-7xl flex-col gap-3 text-sm text-black/40 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} Mayank.</p>
+          <p>© {new Date().getFullYear()} Mayank Dadhich.</p>
 
-          <p>Designed & built by Mayank.</p>
+          <p>Designed & built by Mayank Dadhich.</p>
         </div>
       </footer>
       {notification && (
