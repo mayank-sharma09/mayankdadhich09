@@ -366,115 +366,67 @@ export default function Home() {
               </div>
 
               {/* IMAGE */}
-              {/* IMAGE */}
+
               <div className="relative min-h-[300px] overflow-hidden md:min-h-[500px]">
 
-                {/* MAIN IMAGE */}
-                <Image
-                  src="/caytunes.jpg"
-                  alt="CayTunes project"
-                  fill
-                  priority
-                  className="
-      object-cover
-      transition-transform
-      duration-700
-      ease-out
-      group-hover:scale-[1.03]
-    "
-                />
-
-                {/* DESKTOP — ACTUAL BLURRED COPY */}
+                {/* IMAGE */}
                 <div
                   className="
-      pointer-events-none
       absolute
-      inset-y-0
-      left-0
-      z-10
+      inset-0
       hidden
-      w-56
-      overflow-hidden
       md:block
     "
                   style={{
                     maskImage:
-                      "linear-gradient(to right, black 0%, black 20%, rgba(0,0,0,0.7) 55%, transparent 100%)",
+                      "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.25) 8%, rgba(0,0,0,0.7) 22%, #000 38%, #000 100%)",
                     WebkitMaskImage:
-                      "linear-gradient(to right, black 0%, black 20%, rgba(0,0,0,0.7) 55%, transparent 100%)",
+                      "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.25) 8%, rgba(0,0,0,0.7) 22%, #000 38%, #000 100%)",
                   }}
                 >
                   <Image
                     src="/caytunes.jpg"
-                    alt=""
+                    alt="CayTunes project"
                     fill
-                    className="scale-110 object-cover blur-[24px]"
+                    priority
+                    className="
+        object-cover
+        transition-transform
+        duration-700
+        ease-out
+        group-hover:scale-[1.03]
+      "
                   />
                 </div>
 
-                {/* DESKTOP — SOFT PURPLE TRANSITION */}
+                {/* MOBILE IMAGE */}
                 <div
                   className="
-      pointer-events-none
       absolute
-      inset-y-0
-      left-0
-      z-20
-      hidden
-      w-56
-      md:block
-    "
-                  style={{
-                    background:
-                      "linear-gradient(to right, #E9E7FF 0%, rgba(233,231,255,0.85) 18%, rgba(233,231,255,0.35) 55%, transparent 100%)",
-                  }}
-                />
-
-                {/* MOBILE — ACTUAL BLURRED COPY */}
-                <div
-                  className="
-      pointer-events-none
-      absolute
-      left-0
-      top-0
-      z-10
-      h-36
-      w-full
-      overflow-hidden
+      inset-0
       md:hidden
     "
                   style={{
                     maskImage:
-                      "linear-gradient(to bottom, black 0%, black 20%, rgba(0,0,0,0.7) 55%, transparent 100%)",
+                      "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.25) 8%, rgba(0,0,0,0.7) 22%, #000 38%, #000 100%)",
                     WebkitMaskImage:
-                      "linear-gradient(to bottom, black 0%, black 20%, rgba(0,0,0,0.7) 55%, transparent 100%)",
+                      "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.25) 8%, rgba(0,0,0,0.7) 22%, #000 38%, #000 100%)",
                   }}
                 >
                   <Image
                     src="/caytunes.jpg"
-                    alt=""
+                    alt="CayTunes project"
                     fill
-                    className="scale-110 object-cover blur-[24px]"
+                    priority
+                    className="
+        object-cover
+        transition-transform
+        duration-700
+        ease-out
+        group-hover:scale-[1.03]
+      "
                   />
                 </div>
-
-                {/* MOBILE — SOFT PURPLE TRANSITION */}
-                <div
-                  className="
-      pointer-events-none
-      absolute
-      left-0
-      top-0
-      z-20
-      h-36
-      w-full
-      md:hidden
-    "
-                  style={{
-                    background:
-                      "linear-gradient(to bottom, #E9E7FF 0%, rgba(233,231,255,0.85) 18%, rgba(233,231,255,0.35) 55%, transparent 100%)",
-                  }}
-                />
 
               </div>
 
@@ -491,8 +443,8 @@ export default function Home() {
 
               {/* TEXT */}
               <div className="relative z-20 flex flex-col justify-end p-8 sm:p-12 lg:p-16">
-                <p className="text-sm text-black/40 uppercase">
-                  02 ·Frontend Development
+                <p className="text-sm uppercase text-black/40">
+                  02 · Frontend Development
                 </p>
 
                 <h3 className="mt-6 text-5xl font-semibold tracking-[-0.05em] sm:text-6xl">
@@ -526,7 +478,7 @@ export default function Home() {
         "
                 />
 
-                {/* DESKTOP — LEFT EDGE BLUR */}
+                {/* DESKTOP — VERY SOFT IMAGE FADE */}
                 <div
                   className="
           pointer-events-none
@@ -535,21 +487,27 @@ export default function Home() {
           left-0
           z-10
           hidden
-          w-40
+          w-72
           md:block
-          md:w-56
         "
                   style={{
-                    backdropFilter: "blur(24px)",
-                    WebkitBackdropFilter: "blur(24px)",
-                    maskImage:
-                      "linear-gradient(to right, black 0%, rgba(0,0,0,0.8) 35%, transparent 100%)",
-                    WebkitMaskImage:
-                      "linear-gradient(to right, black 0%, rgba(0,0,0,0.8) 35%, transparent 100%)",
+                    background: `
+            linear-gradient(
+              to right,
+              #EDEDE9 0%,
+              rgba(237,237,233,0.98) 8%,
+              rgba(237,237,233,0.90) 18%,
+              rgba(237,237,233,0.72) 30%,
+              rgba(237,237,233,0.48) 43%,
+              rgba(237,237,233,0.22) 60%,
+              rgba(237,237,233,0.06) 78%,
+              transparent 100%
+            )
+          `,
                   }}
                 />
 
-                {/* DESKTOP — PURPLE BLEND */}
+                {/* DESKTOP — SUBTLE BLUR AT THE VERY EDGE */}
                 <div
                   className="
           pointer-events-none
@@ -558,19 +516,20 @@ export default function Home() {
           left-0
           z-20
           hidden
-          w-40
+          w-36
           md:block
-          md:w-56
         "
                   style={{
-                    background:
-                      "linear-gradient(to right, #E9E7FF 0%, rgba(233,231,255,0.75) 20%, rgba(233,231,255,0.25) 55%, transparent 100%)",
-                    filter: "blur(18px)",
-                    transform: "translateX(-30px)",
+                    backdropFilter: "blur(12px)",
+                    WebkitBackdropFilter: "blur(12px)",
+                    maskImage:
+                      "linear-gradient(to right, black 0%, rgba(0,0,0,0.55) 35%, transparent 100%)",
+                    WebkitMaskImage:
+                      "linear-gradient(to right, black 0%, rgba(0,0,0,0.55) 35%, transparent 100%)",
                   }}
                 />
 
-                {/* MOBILE — TOP BLUR */}
+                {/* MOBILE — VERY SOFT TOP FADE */}
                 <div
                   className="
           pointer-events-none
@@ -578,21 +537,28 @@ export default function Home() {
           left-0
           top-0
           z-10
-          h-32
+          h-44
           w-full
           md:hidden
         "
                   style={{
-                    backdropFilter: "blur(24px)",
-                    WebkitBackdropFilter: "blur(24px)",
-                    maskImage:
-                      "linear-gradient(to bottom, black 0%, rgba(0,0,0,0.8) 35%, transparent 100%)",
-                    WebkitMaskImage:
-                      "linear-gradient(to bottom, black 0%, rgba(0,0,0,0.8) 35%, transparent 100%)",
+                    background: `
+            linear-gradient(
+              to bottom,
+              #EDEDE9 0%,
+              rgba(237,237,233,0.98) 8%,
+              rgba(237,237,233,0.90) 18%,
+              rgba(237,237,233,0.72) 30%,
+              rgba(237,237,233,0.48) 45%,
+              rgba(237,237,233,0.22) 63%,
+              rgba(237,237,233,0.06) 80%,
+              transparent 100%
+            )
+          `,
                   }}
                 />
 
-                {/* MOBILE — PURPLE BLEND */}
+                {/* MOBILE — SUBTLE BLUR */}
                 <div
                   className="
           pointer-events-none
@@ -600,158 +566,174 @@ export default function Home() {
           left-0
           top-0
           z-20
-          h-32
+          h-28
           w-full
           md:hidden
         "
                   style={{
-                    background:
-                      "linear-gradient(to bottom, #E9E7FF 0%, rgba(233,231,255,0.75) 20%, rgba(233,231,255,0.25) 55%, transparent 100%)",
-                    filter: "blur(18px)",
-                    transform: "translateY(-30px)",
+                    backdropFilter: "blur(12px)",
+                    WebkitBackdropFilter: "blur(12px)",
+                    maskImage:
+                      "linear-gradient(to bottom, black 0%, rgba(0,0,0,0.55) 35%, transparent 100%)",
+                    WebkitMaskImage:
+                      "linear-gradient(to bottom, black 0%, rgba(0,0,0,0.55) 35%, transparent 100%)",
                   }}
                 />
 
               </div>
-
             </div>
           </a>
 
 
           {/* BRIDGR */}
           <a
-            href="/stories"
-            className="group mt-16 block overflow-hidden rounded-[32px] bg-[#393F4B]"
-          >
-            <div className="grid min-h-[500px] items-stretch md:grid-cols-2">
+  href="/stories"
+  className="group mt-16 block overflow-hidden rounded-[32px] bg-[#393F4B]"
+>
+  <div className="grid min-h-[500px] items-stretch md:grid-cols-2">
 
-              {/* TEXT */}
-              <div className="relative z-20 flex flex-col justify-end p-8 sm:p-12 lg:p-16">
-                <p className="text-sm text-gray-200 uppercase">
-                  03 · Visual Story
-                </p>
+    {/* TEXT */}
+    <div className="relative z-20 flex flex-col justify-end p-8 sm:p-12 lg:p-16">
+      <p className="text-sm uppercase text-white/50">
+        03 · Visual Story
+      </p>
 
-                <h3 className="mt-6 text-5xl text-white font-semibold tracking-[-0.05em] sm:text-6xl">
-                  BridgR
-                </h3>
+      <h3 className="mt-6 text-5xl font-semibold tracking-[-0.05em] text-white sm:text-6xl">
+        BridgR
+      </h3>
 
-                <p className="mt-5 max-w-md text-white">
-                  A short product advertisement created to
-                  communicate a smarter way to manage private libraries.
-                </p>
+      <p className="mt-5 max-w-md text-white/70">
+        A short product advertisement created to communicate
+        a smarter way to manage private libraries.
+      </p>
 
-                <span className="mt-8 inline-block text-sm font-medium text-white">
-                  View case study ↗
-                </span>
-              </div>
+      <span className="mt-8 inline-block text-sm font-medium text-white">
+        View case study ↗
+      </span>
+    </div>
 
-              {/* IMAGE */}
-              <div className="relative min-h-[300px] overflow-hidden md:min-h-[500px]">
+    {/* IMAGE */}
+    <div className="relative min-h-[300px] overflow-hidden md:min-h-[500px]">
 
-                <Image
-                  src="/focuslist.jpg"
-                  alt="FocusList project"
-                  fill
-                  priority
-                  className="
+      <Image
+        src="/bridgr.jpg"
+        alt="BridgR visual story"
+        fill
+        priority
+        className="
           object-cover
           transition-transform
           duration-700
           ease-out
           group-hover:scale-[1.03]
         "
-                />
+      />
 
-                {/* DESKTOP — LEFT EDGE BLUR */}
-                <div
-                  className="
+      {/* DESKTOP — SMOOTH LEFT BLEND */}
+      <div
+        className="
           pointer-events-none
           absolute
           inset-y-0
           left-0
           z-10
           hidden
-          w-40
+          w-72
           md:block
-          md:w-56
         "
-                  style={{
-                    backdropFilter: "blur(24px)",
-                    WebkitBackdropFilter: "blur(24px)",
-                    maskImage:
-                      "linear-gradient(to right, black 0%, rgba(0,0,0,0.8) 35%, transparent 100%)",
-                    WebkitMaskImage:
-                      "linear-gradient(to right, black 0%, rgba(0,0,0,0.8) 35%, transparent 100%)",
-                  }}
-                />
+        style={{
+          background: `
+            linear-gradient(
+              to right,
+              #393F4B 0%,
+              rgba(57,63,75,0.98) 8%,
+              rgba(57,63,75,0.92) 18%,
+              rgba(57,63,75,0.74) 30%,
+              rgba(57,63,75,0.50) 43%,
+              rgba(57,63,75,0.24) 60%,
+              rgba(57,63,75,0.07) 78%,
+              transparent 100%
+            )
+          `,
+        }}
+      />
 
-                {/* DESKTOP — PURPLE BLEND */}
-                <div
-                  className="
+      {/* DESKTOP — SUBTLE IMAGE BLUR */}
+      <div
+        className="
           pointer-events-none
           absolute
           inset-y-0
           left-0
           z-20
           hidden
-          w-40
+          w-36
           md:block
-          md:w-56
         "
-                  style={{
-                    background:
-                      "linear-gradient(to right, #E9E7FF 0%, rgba(233,231,255,0.75) 20%, rgba(233,231,255,0.25) 55%, transparent 100%)",
-                    filter: "blur(18px)",
-                    transform: "translateX(-30px)",
-                  }}
-                />
+        style={{
+          backdropFilter: "blur(12px)",
+          WebkitBackdropFilter: "blur(12px)",
+          maskImage:
+            "linear-gradient(to right, black 0%, rgba(0,0,0,0.55) 35%, transparent 100%)",
+          WebkitMaskImage:
+            "linear-gradient(to right, black 0%, rgba(0,0,0,0.55) 35%, transparent 100%)",
+        }}
+      />
 
-                {/* MOBILE — TOP BLUR */}
-                <div
-                  className="
+      {/* MOBILE — SMOOTH TOP BLEND */}
+      <div
+        className="
           pointer-events-none
           absolute
           left-0
           top-0
           z-10
-          h-32
+          h-44
           w-full
           md:hidden
         "
-                  style={{
-                    backdropFilter: "blur(24px)",
-                    WebkitBackdropFilter: "blur(24px)",
-                    maskImage:
-                      "linear-gradient(to bottom, black 0%, rgba(0,0,0,0.8) 35%, transparent 100%)",
-                    WebkitMaskImage:
-                      "linear-gradient(to bottom, black 0%, rgba(0,0,0,0.8) 35%, transparent 100%)",
-                  }}
-                />
+        style={{
+          background: `
+            linear-gradient(
+              to bottom,
+              #393F4B 0%,
+              rgba(57,63,75,0.98) 8%,
+              rgba(57,63,75,0.92) 18%,
+              rgba(57,63,75,0.74) 30%,
+              rgba(57,63,75,0.50) 45%,
+              rgba(57,63,75,0.24) 63%,
+              rgba(57,63,75,0.07) 80%,
+              transparent 100%
+            )
+          `,
+        }}
+      />
 
-                {/* MOBILE — PURPLE BLEND */}
-                <div
-                  className="
+      {/* MOBILE — SUBTLE IMAGE BLUR */}
+      <div
+        className="
           pointer-events-none
           absolute
           left-0
           top-0
           z-20
-          h-32
+          h-28
           w-full
           md:hidden
         "
-                  style={{
-                    background:
-                      "linear-gradient(to bottom, #E9E7FF 0%, rgba(233,231,255,0.75) 20%, rgba(233,231,255,0.25) 55%, transparent 100%)",
-                    filter: "blur(18px)",
-                    transform: "translateY(-30px)",
-                  }}
-                />
+        style={{
+          backdropFilter: "blur(12px)",
+          WebkitBackdropFilter: "blur(12px)",
+          maskImage:
+            "linear-gradient(to bottom, black 0%, rgba(0,0,0,0.55) 35%, transparent 100%)",
+          WebkitMaskImage:
+            "linear-gradient(to bottom, black 0%, rgba(0,0,0,0.55) 35%, transparent 100%)",
+        }}
+      />
 
-              </div>
-
-            </div>
-          </a>
+    </div>
+  </div>
+</a>
 
         </div>
       </section>
