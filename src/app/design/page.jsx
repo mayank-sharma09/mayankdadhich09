@@ -13,32 +13,7 @@ export default function DesignPage() {
      <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#F7F7F5]">
 
   {/* DESKTOP VIDEO */}
-  <div className="absolute inset-0 hidden md:block">
-    <video
-      src="/designPage.mp4"
-      autoPlay
-      loop
-      muted
-      playsInline
-      preload="metadata"
-      aria-hidden="true"
-      className="h-full w-full object-cover"
-    />
-  </div>
-
-  {/* MOBILE VIDEO */}
-  <div className="absolute inset-0 block md:hidden">
-    <video
-      src="/designPage.mp4"
-      autoPlay
-      loop
-      muted
-      playsInline
-      preload="metadata"
-      aria-hidden="true"
-      className="h-full w-full object-cover"
-    />
-  </div>
+  
 
   {/* TEXT */}
   <div className="relative z-10 mx-auto w-full max-w-[1600px] px-6 py-20 sm:px-10 md:px-12 lg:px-16">
