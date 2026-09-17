@@ -1,9 +1,58 @@
-
+"use client";
 import Navbar from "./components/Navbar";
 import Image from "next/image";
+import { useState } from "react";
 
 
 export default function Home() {
+  const [notification, setNotification] = useState("");
+const [showSuccess, setShowSuccess] = useState(false);
+const [isSending, setIsSending] = useState(false);
+async function handleSubmit(e) {
+  e.preventDefault();
+
+  const form = e.currentTarget;
+  const formData = new FormData(form);
+
+  try {
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: formData.get("name"),
+        email: formData.get("email"),
+        phone: formData.get("phone"),
+        message: formData.get("message"),
+      }),
+    });
+
+    if (response.ok) {
+      form.reset();
+
+      setNotification("Message sent successfully!");
+
+      setTimeout(() => {
+        setNotification("");
+      }, 4000);
+    } else {
+      setNotification("Something went wrong. Please try again.");
+
+      setTimeout(() => {
+        setNotification("");
+      }, 4000);
+    }
+  } catch (error) {
+    console.error(error);
+
+    setNotification("Unable to send your message. Please try again.");
+
+    setTimeout(() => {
+      setNotification("");
+    }, 4000);
+  }
+}
   return (
     <main className="min-h-screen bg-[#F7F7F5] text-[#111111]">
 
@@ -428,13 +477,14 @@ export default function Home() {
           {/* FOCUSLIST */}
           <a
             href="/design/focuslist"
-            className="group mt-6 block overflow-hidden rounded-[32px] bg-[#EDEDE9]"
+            className="group mt-16 block overflow-hidden rounded-[32px] bg-[#EDEDE9]"
           >
-            <div className="grid min-h-[420px] items-center md:grid-cols-2">
+            <div className="grid min-h-[500px] items-stretch md:grid-cols-2">
 
-              <div className="order-2 p-8 sm:p-12 md:order-1 lg:p-16">
-                <p className="text-sm text-black/40">
-                  02 · FRONTEND
+              {/* TEXT */}
+              <div className="relative z-20 flex flex-col justify-end p-8 sm:p-12 lg:p-16">
+                <p className="text-sm text-black/40 uppercase">
+                  02 ·Frontend Development
                 </p>
 
                 <h3 className="mt-6 text-5xl font-semibold tracking-[-0.05em] sm:text-6xl">
@@ -442,20 +492,118 @@ export default function Home() {
                 </h3>
 
                 <p className="mt-5 max-w-md text-black/60">
-                  A focused task management experience built
-                  for planning, prioritizing and getting things done.
+                  A focused task management experience built for planning,
+                  prioritizing and getting things done.
                 </p>
 
                 <span className="mt-8 inline-block text-sm font-medium">
-                  View project ↗
+                  View case study ↗
                 </span>
               </div>
 
-              {/* PROJECT VISUAL PLACEHOLDER */}
-              <div className="order-1 flex h-full min-h-[280px] items-center justify-center bg-black/5 md:order-2">
-                <span className="text-xs font-medium uppercase tracking-[0.16em] text-black/20">
-                  Project Preview
-                </span>
+              {/* IMAGE */}
+              <div className="relative min-h-[300px] overflow-hidden md:min-h-[500px]">
+
+                <Image
+                  src="/focuslist.jpg"
+                  alt="FocusList project"
+                  fill
+                  priority
+                  className="
+          object-cover
+          transition-transform
+          duration-700
+          ease-out
+          group-hover:scale-[1.03]
+        "
+                />
+
+                {/* DESKTOP — LEFT EDGE BLUR */}
+                <div
+                  className="
+          pointer-events-none
+          absolute
+          inset-y-0
+          left-0
+          z-10
+          hidden
+          w-40
+          md:block
+          md:w-56
+        "
+                  style={{
+                    backdropFilter: "blur(24px)",
+                    WebkitBackdropFilter: "blur(24px)",
+                    maskImage:
+                      "linear-gradient(to right, black 0%, rgba(0,0,0,0.8) 35%, transparent 100%)",
+                    WebkitMaskImage:
+                      "linear-gradient(to right, black 0%, rgba(0,0,0,0.8) 35%, transparent 100%)",
+                  }}
+                />
+
+                {/* DESKTOP — PURPLE BLEND */}
+                <div
+                  className="
+          pointer-events-none
+          absolute
+          inset-y-0
+          left-0
+          z-20
+          hidden
+          w-40
+          md:block
+          md:w-56
+        "
+                  style={{
+                    background:
+                      "linear-gradient(to right, #E9E7FF 0%, rgba(233,231,255,0.75) 20%, rgba(233,231,255,0.25) 55%, transparent 100%)",
+                    filter: "blur(18px)",
+                    transform: "translateX(-30px)",
+                  }}
+                />
+
+                {/* MOBILE — TOP BLUR */}
+                <div
+                  className="
+          pointer-events-none
+          absolute
+          left-0
+          top-0
+          z-10
+          h-32
+          w-full
+          md:hidden
+        "
+                  style={{
+                    backdropFilter: "blur(24px)",
+                    WebkitBackdropFilter: "blur(24px)",
+                    maskImage:
+                      "linear-gradient(to bottom, black 0%, rgba(0,0,0,0.8) 35%, transparent 100%)",
+                    WebkitMaskImage:
+                      "linear-gradient(to bottom, black 0%, rgba(0,0,0,0.8) 35%, transparent 100%)",
+                  }}
+                />
+
+                {/* MOBILE — PURPLE BLEND */}
+                <div
+                  className="
+          pointer-events-none
+          absolute
+          left-0
+          top-0
+          z-20
+          h-32
+          w-full
+          md:hidden
+        "
+                  style={{
+                    background:
+                      "linear-gradient(to bottom, #E9E7FF 0%, rgba(233,231,255,0.75) 20%, rgba(233,231,255,0.25) 55%, transparent 100%)",
+                    filter: "blur(18px)",
+                    transform: "translateY(-30px)",
+                  }}
+                />
+
               </div>
 
             </div>
@@ -465,34 +613,133 @@ export default function Home() {
           {/* BRIDGR */}
           <a
             href="/stories"
-            className="group mt-6 block overflow-hidden rounded-[32px] bg-[#111111] text-white"
+            className="group mt-16 block overflow-hidden rounded-[32px] bg-[#393F4B]"
           >
-            <div className="grid min-h-[420px] items-center md:grid-cols-2">
+            <div className="grid min-h-[500px] items-stretch md:grid-cols-2">
 
-              {/* VISUAL PLACEHOLDER */}
-              <div className="flex h-full min-h-[280px] items-center justify-center bg-white/5">
-                <span className="text-xs font-medium uppercase tracking-[0.16em] text-white/20">
-                  Video Preview
-                </span>
-              </div>
-
-              <div className="p-8 sm:p-12 lg:p-16">
-                <p className="text-sm text-white/40">
-                  03 · VISUAL STORY
+              {/* TEXT */}
+              <div className="relative z-20 flex flex-col justify-end p-8 sm:p-12 lg:p-16">
+                <p className="text-sm text-gray-200 uppercase">
+                  03 · Visual Story
                 </p>
 
-                <h3 className="mt-6 text-5xl font-semibold tracking-[-0.05em] sm:text-6xl">
-                  Bridgr
+                <h3 className="mt-6 text-5xl text-white font-semibold tracking-[-0.05em] sm:text-6xl">
+                  BridgR
                 </h3>
 
-                <p className="mt-5 max-w-md text-white/50">
+                <p className="mt-5 max-w-md text-white">
                   A short product advertisement created to
                   communicate a smarter way to manage private libraries.
                 </p>
 
-                <span className="mt-8 inline-block text-sm font-medium text-white/70">
-                  View story ↗
+                <span className="mt-8 inline-block text-sm font-medium text-white">
+                  View case study ↗
                 </span>
+              </div>
+
+              {/* IMAGE */}
+              <div className="relative min-h-[300px] overflow-hidden md:min-h-[500px]">
+
+                <Image
+                  src="/focuslist.jpg"
+                  alt="FocusList project"
+                  fill
+                  priority
+                  className="
+          object-cover
+          transition-transform
+          duration-700
+          ease-out
+          group-hover:scale-[1.03]
+        "
+                />
+
+                {/* DESKTOP — LEFT EDGE BLUR */}
+                <div
+                  className="
+          pointer-events-none
+          absolute
+          inset-y-0
+          left-0
+          z-10
+          hidden
+          w-40
+          md:block
+          md:w-56
+        "
+                  style={{
+                    backdropFilter: "blur(24px)",
+                    WebkitBackdropFilter: "blur(24px)",
+                    maskImage:
+                      "linear-gradient(to right, black 0%, rgba(0,0,0,0.8) 35%, transparent 100%)",
+                    WebkitMaskImage:
+                      "linear-gradient(to right, black 0%, rgba(0,0,0,0.8) 35%, transparent 100%)",
+                  }}
+                />
+
+                {/* DESKTOP — PURPLE BLEND */}
+                <div
+                  className="
+          pointer-events-none
+          absolute
+          inset-y-0
+          left-0
+          z-20
+          hidden
+          w-40
+          md:block
+          md:w-56
+        "
+                  style={{
+                    background:
+                      "linear-gradient(to right, #E9E7FF 0%, rgba(233,231,255,0.75) 20%, rgba(233,231,255,0.25) 55%, transparent 100%)",
+                    filter: "blur(18px)",
+                    transform: "translateX(-30px)",
+                  }}
+                />
+
+                {/* MOBILE — TOP BLUR */}
+                <div
+                  className="
+          pointer-events-none
+          absolute
+          left-0
+          top-0
+          z-10
+          h-32
+          w-full
+          md:hidden
+        "
+                  style={{
+                    backdropFilter: "blur(24px)",
+                    WebkitBackdropFilter: "blur(24px)",
+                    maskImage:
+                      "linear-gradient(to bottom, black 0%, rgba(0,0,0,0.8) 35%, transparent 100%)",
+                    WebkitMaskImage:
+                      "linear-gradient(to bottom, black 0%, rgba(0,0,0,0.8) 35%, transparent 100%)",
+                  }}
+                />
+
+                {/* MOBILE — PURPLE BLEND */}
+                <div
+                  className="
+          pointer-events-none
+          absolute
+          left-0
+          top-0
+          z-20
+          h-32
+          w-full
+          md:hidden
+        "
+                  style={{
+                    background:
+                      "linear-gradient(to bottom, #E9E7FF 0%, rgba(233,231,255,0.75) 20%, rgba(233,231,255,0.25) 55%, transparent 100%)",
+                    filter: "blur(18px)",
+                    transform: "translateY(-30px)",
+                  }}
+                />
+
               </div>
 
             </div>
@@ -536,80 +783,124 @@ export default function Home() {
       {/* =========================
           CONTACT
       ========================== */}
+     
+
       <section className="border-t border-black/10">
-        <div className="mx-auto max-w-7xl px-6 py-24 sm:px-10 lg:px-16 lg:py-32">
+  <div className="mx-auto max-w-7xl px-6 py-24 sm:px-10 lg:px-16 lg:py-32">
 
-          <div className="grid gap-16 md:grid-cols-2">
+    <div className="grid gap-16 md:grid-cols-2">
 
-            <div>
-              <p className="text-sm font-medium uppercase tracking-[0.15em] text-black/40">
-                Let's talk
-              </p>
+      <div>
+        <p className="text-sm font-medium uppercase tracking-[0.15em] text-black/40">
+          Let's talk
+        </p>
 
-              <h2 className="mt-6 max-w-xl text-5xl font-semibold leading-[1.05] tracking-[-0.05em] sm:text-6xl">
-                Have something
-                <br />
-                worth exploring?
-              </h2>
+        <h2 className="mt-6 max-w-xl text-5xl font-semibold leading-[1.05] tracking-[-0.05em] sm:text-6xl">
+          Have something
+          <br />
+          worth exploring?
+        </h2>
 
-              <p className="mt-6 max-w-md leading-relaxed text-black/50">
-                Have an idea, project or collaboration in mind?
-                I'd love to hear about it.
-              </p>
-            </div>
+        <p className="mt-6 max-w-md leading-relaxed text-black/50">
+          Have an idea, project or collaboration in mind?
+          I'd love to hear about it.
+        </p>
+      </div>
 
+      {/* FORM */}
+      
+       <form onSubmit={handleSubmit} className="space-y-8">
 
-            {/* FORM */}
-            <form className="space-y-8">
+  {/* NAME */}
+  <div>
+    <label
+      htmlFor="name"
+      className="text-sm text-black/40"
+    >
+      Your name
+    </label>
 
-              <div>
-                <label className="text-sm text-black/40">
-                  Your name
-                </label>
+    <input
+      id="name"
+      name="name"
+      type="text"
+      placeholder="Mayank"
+      required
+      className="mt-3 w-full border-b border-black/15 bg-transparent pb-3 text-lg outline-none placeholder:text-black/20 focus:border-black"
+    />
+  </div>
 
-                <input
-                  type="text"
-                  placeholder="Mayank"
-                  className="mt-3 w-full border-b border-black/15 bg-transparent pb-3 text-lg outline-none placeholder:text-black/20 focus:border-black"
-                />
-              </div>
+  {/* EMAIL */}
+  <div>
+    <label
+      htmlFor="email"
+      className="text-sm text-black/40"
+    >
+      Your email
+    </label>
 
-              <div>
-                <label className="text-sm text-black/40">
-                  Your email
-                </label>
+    <input
+      id="email"
+      name="email"
+      type="email"
+      placeholder="you@example.com"
+      required
+      className="mt-3 w-full border-b border-black/15 bg-transparent pb-3 text-lg outline-none placeholder:text-black/20 focus:border-black"
+    />
+  </div>
 
-                <input
-                  type="email"
-                  placeholder="you@example.com"
-                  className="mt-3 w-full border-b border-black/15 bg-transparent pb-3 text-lg outline-none placeholder:text-black/20 focus:border-black"
-                />
-              </div>
+  {/* PHONE */}
+  <div>
+    <label
+      htmlFor="phone"
+      className="text-sm text-black/40"
+    >
+      Phone number
+    </label>
 
-              <div>
-                <label className="text-sm text-black/40">
-                  What's on your mind?
-                </label>
+    <input
+      id="phone"
+      name="phone"
+      type="tel"
+      placeholder="+91 98765 43210"
+      className="mt-3 w-full border-b border-black/15 bg-transparent pb-3 text-lg outline-none placeholder:text-black/20 focus:border-black"
+    />
+  </div>
 
-                <textarea
-                  rows="4"
-                  placeholder="Tell me a little about it..."
-                  className="mt-3 w-full resize-none border-b border-black/15 bg-transparent pb-3 text-lg outline-none placeholder:text-black/20 focus:border-black"
-                />
-              </div>
+  {/* MESSAGE */}
+  <div>
+    <label
+      htmlFor="message"
+      className="text-sm text-black/40"
+    >
+      What's on your mind?
+    </label>
 
-              <button
-                type="submit"
-                className="rounded-full bg-[#111111] px-7 py-3.5 text-sm font-medium text-white transition-transform duration-300 hover:-translate-y-1"
-              >
-                Send message ↗
-              </button>
+    <textarea
+      id="message"
+      name="message"
+      rows="4"
+      placeholder="Tell me a little about it..."
+      required
+      className="mt-3 w-full resize-none border-b border-black/15 bg-transparent pb-3 text-lg outline-none placeholder:text-black/20 focus:border-black"
+    />
+  </div>
 
-            </form>
+  {/* BUTTON */}
+ <button
+  type="submit"
+  disabled={isSending}
+  className="rounded-full bg-[#111111] px-7 cursor-pointer py-3.5 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-1 disabled:cursor-not-allowed disabled:opacity-50"
+>
+  {isSending ? "Sending..." : "Send message ↗"}
+</button>
 
-          </div>
-        </div>
-      </section>
+</form>
+
+    </div>
+  </div>
+</section>
+
 
 
       {/* =========================
@@ -622,7 +913,17 @@ export default function Home() {
           <p>Designed & built by Mayank.</p>
         </div>
       </footer>
+{notification && (
+  <div className="fixed bottom-6 left-1/2 z-[999] -translate-x-1/2 px-6">
+    <div className="flex items-center gap-3 whitespace-nowrap rounded-full border border-[#C9E8D3] bg-[#EAF6EE] px-5 py-3.5 text-sm font-medium text-[#246B3A] shadow-lg">
+      <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#246B3A] text-xs text-white">
+        ✓
+      </span>
 
+      {notification}
+    </div>
+  </div>
+)}
     </main>
   );
 }
