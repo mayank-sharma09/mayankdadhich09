@@ -2,42 +2,56 @@ import Image from "next/image";
 import Navbar from "./components/Navbar";
 
 
-    export default function Home() {
+export default function Home() {
   return (
     <main className="min-h-screen bg-[#F7F7F5] text-[#111111]">
 
       {/* =========================
           HERO
       ========================== */}
-   <section className="relative overflow-hidden bg-[#F7F7F5]">
-  <div className="mx-auto grid min-h-screen max-w-[1600px] md:grid-cols-[1.02fr_0.90fr]">
+      <section className="relative overflow-hidden bg-[#F7F7F5]">
+        <div className="mx-auto grid min-h-screen max-w-[1600px] md:grid-cols-[1.02fr_1fr]">
 
-    {/* VIDEO */}
-    <div className="relative order-1 min-h-[430px] md:order-2 md:min-h-screen">
-      <video
-        src="/vid.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="auto"
-        className="h-full w-full object-cover"
-        style={{
-          maskImage:
-            "linear-gradient(to right, transparent 0%, transparent 10%, rgba(0,0,0,0.15) 25%, rgba(0,0,0,0.55) 45%, black 70%)",
-          WebkitMaskImage:
-            "linear-gradient(to right, transparent 0%, transparent 10%, rgba(0,0,0,0.15) 25%, rgba(0,0,0,0.55) 45%, black 70%)",
-        }}
-      />
-    </div>
+          {/* VIDEO */}
+          <div className="relative order-1 min-h-[430px] md:order-2 md:min-h-screen">
 
-    {/* TEXT */}
-    <div className="relative order-2 flex items-center px-6 py-16 sm:px-10 sm:py-20 md:order-1 md:px-12 md:py-24 lg:px-16">
-  <div className="relative z-10 w-full">
+            {/* Mobile — no fade */}
+            <video
+              src="/vid.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="auto"
+              className="h-full w-full object-cover md:hidden"
+            />
 
-    {/* Small intro */}
-    <p
-      className="
+            {/* Desktop — with soft fade */}
+            <video
+              src="/vid.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="auto"
+              className="hidden h-full w-full object-cover md:block"
+              style={{
+                maskImage:
+                  "linear-gradient(to right, transparent 0%, transparent 10%, rgba(0,0,0,0.15) 25%, rgba(0,0,0,0.55) 45%, black 70%)",
+                WebkitMaskImage:
+                  "linear-gradient(to right, transparent 0%, transparent 10%, rgba(0,0,0,0.15) 25%, rgba(0,0,0,0.55) 45%, black 70%)",
+              }}
+            />
+
+          </div>
+
+          {/* TEXT */}
+          <div className="relative order-2 flex items-center px-6 py-16 sm:px-10 sm:py-20 md:order-1 md:px-12 md:py-24 lg:px-16">
+            <div className="relative z-10 w-full">
+
+              {/* Small intro */}
+              <p
+                className="
         hero-fade-up
         mb-5
         max-w-[340px]
@@ -53,46 +67,46 @@ import Navbar from "./components/Navbar";
         sm:tracking-[0.18em]
         md:text-sm
       "
-    >
-      Product Designer · Creative Developer · Visual Storyteller
-    </p>
+              >
+                Product Designer · Creative Developer · Visual Storyteller
+              </p>
 
-    {/* Main heading */}
-    <h1 className="max-w-4xl text-[42px] font-semibold leading-[0.98] tracking-[-0.055em] sm:text-[52px] md:text-7xl lg:text-[76px] xl:text-[88px]">
+              {/* Main heading */}
+              <h1 className="max-w-4xl text-[42px] font-semibold leading-[0.98] tracking-[-0.055em] sm:text-[52px] md:text-7xl lg:text-[76px] xl:text-[88px]">
 
-      <span
-        className="hero-line"
-        style={{ animationDelay: "120ms" }}
-      >
-        I've always been
-      </span>
+                <span
+                  className="hero-line"
+                  style={{ animationDelay: "120ms" }}
+                >
+                  I've always been
+                </span>
 
-      <br />
+                <br />
 
-      <span
-        className="hero-line"
-        style={{ animationDelay: "220ms" }}
-      >
-        curious about how
-      </span>
+                <span
+                  className="hero-line"
+                  style={{ animationDelay: "220ms" }}
+                >
+                  curious about how
+                </span>
 
-      <br />
+                <br />
 
-      <span
-        className="hero-line"
-        style={{ animationDelay: "320ms" }}
-      >
-        things{" "}
-        <span className="text-black/30">
-          come together.
-        </span>
-      </span>
+                <span
+                  className="hero-line"
+                  style={{ animationDelay: "320ms" }}
+                >
+                  things{" "}
+                  <span className="text-black/30">
+                    come together.
+                  </span>
+                </span>
 
-    </h1>
+              </h1>
 
-    {/* Buttons */}
-    <div
-      className="
+              {/* Buttons */}
+              <div
+                className="
         hero-fade-up
         mt-8
         flex
@@ -101,11 +115,11 @@ import Navbar from "./components/Navbar";
         gap-3
         sm:mt-10
       "
-      style={{ animationDelay: "500ms" }}
-    >
-      <a
-        href="#work"
-        className="
+                style={{ animationDelay: "500ms" }}
+              >
+                <a
+                  href="#work"
+                  className="
           rounded-full
           bg-[#111111]
           px-5 py-3
@@ -119,13 +133,13 @@ import Navbar from "./components/Navbar";
           sm:py-3.5
           sm:text-sm
         "
-      >
-        Explore my work ↓
-      </a>
+                >
+                  Explore my work ↓
+                </a>
 
-      <a
-        href="/about"
-        className="
+                <a
+                  href="/about"
+                  className="
           rounded-full
           border
           border-black/10
@@ -144,16 +158,16 @@ import Navbar from "./components/Navbar";
           sm:py-3.5
           sm:text-sm
         "
-      >
-        More about me ↗
-      </a>
-    </div>
+                >
+                  More about me ↗
+                </a>
+              </div>
 
-  </div>
-</div>
+            </div>
+          </div>
 
-  </div>
-</section>
+        </div>
+      </section>
 
       {/* =========================
           CREATIVE DIRECTIONS
