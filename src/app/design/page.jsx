@@ -5,7 +5,7 @@ import SelectedWork from "../components/SelectedWork";
 
 export default function DesignPage() {
   return (
-    <main className="min-h-screen bg-[#F7F7F5] text-[#111111]">
+    <main className="min-h-screen bg-[#000000] text-[#111111]">
       {/* =================================================
           HERO
       ================================================= */}
@@ -13,7 +13,32 @@ export default function DesignPage() {
      <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#F7F7F5]">
 
   {/* DESKTOP VIDEO */}
-  
+ <div className="absolute inset-0 hidden md:block">
+    <video
+      src="/designPage.mp4"
+      autoPlay
+      loop
+      muted
+      playsInline
+      preload="metadata"
+      aria-hidden="true"
+      className="h-full w-full object-cover"
+    />
+  </div>
+
+  {/* MOBILE VIDEO 
+  <div className="absolute inset-0 block md:hidden">
+    <video
+      src="/designPage.mp4"
+      autoPlay
+      loop
+      muted
+      playsInline
+      preload="metadata"
+      aria-hidden="true"
+      className="h-full w-full object-cover"
+    />
+  </div> */}
 
   {/* TEXT */}
   <div className="relative z-10 mx-auto w-full max-w-[1600px] px-6 py-20 sm:px-10 md:px-12 lg:px-16">
@@ -137,16 +162,6 @@ export default function DesignPage() {
             to understand people better and make something a little more meaningful.
           </p>
 
-          {/* Small closing detail */}
-          <div className="mt-12 flex items-center justify-center gap-3">
-            <span className="h-px w-8 bg-black/15" />
-
-            <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-black/30">
-              Curious · Creating · Improving
-            </span>
-
-            <span className="h-px w-8 bg-black/15" />
-          </div>
 
         </div>
       </section>

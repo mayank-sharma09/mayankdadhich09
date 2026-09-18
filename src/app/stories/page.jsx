@@ -1,4 +1,6 @@
+"use client";
 import Link from "next/link";
+import { useRef, useState } from "react";
 
 const stories = [
   {
@@ -34,39 +36,117 @@ const stories = [
 ];
 
 export default function StoriesPage() {
+
+  const videoRef = useRef(null);
+  const [isMuted, setIsMuted] = useState(true);
+
+  const toggleMute = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    if (!videoRef.current) return;
+
+    videoRef.current.muted = !videoRef.current.muted;
+    setIsMuted(videoRef.current.muted);
+  };
   return (
     <main className="min-h-screen bg-[#111111] text-white">
       {/* HERO */}
-      <section className="px-6 pb-24 pt-32 md:px-10 md:pb-32 md:pt-40 lg:px-16">
-        <div className="mx-auto max-w-7xl">
-          <p className="mb-7 text-xs font-medium uppercase tracking-[0.2em] text-white/35">
-            Visual Storyteller
-          </p>
+     <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
 
-          <div className="max-w-6xl">
-            <h1 className="text-5xl font-semibold leading-[0.92] tracking-[-0.055em] md:text-7xl lg:text-[100px]">
-              Stories made
-              <br />
-              to be felt.
-            </h1>
+  {/* VIDEO BACKGROUND */}
+  <div className="absolute inset-0">
+    <video
+      src="/visual.mp4"
+      autoPlay
+      loop
+      muted
+      playsInline
+      preload="metadata"
+      aria-hidden="true"
+      className="h-full w-full object-cover"
+    />
+  </div>
 
-            <p className="mt-9 max-w-xl text-base leading-7 text-white/45 md:text-lg">
-              I like turning ideas into visual experiences through
-              storytelling, motion, sound, characters, and product films.
-            </p>
-          </div>
+  {/* TEXT CONTENT */}
+  <div className="relative z-10 w-full px-6 py-20 md:px-10 lg:px-16">
 
-          {/* Scroll hint */}
-          <div className="mt-20 flex items-center gap-3 text-xs uppercase tracking-[0.18em] text-white/25">
-            <span className="h-px w-10 bg-white/20" />
-            Scroll to explore
-          </div>
-        </div>
-      </section>
+    <div className="mx-auto max-w-7xl text-center">
+
+      {/* Small intro */}
+      <p
+        className="stories-text-up mb-7 text-xs font-medium uppercase tracking-[0.2em] text-white/50"
+        style={{ animationDelay: "0ms" }}
+      >
+        Visual Storyteller
+      </p>
+
+      {/* Main heading */}
+      <h1
+        className="stories-text-up mx-auto max-w-5xl text-5xl font-semibold leading-[0.92] tracking-[-0.055em] text-white md:text-7xl lg:text-[100px]"
+        style={{ animationDelay: "120ms" }}
+      >
+        Stories made
+        <br />
+        to be felt
+      </h1>
+
+      {/* Description */}
+      <p
+        className="stories-text-up mx-auto mt-9 max-w-xl text-base leading-7 text-white/55 md:text-lg"
+        style={{ animationDelay: "240ms" }}
+      >
+        I like turning ideas into visual experiences through
+        storytelling, motion, sound, characters, and product films.
+      </p>
+
+      {/* Scroll hint */}
+      <div
+        className="stories-text-up mt-16 flex items-center justify-center gap-3 text-xs uppercase tracking-[0.18em] text-white/35"
+        style={{ animationDelay: "360ms" }}
+      >
+        <span className="h-px w-10 bg-white/30" />
+        Scroll to explore
+      </div>
+
+    </div>
+
+  </div>
+
+  {/* SECTION ANIMATION */}
+  <style>{`
+    .stories-text-up {
+      opacity: 0;
+      transform: translateY(24px);
+      animation: storiesTextUp 0.8s ease-out forwards;
+    }
+
+    @keyframes storiesTextUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .stories-text-up {
+        opacity: 1;
+        transform: none;
+        animation: none;
+      }
+    }
+  `}</style>
+
+</section>
 
       {/* SELECTED STORIES */}
       {/* SELECTED STORIES */}
-<section className="px-6 pb-28 md:px-10 lg:px-16">
+<section className="px-6 pb-28 pt-28 md:px-10 lg:px-16">
   <div className="mx-auto max-w-7xl">
 
     {/* Section heading */}
@@ -93,26 +173,23 @@ export default function StoriesPage() {
     >
       <div className="relative aspect-[16/8] overflow-hidden bg-[#222222]">
 
-        {/* IMAGE PLACEHOLDER */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center">
-            <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-white/5 text-lg text-white/25">
-              +
-            </div>
-
-            <p className="text-sm text-white/25">
-              Bridgr Preview
-            </p>
-          </div>
-        </div>
-
-        {/* Ambient glow */}
-        <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-blue-500/10 blur-[90px]" />
+        {/* VIDEO */}
+        <video
+          ref={videoRef}
+          src="/"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+        />
 
         {/* Gradient */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
 
-        {/* Info over image */}
+        {/* Info */}
         <div className="absolute bottom-6 left-6 right-6 md:bottom-8 md:left-8">
           <p className="text-[10px] uppercase tracking-[0.18em] text-white/40">
             01 / Product Story
@@ -122,17 +199,19 @@ export default function StoriesPage() {
             <h3 className="text-4xl font-medium tracking-[-0.04em] md:text-6xl">
               Bridgr
             </h3>
-
-            <span className="hidden rounded-full bg-white/10 px-4 py-2 text-xs text-white/60 backdrop-blur-md md:block">
-              View Story ↗
-            </span>
           </div>
         </div>
 
-        {/* Play */}
-        <div className="absolute right-6 top-6 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-xs text-white/60 backdrop-blur-md transition-all duration-500 group-hover:scale-110 group-hover:bg-white group-hover:text-black">
-          ▶
-        </div>
+        {/* Sound Button */}
+        <button
+          type="button"
+          onClick={toggleMute}
+          aria-label={isMuted ? "Unmute video" : "Mute video"}
+          className="absolute right-6 top-6 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-sm text-white/70 backdrop-blur-md transition-all duration-300 hover:scale-110 hover:bg-white hover:text-black"
+        >
+          {isMuted ? "🔇" : "🔊"}
+        </button>
+
       </div>
     </Link>
 
@@ -146,21 +225,19 @@ export default function StoriesPage() {
       >
         <div className="relative aspect-[4/3] overflow-hidden bg-[#222222]">
 
-          {/* IMAGE PLACEHOLDER */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-center">
-              <div className="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-white/5 text-lg text-white/25">
-                +
-              </div>
+          {/* VIDEO */}
+          <video
+            src="/conversations.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata"
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+          />
 
-              <p className="text-sm text-white/25">
-                Character Story
-              </p>
-            </div>
-          </div>
-
-          <div className="absolute -left-20 -top-20 h-60 w-60 rounded-full bg-purple-500/10 blur-[80px]" />
-
+          {/* Gradient */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
 
           <div className="absolute bottom-5 left-5 right-5">
@@ -173,7 +250,7 @@ export default function StoriesPage() {
             </h3>
           </div>
 
-          <div className="absolute right-5 top-5 flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-xs text-white/60 backdrop-blur-md">
+          <div className="absolute right-5 top-5 flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-xs text-white/60 backdrop-blur-md transition-all duration-500 group-hover:scale-110 group-hover:bg-white group-hover:text-black">
             ▶
           </div>
         </div>
@@ -186,21 +263,19 @@ export default function StoriesPage() {
       >
         <div className="relative aspect-[4/3] overflow-hidden bg-[#222222]">
 
-          {/* IMAGE PLACEHOLDER */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-center">
-              <div className="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-white/5 text-lg text-white/25">
-                +
-              </div>
+          {/* VIDEO */}
+          <video
+            src="/the-last-point.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata"
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+          />
 
-              <p className="text-sm text-white/25">
-                The Last Point
-              </p>
-            </div>
-          </div>
-
-          <div className="absolute -bottom-20 -right-20 h-60 w-60 rounded-full bg-blue-500/10 blur-[80px]" />
-
+          {/* Gradient */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
 
           <div className="absolute bottom-5 left-5 right-5">
@@ -213,7 +288,7 @@ export default function StoriesPage() {
             </h3>
           </div>
 
-          <div className="absolute right-5 top-5 flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-xs text-white/60 backdrop-blur-md">
+          <div className="absolute right-5 top-5 flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-xs text-white/60 backdrop-blur-md transition-all duration-500 group-hover:scale-110 group-hover:bg-white group-hover:text-black">
             ▶
           </div>
         </div>
