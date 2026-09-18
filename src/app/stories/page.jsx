@@ -52,10 +52,26 @@ export default function StoriesPage() {
   return (
     <main className="min-h-screen bg-[#111111] text-white">
       {/* HERO */}
-     <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
+    <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
 
   {/* VIDEO BACKGROUND */}
-  <div className="absolute inset-0">
+
+  {/* MOBILE VIDEO */}
+  <div className="absolute inset-0 md:hidden">
+    <video
+      src="/blackholemobile.mp4"
+      autoPlay
+      loop
+      muted
+      playsInline
+      preload="metadata"
+      aria-hidden="true"
+      className="h-full w-full object-cover"
+    />
+  </div>
+
+  {/* DESKTOP VIDEO */}
+  <div className="absolute inset-0 hidden md:block">
     <video
       src="/visual.mp4"
       autoPlay
@@ -67,6 +83,9 @@ export default function StoriesPage() {
       className="h-full w-full object-cover"
     />
   </div>
+
+  {/* DARK OVERLAY */}
+  <div className="absolute inset-0 bg-black/20" />
 
   {/* TEXT CONTENT */}
   <div className="relative z-10 w-full px-6 py-20 md:px-10 lg:px-16">
