@@ -3,6 +3,7 @@
 import { ArrowUpRight, Mail } from "lucide-react";
 import ScrollProgress from "../components/ScrollProgress";
 import Skills from "../components/Skills";
+import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 export default function Page() {
   return (
@@ -311,26 +312,35 @@ export default function Page() {
 
             {/* SOCIAL LINKS */}
             <div className="mt-20 flex flex-wrap gap-3">
-              <a
-                href="#"
-                className="rounded-full border border-white/10 px-4 py-2.5 text-sm text-white/60 transition hover:bg-white/10 hover:text-white"
-              >
-                LinkedIn
-              </a>
+              <div className="flex items-center gap-2">
+      {/* Instagram */}
+      <a
+        href="https://www.instagram.com/mayankdadhich._?stkn=a2p4b2c1ZWhwMzlo"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram"
+        className="group flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-white/40 transition-all duration-300 hover:border-transparent hover:bg-gradient-to-br hover:from-[#f58529] hover:via-[#dd2a7b] hover:to-[#8134af] hover:text-white"
+      >
+        <FaInstagram
+          size={17}
+          className="transition-transform duration-300 group-hover:scale-110"
+        />
+      </a>
 
-              <a
-                href="#"
-                className="rounded-full border border-white/10 px-4 py-2.5 text-sm text-white/60 transition hover:bg-white/10 hover:text-white"
-              >
-                GitHub
-              </a>
-
-              <a
-                href="#"
-                className="rounded-full border border-white/10 px-4 py-2.5 text-sm text-white/60 transition hover:bg-white/10 hover:text-white"
-              >
-                Instagram
-              </a>
+      {/* LinkedIn */}
+      <a
+        href="https://www.linkedin.com/in/mayank-sharma-ab0a9b226/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="LinkedIn"
+        className="group flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-white/40 transition-all duration-300 hover:border-[#0A66C2] hover:bg-[#0A66C2] hover:text-white"
+      >
+        <FaLinkedinIn
+          size={17}
+          className="transition-transform duration-300 group-hover:scale-110"
+        />
+      </a>
+    </div>
             </div>
           </div>
         </section>
@@ -341,10 +351,10 @@ export default function Page() {
         <footer
           data-theme="dark"
             data-label="THANK YOU"
-          className="bg-[#111111] px-6 pb-28 text-white sm:px-10 lg:px-16"
+          className="bg-[#111111] px-6 pb-28  sm:px-10 lg:px-16"
         >
           <div className="mx-auto flex max-w-7xl flex-col gap-4 border-t border-white/10 pt-6 text-sm text-white/30 sm:flex-row sm:items-center sm:justify-between">
-            <p>© {new Date().getFullYear()} Mayank.</p>
+            <p>© {new Date().getFullYear()} Mayank Dadhich.</p>
 
             <p>Designed & built by Mayank Dadhich.</p>
           </div>

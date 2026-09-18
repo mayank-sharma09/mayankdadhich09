@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-
+import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import SelectedWork from "../components/SelectedWork";
 
 export default function DesignPage() {
@@ -195,32 +195,49 @@ export default function DesignPage() {
               Have an idea worth building?
             </h2>
 
-            <Link
-              href="/#contact"
-              className="
-                group
-                flex
-                w-fit
-                items-center
-                gap-3
-                rounded-full
-                bg-white
-                px-6
-                py-3
-                text-sm
-                font-medium
-                text-black
-                transition-transform
-                duration-300
-                hover:scale-105
-              "
-            >
-              Let&apos;s talk
-
-              <span className="transition-transform duration-300 group-hover:translate-x-1">
-                ↗
-              </span>
-            </Link>
+            <div className="flex items-center gap-4">
+                {/* Let's Talk */}
+                <a
+                  href="mailto:dadhichmayank09@gmail.com"
+                  className="group flex w-fit items-center gap-3 rounded-full bg-white px-6 py-3 text-sm font-medium text-black transition-transform duration-300 hover:scale-105"
+                >
+                  Let's talk
+                  <span className="transition-transform duration-300 group-hover:translate-x-1">
+                    ↗
+                  </span>
+                </a>
+            
+                {/* Social Icons */}
+                <div className="flex items-center gap-2">
+                  {/* Instagram */}
+                  <a
+                    href="https://www.instagram.com/YOUR_USERNAME"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                    className="group flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-white/40 transition-all duration-300 hover:border-transparent hover:bg-gradient-to-br hover:from-[#f58529] hover:via-[#dd2a7b] hover:to-[#8134af] hover:text-white"
+                  >
+                    <FaInstagram
+                      size={17}
+                      className="transition-transform duration-300 group-hover:scale-110"
+                    />
+                  </a>
+            
+                  {/* LinkedIn */}
+                  <a
+                   href="https://www.instagram.com/mayankdadhich._?stkn=a2p4b2c1ZWhwMzlo"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                    className="group flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-white/40 transition-all duration-300 hover:border-[#0A66C2] hover:bg-[#0A66C2] hover:text-white"
+                  >
+                    <FaLinkedinIn
+                      size={17}
+                      className="transition-transform duration-300 group-hover:scale-110"
+                    />
+                  </a>
+                </div>
+              </div>
           </div>
         </div>
       </section>
@@ -229,31 +246,12 @@ export default function DesignPage() {
           FOOTER
       ================================================= */}
 
-      <footer className="px-6 pb-28 md:px-10 md:pb-10 lg:px-16 text-gray-500">
-        <div
-          className="
-            mx-auto
-            flex
-            max-w-7xl
-            flex-col
-            gap-4
-            border-t
-            border-black/10
-            pt-6
+      <footer className="px-6 pb-28 md:px-10 md:pb-10 lg:px-16 ">
+       <div className="mx-auto flex max-w-7xl flex-col gap-4 border-t border-white/10 pt-6 text-sm text-white/30 sm:flex-row sm:items-center sm:justify-between">
+            <p>© {new Date().getFullYear()} Mayank Dadhich.</p>
 
-            md:flex-row
-            md:items-center
-            md:justify-between
-          "
-        >
-          <p className="text-sm font-medium">
-           © 2026  Mayank Dadhich.
-          </p>
-
-          <p className="text-xs ">
-            Product Design · Frontend · Visual Storytelling
-          </p>
-        </div>
+            <p>Designed & built by Mayank Dadhich.</p>
+          </div>
       </footer>
     </main>
   );

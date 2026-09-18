@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useRef, useState } from "react";
+import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 
 
@@ -388,9 +389,9 @@ export default function StoriesPage() {
       </section>
 
       {/* PHILOSOPHY */}
-      <section className="px-6 py-28 md:px-10 lg:px-16">
+      <section className="border-t border-white/10 px-6 py-28 md:px-10 lg:px-16">
         <div className="mx-auto max-w-7xl">
-          <div className="rounded-[36px] bg-[#F4F3EF] px-6 py-20 text-black md:px-12 md:py-28">
+          <div className="rounded-[36px] bg-[#E7E7E7] px-6 py-20 text-black md:px-12 md:py-28">
             <p className="text-xs font-medium uppercase tracking-[0.2em] text-black/30">
               My Approach
             </p>
@@ -413,39 +414,66 @@ export default function StoriesPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-6 pb-24 md:px-10 lg:px-16">
-        <div className="mx-auto max-w-7xl border-t border-white/10 pt-20">
-          <p className="text-xs font-medium uppercase tracking-[0.2em] text-white/30">
-            Have a story?
-          </p>
+      <section className="px-6 pb-24 md:px-10 lg:px-26">
+        <div className="mt-6 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+  <h2 className="max-w-3xl text-4xl font-semibold leading-tight tracking-[-0.04em] md:text-6xl">
+    Let's turn an idea into something people remember.
+  </h2>
 
-          <div className="mt-6 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
-            <h2 className="max-w-3xl text-4xl font-semibold leading-tight tracking-[-0.04em] md:text-6xl">
-              Let's turn an idea into something people remember.
-            </h2>
+  {/* CTA + SOCIALS */}
+  <div className="flex items-center gap-4">
+    {/* Let's Talk */}
+    <a
+      href="mailto:dadhichmayank09@gmail.com"
+      className="group flex w-fit items-center gap-3 rounded-full bg-white px-6 py-3 text-sm font-medium text-black transition-transform duration-300 hover:scale-105"
+    >
+      Let's talk
+      <span className="transition-transform duration-300 group-hover:translate-x-1">
+        ↗
+      </span>
+    </a>
 
-            <a
-             href="mailto:dadhichmayank09@gmail.com"
-              className="group flex w-fit items-center gap-3 rounded-full bg-white px-6 py-3 text-sm font-medium text-black transition-transform duration-300 hover:scale-105"
-            >
-              Let's talk
-              <span className="transition-transform duration-300 group-hover:translate-x-1">
-                ↗
-              </span>
-            </a>
-          </div>
-        </div>
+    {/* Social Icons */}
+    <div className="flex items-center gap-2">
+      {/* Instagram */}
+      <a
+        href="https://www.instagram.com/mayankdadhich._?stkn=a2p4b2c1ZWhwMzlo"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram"
+        className="group flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-white/40 transition-all duration-300 hover:border-transparent hover:bg-gradient-to-br hover:from-[#f58529] hover:via-[#dd2a7b] hover:to-[#8134af] hover:text-white"
+      >
+        <FaInstagram
+          size={17}
+          className="transition-transform duration-300 group-hover:scale-110"
+        />
+      </a>
+
+      {/* LinkedIn */}
+      <a
+         href="https://www.linkedin.com/in/mayank-sharma-ab0a9b226/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="LinkedIn"
+        className="group flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-white/40 transition-all duration-300 hover:border-[#0A66C2] hover:bg-[#0A66C2] hover:text-white"
+      >
+        <FaLinkedinIn
+          size={17}
+          className="transition-transform duration-300 group-hover:scale-110"
+        />
+      </a>
+    </div>
+  </div>
+</div>
       </section>
 
       {/* FOOTER */}
       <footer className="px-6 pb-28 md:px-10 md:pb-10 lg:px-16">
-        <div className="mx-auto flex max-w-7xl flex-col gap-4 border-t border-white/10 pt-6 md:flex-row md:items-center md:justify-between">
-          <p className="text-sm font-medium">Mayank.</p>
+       <div className="mx-auto flex max-w-7xl flex-col gap-4 border-t border-white/10 pt-6 text-sm text-white/30 sm:flex-row sm:items-center sm:justify-between">
+            <p>© {new Date().getFullYear()} Mayank Dadhich.</p>
 
-          <p className="text-xs text-white/25">
-            Product Design · Frontend · Visual Storytelling
-          </p>
-        </div>
+            <p>Designed & built by Mayank Dadhich.</p>
+          </div>
       </footer>
     </main>
   );

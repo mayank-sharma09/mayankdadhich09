@@ -1,8 +1,8 @@
 "use client";
-import Navbar from "./components/Navbar";
+
 import Image from "next/image";
 import { useState } from "react";
-
+import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 export default function Home() {
   const [notification, setNotification] = useState("");
@@ -772,7 +772,7 @@ export default function Home() {
 
           <div className="grid gap-16 md:grid-cols-2">
 
-            <div>
+            <div >
               <p className="text-sm font-medium uppercase tracking-[0.15em] text-black/40">
                 Let's talk
               </p>
@@ -787,8 +787,43 @@ export default function Home() {
                 Got an idea, project, or something exciting in mind? Let’s connect.
 
               </p>
-            </div>
+              <div className="flex items-center gap-4">
+   
+    
 
+    {/* Social Icons */}
+    <div className="flex items-center gap-2 mt-10">
+      {/* Instagram */}
+      <a
+        href="https://www.instagram.com/mayankdadhich._?stkn=a2p4b2c1ZWhwMzlo"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram"
+        className="group flex h-11 w-11 items-center justify-center rounded-full border border-gray/500 text-gray/500 transition-all duration-300 hover:border-transparent hover:bg-gradient-to-br hover:from-[#f58529] hover:via-[#dd2a7b] hover:to-[#8134af] hover:text-white"
+      >
+        <FaInstagram
+          size={17}
+          className="transition-transform duration-300 group-hover:scale-110"
+        />
+      </a>
+
+      {/* LinkedIn */}
+      <a
+        href="https://www.linkedin.com/in/mayank-sharma-ab0a9b226/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="LinkedIn"
+        className="group flex h-11 w-11 items-center justify-center rounded-full border border-gray/500 text-gray/500 transition-all duration-300 hover:border-[#0A66C2] hover:bg-[#0A66C2] hover:text-white"
+      >
+        <FaLinkedinIn
+          size={17}
+          className="transition-transform duration-300 group-hover:scale-110"
+        />
+      </a>
+    </div>
+  </div>
+            </div>
+            
             {/* FORM */}
 
             <form onSubmit={handleSubmit} className="space-y-8">
@@ -888,12 +923,12 @@ export default function Home() {
       {/* =========================
           FOOTER
       ========================== */}
-      <footer className="border-t border-black/10 px-6 py-8 sm:px-10 lg:px-16">
-        <div className="mx-auto flex max-w-7xl flex-col gap-3 text-sm text-black/40 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} Mayank Dadhich.</p>
+       <footer className="px-6 pb-28 md:px-10 md:pb-10 lg:px-16 ">
+       <div className="mx-auto flex max-w-7xl flex-col gap-4 border-t border-white/10 pt-6 text-sm text-gray-500 sm:flex-row sm:items-center sm:justify-between">
+            <p>© {new Date().getFullYear()} Mayank Dadhich.</p>
 
-          <p>Designed & built by Mayank Dadhich.</p>
-        </div>
+            <p>Designed & built by Mayank Dadhich.</p>
+          </div>
       </footer>
       {notification && (
         <div className="fixed bottom-6 left-1/2 z-[999] -translate-x-1/2 px-6">
