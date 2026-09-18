@@ -17,10 +17,14 @@ export default function Page() {
     <section
   data-theme="light"
   data-label="WELCOME"
-  className="relative mx-auto max-w-7xl overflow-hidden px-6 pb-24 pt-36 sm:px-10 md:pt-40 lg:px-16"
+  className="relative mx-auto max-w-7xl overflow-hidden px-6 pb-24 pt-16 sm:px-10 md:pt-40 lg:px-16"
 >
   <div className="relative z-10">
-
+<div className="mb-10 text-center md:hidden">
+  <p className="text-xs font-medium uppercase tracking-[0.2em] text-black/40">
+    About Me
+  </p>
+</div>
     {/* PHOTO */}
     <div className="about-photo relative mx-auto mb-14 flex justify-center md:mb-16">
 
