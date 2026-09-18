@@ -10,7 +10,7 @@ export default function DesignPage() {
           HERO
       ================================================= */}
 
-      <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#F7F7F5]">
+    <section className="relative flex min-h-screen items-start justify-center overflow-hidden bg-[#F7F7F5] md:items-center">
 
         {/* DESKTOP VIDEO */}
         <div className="absolute inset-0 hidden md:block">
@@ -30,57 +30,57 @@ export default function DesignPage() {
 
 
         {/* TEXT */}
-        <div className="relative z-10 mx-auto w-full font-sans  max-w-[1600px] px-6 py-20 sm:px-10 md:px-12 lg:px-16">
-          <div className="mx-auto max-w-6xl text-center">
+      <div className="relative z-10 mx-auto w-full max-w-[1600px] px-6 pt-100 sm:px-10 sm:pt-32 md:px-12 md:py-20 lg:px-16">
+  <div className="mx-auto max-w-6xl  text-center ">
 
-            {/* Small intro */}
-            <p
-              className="mayank-hero-text-up mb-5 text-[10px] font-medium uppercase leading-[1.6] tracking-[0.16em] text-black/40 sm:mb-7 sm:text-xs sm:tracking-[0.18em] md:text-sm"
-              style={{ animationDelay: "0ms" }}
-            >
-              Product Design
-            </p>
+    {/* Small intro */}
+    <p
+      className="mayank-hero-text-up mb-4 text-[9px] font-medium uppercase leading-[1.6] tracking-[0.16em] text-black/40 sm:mb-6 sm:text-xs sm:tracking-[0.18em] md:text-sm"
+      style={{ animationDelay: "0ms" }}
+    >
+      Product Design
+    </p>
 
-            {/* Main heading */}
-            {/* MAIN HEADING + MOBILE SHAPES */}
-            <div className="relative mx-auto max-w-5xl">
+    {/* Main heading + mobile shapes */}
+    <div className="relative mx-auto max-w-5xl">
 
-              {/* MOBILE FLOATING SHAPES */}
-              <div className="pointer-events-none absolute inset-0 md:hidden">
+      {/* MOBILE FLOATING SHAPES */}
+      <div className="pointer-events-none absolute inset-0 md:hidden">
 
-                {/* Top left circle */}
-                <span className="hero-shape hero-shape-1 absolute left-[4%] top-[8%] h-3 w-3 rounded-full bg-black/10" />
+        {/* Top left dot */}
+        <span className="hero-shape hero-shape-1 absolute left-[6%] top-[5%] h-2.5 w-2.5 rounded-full bg-black/10" />
+           <span className="hero-shape hero-shape-1 absolute left-[10%] top-[5%] h-2.5 w-2.5 rounded-full bg-black/10" />
+            <span className="hero-shape hero-shape-1 absolute left-[60%] top-[30%] h-2.5 w-2.5 rounded-full bg-black/10" />
+        {/* Top right ring */}
+        <span className="hero-shape hero-shape-2 absolute right-[6%] top-[12%] h-7 w-7 rounded-full border border-black/10" />
 
-                {/* Top right ring */}
-                <span className="hero-shape hero-shape-2 absolute right-[5%] top-[18%] h-8 w-8 rounded-full border border-black/10" />
+        {/* Left square */}
+        <span className="hero-shape hero-shape-3 absolute left-[8%] top-[48%] h-4 w-4 rotate-12 rounded-[5px] border border-black/10" />
 
-                {/* Left small square */}
-                <span className="hero-shape hero-shape-3 absolute left-[10%] top-[48%] h-5 w-5 rotate-12 rounded-[6px] border border-black/10" />
+        {/* Right diamond */}
+        <span className="hero-shape hero-shape-4 absolute right-[8%] top-[55%] h-3.5 w-3.5 rotate-45 bg-black/[0.06]" />
 
-                {/* Right diamond */}
-                <span className="hero-shape hero-shape-4 absolute right-[7%] top-[55%] h-4 w-4 rotate-45 bg-black/[0.06]" />
+        {/* Bottom ring */}
+        <span className="hero-shape hero-shape-5 absolute bottom-[2%] left-[22%] h-5 w-5 rounded-full border border-black/10" />
 
-                {/* Bottom left ring */}
-                <span className="hero-shape hero-shape-5 absolute bottom-[4%] left-[20%] h-6 w-6 rounded-full border border-black/10" />
+        {/* Bottom dot */}
+        <span className="hero-shape hero-shape-6 absolute bottom-[7%] right-[23%] h-1.5 w-1.5 rounded-full bg-black/15" />
 
-                {/* Bottom right dot */}
-                <span className="hero-shape hero-shape-6 absolute bottom-[10%] right-[22%] h-2 w-2 rounded-full bg-black/15" />
+      </div>
 
-              </div>
+      <h1
+        className="mayank-hero-text-up relative z-10 text-[42px] font-semibold leading-[1] tracking-[-0.05em] text-black sm:text-[46px] md:text-7xl lg:text-[76px] xl:text-[88px]"
+        style={{ animationDelay: "120ms" }}
+      >
+        Designing things
+        <br />
+        Worth experiencing.
+      </h1>
 
-              <h1
-                className="mayank-hero-text-up relative z-10 text-[42px] font-semibold leading-[0.98] tracking-[-0.055em] text-black sm:text-[52px] md:text-7xl lg:text-[76px] xl:text-[88px]"
-                style={{ animationDelay: "120ms" }}
-              >
-                Designing things
-                <br />
-                Worth experiencing.
-              </h1>
+    </div>
 
-            </div>
-
-          </div>
-        </div>
+  </div>
+</div>
 
         {/* HERO-ONLY ANIMATION */}
         <style>{`
