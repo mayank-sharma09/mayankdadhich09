@@ -54,6 +54,7 @@ export default function StoriesPage() {
     muted
     playsInline
     preload="auto"
+    poster="/blackholemobile-poster.png"
     aria-hidden="true"
     className="h-full w-full object-cover"
   />
@@ -68,10 +69,13 @@ export default function StoriesPage() {
     muted
     playsInline
     preload="auto"
+    poster="/visual-poster.png"
     aria-hidden="true"
     className="h-full w-full object-cover"
   />
 </div>
+
+
 
   {/* TEXT CONTENT */}
   <div className="relative z-10 w-full px-6 py-20 md:px-10 lg:px-16 font-serif ">
@@ -180,7 +184,8 @@ export default function StoriesPage() {
           loop
           muted
           playsInline
-         preload="auto"
+         preload="metadata"
+          poster="/bridgr.png"
           aria-hidden="true"
           className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
         />
@@ -232,7 +237,8 @@ export default function StoriesPage() {
             loop
             muted
             playsInline
-            preload="auto"
+            preload="metadata"
+            poster="/bridr-poster.png"
             aria-hidden="true"
             className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
           />
@@ -280,7 +286,8 @@ export default function StoriesPage() {
             loop
             muted
             playsInline
-            preload="auto"
+            preload="metadata"
+                poster="/bride-poster.png"
             aria-hidden="true"
             className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
           />
