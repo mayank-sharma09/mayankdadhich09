@@ -424,15 +424,15 @@ export default function StoriesPage() {
               Let's turn an idea into something people remember.
             </h2>
 
-            <Link
-             href="mailto:dadhichmayank@gmail.com"
+            <a
+             href="mailto:dadhichmayank09@gmail.com"
               className="group flex w-fit items-center gap-3 rounded-full bg-white px-6 py-3 text-sm font-medium text-black transition-transform duration-300 hover:scale-105"
             >
               Let's talk
               <span className="transition-transform duration-300 group-hover:translate-x-1">
                 ↗
               </span>
-            </Link>
+            </a>
           </div>
         </div>
       </section>

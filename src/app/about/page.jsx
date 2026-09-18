@@ -302,7 +302,7 @@ export default function Page() {
             </h2>
 
             <a
-              href="mailto:your@email.com"
+              href="mailto:dadhichmayank09@gmail.com"
               className="mt-10 inline-flex items-center gap-3 rounded-full bg-white px-6 py-3.5 text-sm font-medium text-black transition-transform duration-300 hover:-translate-y-1"
             >
               <Mail size={17} />
