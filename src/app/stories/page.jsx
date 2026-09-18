@@ -10,7 +10,7 @@ const stories = [
     description:
       "A short product advertisement created to show how a traditional library can move from paper and spreadsheets to smarter digital management.",
     tags: ["Ad Film", "Product Story", "Visual Direction"],
-    image: "/images/bridgr-preview.jpg",
+    video: "/bridgrVid.mp4",
     className: "md:col-span-2",
   },
   {
@@ -20,7 +20,7 @@ const stories = [
     description:
       "Short visual stories built around characters, everyday situations, and the small conversations that make a scene feel alive.",
     tags: ["Characters", "Storytelling", "Direction"],
-    image: "/images/character-story.jpg",
+    video: "/images/character-story.jpg",
     className: "",
   },
   {
@@ -30,7 +30,7 @@ const stories = [
     description:
       "A visual story about ambition, competition, friendship, and the moments that happen beyond the final point.",
     tags: ["2D Story", "Narrative", "Sound"],
-    image: "/images/the-last-point.jpg",
+    video: "/images/the-last-point.jpg",
     className: "",
   },
 ];
@@ -52,124 +52,102 @@ export default function StoriesPage() {
   return (
     <main className="min-h-screen bg-[#000000] text-white">
       {/* HERO */}
+     <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
 
-
-  {/* HERO */}
-  <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
-
-    {/* MOBILE VIDEO */}
-    <div className="absolute inset-0 md:hidden">
-      <video
-        src="/blackholemobile.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="metadata"
-        aria-hidden="true"
-        className="h-full w-full object-cover"
-      />
-    </div>
-
-    {/* DESKTOP VIDEO */}
-    <div className="absolute inset-0 hidden md:block">
-      <video
-        src="/visual.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="metadata"
-        aria-hidden="true"
-        className="h-full w-full object-cover"
-      />
-    </div>
-
-    {/* OVERLAY */}
-    <div className="absolute inset-0 bg-black/20" />
-
-    {/* TEXT */}
-    <div className="relative z-10 w-full px-6 py-20 md:px-10 lg:px-16">
-      <div className="mx-auto max-w-7xl text-center">
-
-        <p
-          className="stories-text-up mb-7 text-xs font-medium uppercase tracking-[0.2em] text-white/50"
-          style={{ animationDelay: "0ms" }}
-        >
-          Visual Storyteller
-        </p>
-
-        <h1
-          className="stories-text-up mx-auto max-w-5xl text-5xl font-semibold leading-[0.92] tracking-[-0.055em] text-white md:text-7xl lg:text-[100px]"
-          style={{ animationDelay: "120ms" }}
-        >
-          Stories made
-          <br />
-          to be felt
-        </h1>
-
-        <p
-          className="stories-text-up mx-auto mt-9 max-w-xl text-base leading-7 text-white/55 md:text-lg"
-          style={{ animationDelay: "240ms" }}
-        >
-          I like turning ideas into visual experiences through
-          storytelling, motion, sound, characters, and product films.
-        </p>
-
-        <div
-          className="stories-text-up mt-16 flex items-center justify-center gap-3 text-xs uppercase tracking-[0.18em] text-white/35"
-          style={{ animationDelay: "360ms" }}
-        >
-          <span className="h-px w-10 bg-white/30" />
-          Scroll to explore
-        </div>
-
-      </div>
-    </div>
-
-    {/* ANIMATION */}
-    <style>{`
-      .stories-text-up {
-        opacity: 0;
-        transform: translateY(24px);
-        animation: storiesTextUp 0.8s ease-out forwards;
-      }
-
-      @keyframes storiesTextUp {
-        from {
-          opacity: 0;
-          transform: translateY(24px);
-        }
-
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        .stories-text-up {
-          opacity: 1;
-          transform: none;
-          animation: none;
-        }
-      }
-    `}</style>
-
-  </section>
-
-
-
-      {/* SELECTED STORIES */}
-      {/* SELECTED STORIES */}
-<section className="relative px-6 pb-28 pt-28 md:px-10 lg:px-16">
-
-  {/* BLUR TRANSITION FROM HERO */}
-  <div className="pointer-events-none absolute inset-x-0 -top-32 h-48 overflow-hidden">
-    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#111111]/70 to-[#111111] blur-2xl" />
+  {/* VIDEO BACKGROUND */}
+  <div className="absolute inset-0">
+    <video
+      src="/visual.mp4"
+      autoPlay
+      loop
+      muted
+      playsInline
+      preload="metadata"
+      aria-hidden="true"
+      className="h-full w-full object-cover"
+    />
   </div>
 
-  <div className="relative z-10 mx-auto max-w-7xl">
+  {/* TEXT CONTENT */}
+  <div className="relative z-10 w-full px-6 py-20 md:px-10 lg:px-16">
+
+    <div className="mx-auto max-w-7xl text-center">
+
+      {/* Small intro */}
+      <p
+        className="stories-text-up mb-7 text-xs font-medium uppercase tracking-[0.2em] text-white/50"
+        style={{ animationDelay: "0ms" }}
+      >
+        Visual Storyteller
+      </p>
+
+      {/* Main heading */}
+      <h1
+        className="stories-text-up mx-auto max-w-5xl text-5xl font-semibold leading-[0.92] tracking-[-0.055em] text-white md:text-7xl lg:text-[100px]"
+        style={{ animationDelay: "120ms" }}
+      >
+        Stories made
+        <br />
+        to be felt.
+      </h1>
+
+      {/* Description */}
+      <p
+        className="stories-text-up mx-auto mt-9 max-w-xl text-base leading-7 text-white/55 md:text-lg"
+        style={{ animationDelay: "240ms" }}
+      >
+        I like turning ideas into visual experiences through
+        storytelling, motion, sound, characters, and product films.
+      </p>
+
+      {/* Scroll hint */}
+      <div
+        className="stories-text-up mt-16 flex items-center justify-center gap-3 text-xs uppercase tracking-[0.18em] text-white/35"
+        style={{ animationDelay: "360ms" }}
+      >
+        <span className="h-px w-10 bg-white/30" />
+        Scroll to explore
+      </div>
+
+    </div>
+
+  </div>
+
+  {/* SECTION ANIMATION */}
+  <style>{`
+    .stories-text-up {
+      opacity: 0;
+      transform: translateY(24px);
+      animation: storiesTextUp 0.8s ease-out forwards;
+    }
+
+    @keyframes storiesTextUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .stories-text-up {
+        opacity: 1;
+        transform: none;
+        animation: none;
+      }
+    }
+  `}</style>
+
+</section>
+
+      {/* SELECTED STORIES */}
+      {/* SELECTED STORIES */}
+<section className="px-6 pb-28 pt-28 md:px-10 lg:px-16">
+  <div className="mx-auto max-w-7xl">
 
     {/* Section heading */}
     <div className="mb-8 flex items-end justify-between">
@@ -188,8 +166,135 @@ export default function StoriesPage() {
       </span>
     </div>
 
-    {/* REST OF YOUR CONTENT... */}
+    {/* FEATURED STORY */}
+    <Link
+      href="#"
+      className="group relative mb-6 block overflow-hidden rounded-[28px] bg-[#1A1A1A]"
+    >
+      <div className="relative aspect-[16/8] overflow-hidden bg-[#222222]">
 
+        {/* VIDEO */}
+        <video
+          ref={videoRef}
+          src="/bridgrVid.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+        />
+
+        {/* Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+
+        {/* Info */}
+        <div className="absolute bottom-6 left-6 right-6 md:bottom-8 md:left-8">
+          <p className="text-[10px] uppercase tracking-[0.18em] text-white/40">
+            01 / Product Story
+          </p>
+
+          <div className="mt-2 flex items-end justify-between gap-4">
+            <h3 className="text-4xl font-medium tracking-[-0.04em] md:text-6xl">
+              Bridgr
+            </h3>
+          </div>
+        </div>
+
+        {/* Sound Button */}
+        <button
+          type="button"
+          onClick={toggleMute}
+          aria-label={isMuted ? "Unmute video" : "Mute video"}
+          className="absolute right-6 top-6 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-sm text-white/70 backdrop-blur-md transition-all duration-300 hover:scale-110 hover:bg-white hover:text-black"
+        >
+          {isMuted ? "🔇" : "🔊"}
+        </button>
+
+      </div>
+    </Link>
+
+    {/* SMALL STORIES */}
+    <div className="grid gap-6 md:grid-cols-2">
+
+      {/* Character Story */}
+      <Link
+        href="#"
+        className="group relative overflow-hidden rounded-[28px] bg-[#1A1A1A]"
+      >
+        <div className="relative aspect-[4/3] overflow-hidden bg-[#222222]">
+
+          {/* VIDEO */}
+          <video
+            src="/conversations.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata"
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+          />
+
+          {/* Gradient */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+
+          <div className="absolute bottom-5 left-5 right-5">
+            <p className="text-[10px] uppercase tracking-[0.18em] text-white/35">
+              02 / Character Story
+            </p>
+
+            <h3 className="mt-2 text-3xl font-medium tracking-[-0.035em]">
+              Conversations
+            </h3>
+          </div>
+
+          <div className="absolute right-5 top-5 flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-xs text-white/60 backdrop-blur-md transition-all duration-500 group-hover:scale-110 group-hover:bg-white group-hover:text-black">
+            ▶
+          </div>
+        </div>
+      </Link>
+
+      {/* Narrative */}
+      <Link
+        href="#"
+        className="group relative overflow-hidden rounded-[28px] bg-[#1A1A1A]"
+      >
+        <div className="relative aspect-[4/3] overflow-hidden bg-[#222222]">
+
+          {/* VIDEO */}
+          <video
+            src="/the-last-point.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata"
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+          />
+
+          {/* Gradient */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+
+          <div className="absolute bottom-5 left-5 right-5">
+            <p className="text-[10px] uppercase tracking-[0.18em] text-white/35">
+              03 / Narrative
+            </p>
+
+            <h3 className="mt-2 text-3xl font-medium tracking-[-0.035em]">
+              The Last Point
+            </h3>
+          </div>
+
+          <div className="absolute right-5 top-5 flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-xs text-white/60 backdrop-blur-md transition-all duration-500 group-hover:scale-110 group-hover:bg-white group-hover:text-black">
+            ▶
+          </div>
+        </div>
+      </Link>
+
+    </div>
   </div>
 </section>
 
