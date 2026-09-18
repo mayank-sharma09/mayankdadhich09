@@ -170,7 +170,7 @@ export default function DesignPage() {
           CTA
       ================================================= */}
 
-      <section className="px-6 pb-24 md:px-10 lg:px-16">
+      <section className="px-6 mt-24 pb-24 md:px-10 lg:px-16">
         <div
           className="
             mx-auto
@@ -229,7 +229,7 @@ export default function DesignPage() {
           FOOTER
       ================================================= */}
 
-      <footer className="px-6 pb-28 md:px-10 md:pb-10 lg:px-16">
+      <footer className="px-6 pb-28 md:px-10 md:pb-10 lg:px-16 text-gray-500">
         <div
           className="
             mx-auto
@@ -247,10 +247,10 @@ export default function DesignPage() {
           "
         >
           <p className="text-sm font-medium">
-            Mayank.
+           © 2026  Mayank Dadhich.
           </p>
 
-          <p className="text-xs text-black/35">
+          <p className="text-xs ">
             Product Design · Frontend · Visual Storytelling
           </p>
         </div>

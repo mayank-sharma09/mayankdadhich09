@@ -231,18 +231,18 @@ export default function StoriesPage() {
     </Link>
 
     {/* SMALL STORIES */}
-    <div className="grid gap-6 md:grid-cols-2">
+    <div className="grid gap-6 md:grid-cols-3">
 
       {/* Character Story */}
       <Link
         href="#"
-        className="group relative overflow-hidden rounded-[28px] bg-[#1A1A1A]"
+        className="group relative max-w-[260px] overflow-hidden rounded-[28px] bg-[#1A1A1A]"
       >
-        <div className="relative aspect-[4/3] overflow-hidden bg-[#222222]">
+        <div className="relative aspect-[9/16] overflow-hidden bg-[#222222]">
 
           {/* VIDEO */}
           <video
-            src="/conversations.mp4"
+            src="/bridgR-App.mp4"
             autoPlay
             loop
             muted
@@ -261,7 +261,7 @@ export default function StoriesPage() {
             </p>
 
             <h3 className="mt-2 text-3xl font-medium tracking-[-0.035em]">
-              Conversations
+              AI Advertisement
             </h3>
           </div>
 
@@ -274,13 +274,13 @@ export default function StoriesPage() {
       {/* Narrative */}
       <Link
         href="#"
-        className="group relative overflow-hidden rounded-[28px] bg-[#1A1A1A]"
+        className="group relative max-w-[260px] overflow-hidden rounded-[28px] bg-[#1A1A1A]"
       >
-        <div className="relative aspect-[4/3] overflow-hidden bg-[#222222]">
+        <div className="relative aspect-[9/16] overflow-hidden bg-[#222222]">
 
           {/* VIDEO */}
           <video
-            src="/the-last-point.mp4"
+            src="/bride-reel.mp4"
             autoPlay
             loop
             muted
@@ -295,17 +295,15 @@ export default function StoriesPage() {
 
           <div className="absolute bottom-5 left-5 right-5">
             <p className="text-[10px] uppercase tracking-[0.18em] text-white/35">
-              03 / Narrative
+              03 / Reel
             </p>
 
             <h3 className="mt-2 text-3xl font-medium tracking-[-0.035em]">
-              The Last Point
+             Reel
             </h3>
           </div>
 
-          <div className="absolute right-5 top-5 flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-xs text-white/60 backdrop-blur-md transition-all duration-500 group-hover:scale-110 group-hover:bg-white group-hover:text-black">
-            ▶
-          </div>
+          
         </div>
       </Link>
 
