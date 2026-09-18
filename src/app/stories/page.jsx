@@ -55,18 +55,33 @@ export default function StoriesPage() {
      <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
 
   {/* VIDEO BACKGROUND */}
-  <div className="absolute inset-0">
-    <video
-      src="/visual.mp4"
-      autoPlay
-      loop
-      muted
-      playsInline
-      preload="metadata"
-      aria-hidden="true"
-      className="h-full w-full object-cover"
-    />
-  </div>
+{/* MOBILE VIDEO */}
+<div className="absolute inset-0 md:hidden">
+  <video
+    src="/blackholemobile.mp4"
+    autoPlay
+    loop
+    muted
+    playsInline
+    preload="metadata"
+    aria-hidden="true"
+    className="h-full w-full object-cover"
+  />
+</div>
+
+{/* DESKTOP VIDEO */}
+<div className="absolute inset-0 hidden md:block">
+  <video
+    src="/visual.mp4"
+    autoPlay
+    loop
+    muted
+    playsInline
+    preload="metadata"
+    aria-hidden="true"
+    className="h-full w-full object-cover"
+  />
+</div>
 
   {/* TEXT CONTENT */}
   <div className="relative z-10 w-full px-6 py-20 md:px-10 lg:px-16">
