@@ -53,8 +53,7 @@ export default function StoriesPage() {
     loop
     muted
     playsInline
-    preload="auto"
-    poster="/blackholemobile-poster.png"
+    preload="metadata"
     aria-hidden="true"
     className="h-full w-full object-cover"
   />
@@ -68,8 +67,7 @@ export default function StoriesPage() {
     loop
     muted
     playsInline
-    preload="auto"
-    poster="/visual-poster.png"
+    preload="metadata"
     aria-hidden="true"
     className="h-full w-full object-cover"
   />
@@ -233,7 +231,7 @@ export default function StoriesPage() {
           <video
             ref={video1Ref}
             src="/bridgR-App.mp4"
-            autoPlay
+          autoPlay
             loop
             muted
             playsInline
