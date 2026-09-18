@@ -30,7 +30,7 @@ export default function DesignPage() {
 
 
         {/* TEXT */}
-      <div className="relative z-10 mx-auto w-full max-w-[1600px] px-6 pt-100 sm:px-10 sm:pt-32 md:px-12 md:py-20 lg:px-16">
+      <div className="relative z-10 mx-auto w-full max-w-[1600px] px-6 pt-100 sm:px-10 sm:pt-16 md:px-12 md:py-20 lg:px-16">
   <div className="mx-auto max-w-6xl  text-center ">
 
     {/* Small intro */}
