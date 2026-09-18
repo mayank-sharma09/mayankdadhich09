@@ -2,43 +2,32 @@
 import Link from "next/link";
 import { useRef, useState } from "react";
 
-const stories = [
-  {
-    number: "01",
-    type: "Product Story",
-    title: "Bridgr",
-    description:
-      "A short product advertisement created to show how a traditional library can move from paper and spreadsheets to smarter digital management.",
-    tags: ["Ad Film", "Product Story", "Visual Direction"],
-    video: "/bridgrVid.mp4",
-    className: "md:col-span-2",
-  },
-  {
-    number: "02",
-    type: "Character Story",
-    title: "Conversations",
-    description:
-      "Short visual stories built around characters, everyday situations, and the small conversations that make a scene feel alive.",
-    tags: ["Characters", "Storytelling", "Direction"],
-    video: "/images/character-story.jpg",
-    className: "",
-  },
-  {
-    number: "03",
-    type: "Narrative",
-    title: "The Last Point",
-    description:
-      "A visual story about ambition, competition, friendship, and the moments that happen beyond the final point.",
-    tags: ["2D Story", "Narrative", "Sound"],
-    video: "/images/the-last-point.jpg",
-    className: "",
-  },
-];
+
 
 export default function StoriesPage() {
 
   const videoRef = useRef(null);
   const [isMuted, setIsMuted] = useState(true);
+   const video1Ref = useRef(null);
+  const video2Ref = useRef(null);
+
+  const [muted1, setMuted1] = useState(true);
+  const [muted2, setMuted2] = useState(true);
+
+  const toggleMute1 = () => {
+    if (!video1Ref.current) return;
+
+    video1Ref.current.muted = !video1Ref.current.muted;
+    setMuted1(video1Ref.current.muted);
+  };
+
+  const toggleMute2 = () => {
+    if (!video2Ref.current) return;
+
+    video2Ref.current.muted = !video2Ref.current.muted;
+    setMuted2(video2Ref.current.muted);
+  };
+
 
   const toggleMute = (e) => {
     e.preventDefault();
@@ -242,6 +231,7 @@ export default function StoriesPage() {
 
           {/* VIDEO */}
           <video
+            ref={video1Ref}
             src="/bridgR-App.mp4"
             autoPlay
             loop
@@ -254,7 +244,18 @@ export default function StoriesPage() {
 
           {/* Gradient */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-
+           <button
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              toggleMute1();
+            }}
+            className="absolute right-5 top-5 z-20 flex h-9 w-9 items-center justify-center rounded-full bg-black/30 text-sm text-white backdrop-blur-md transition-all duration-300 hover:bg-white hover:text-black"
+            aria-label={muted1 ? "Unmute video" : "Mute video"}
+          >
+            {muted1 ? "🔇" : "🔊"}
+          </button>
           <div className="absolute bottom-5 left-5 right-5">
             <p className="text-[10px] uppercase tracking-[0.18em] text-white/35">
               02 / Character Story
@@ -265,9 +266,7 @@ export default function StoriesPage() {
             </h3>
           </div>
 
-          <div className="absolute right-5 top-5 flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-xs text-white/60 backdrop-blur-md transition-all duration-500 group-hover:scale-110 group-hover:bg-white group-hover:text-black">
-            ▶
-          </div>
+          
         </div>
       </Link>
 
@@ -280,6 +279,7 @@ export default function StoriesPage() {
 
           {/* VIDEO */}
           <video
+            ref={video2Ref}
             src="/bride-reel.mp4"
             autoPlay
             loop
@@ -292,7 +292,18 @@ export default function StoriesPage() {
 
           {/* Gradient */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-
+          <button
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              toggleMute2();
+            }}
+            className="absolute right-5 top-5 z-20 flex h-9 w-9 items-center justify-center rounded-full bg-black/30 text-sm text-white backdrop-blur-md transition-all duration-300 hover:bg-white hover:text-black"
+            aria-label={muted2 ? "Unmute video" : "Mute video"}
+          >
+            {muted2 ? "🔇" : "🔊"}
+          </button>
           <div className="absolute bottom-5 left-5 right-5">
             <p className="text-[10px] uppercase tracking-[0.18em] text-white/35">
               03 / Reel
@@ -414,7 +425,7 @@ export default function StoriesPage() {
             </h2>
 
             <Link
-              href="/#contact"
+             href="mailto:dadhichmayank@gmail.com"
               className="group flex w-fit items-center gap-3 rounded-full bg-white px-6 py-3 text-sm font-medium text-black transition-transform duration-300 hover:scale-105"
             >
               Let's talk
