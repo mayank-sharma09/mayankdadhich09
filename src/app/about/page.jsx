@@ -14,26 +14,138 @@ export default function Page() {
         {/* =========================
             HERO 
         ========================== */}
-        <section   data-theme="light"
-  data-label="WELCOME" className="mx-auto max-w-7xl px-6 pb-24 pt-36 sm:px-10 md:pt-40 lg:px-16 ">
-          <div className="max-w-5xl">
-            <p className="mb-6 text-sm font-medium uppercase tracking-[0.18em] text-black/50">
-              About Me
-            </p>
+    <section
+  data-theme="light"
+  data-label="WELCOME"
+  className="relative mx-auto max-w-7xl overflow-hidden px-6 pb-24 pt-36 sm:px-10 md:pt-40 lg:px-16"
+>
+  <div className="relative z-10">
 
-            <h1 className="text-5xl font-semibold leading-[1.05] tracking-[-0.04em] sm:text-6xl md:text-7xl lg:text-[92px]">
-             I've always been curious
+    {/* PHOTO */}
+    <div className="about-photo relative mx-auto mb-14 flex justify-center md:mb-16">
 
+      {/* subtle ring */}
+      <div className="about-ring absolute inset-0 m-auto h-[230px] w-[230px] rounded-full border border-black/10 sm:h-[270px] sm:w-[270px] md:h-[310px] md:w-[310px]" />
 
-              <br />
-             about how things
-              <br />
-              <span className="text-black/35">
-              come together.
-              </span>
-            </h1>
-          </div>
-        </section>
+      {/* photo */}
+      <div className="relative h-[210px] w-[210px] overflow-hidden rounded-full bg-[#E5E5E3] sm:h-[250px] sm:w-[250px] md:h-[290px] md:w-[290px]">
+        <img
+          src="/profilepic.jpg"
+          alt="Mayank Sharma"
+          className="h-full w-full object-cover"
+        />
+      </div>
+    </div>
+
+    {/* HEADING */}
+    <div className="about-heading mx-auto max-w-5xl text-center">
+      <h1 className="text-5xl font-semibold leading-[0.98] tracking-[-0.055em] sm:text-6xl md:text-7xl lg:text-[92px]">
+        I've always been curious
+        <br className="hidden md:block" />
+        about how things
+        <br className="hidden md:block" />
+        <span className="text-black/30">
+          come together.
+        </span>
+      </h1>
+    </div>
+
+    {/* DESCRIPTION */}
+    <div className="about-description mx-auto mt-10 max-w-md text-center">
+      <p className="text-sm leading-6 text-black/45 md:text-base md:leading-7">
+        Design, technology, and storytelling have always been
+        different ways for me to explore that curiosity.
+      </p>
+    </div>
+
+  </div>
+
+  <style>{`
+    /* PHOTO */
+    .about-photo {
+      opacity: 0;
+      transform: translateY(40px) scale(0.92);
+      filter: blur(10px);
+      animation: aboutPhotoIn 1s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards;
+    }
+
+    @keyframes aboutPhotoIn {
+      0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.92);
+        filter: blur(10px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+      }
+    }
+
+    /* RING */
+    .about-ring {
+      opacity: 0;
+      transform: scale(0.7);
+      animation: ringIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.35s forwards;
+    }
+
+    @keyframes ringIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.7);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* HEADING */
+    .about-heading {
+      opacity: 0;
+      transform: translateY(35px);
+      filter: blur(8px);
+      animation: aboutTextIn 1s cubic-bezier(0.22, 1, 0.36, 1) 0.45s forwards;
+    }
+
+    /* DESCRIPTION */
+    .about-description {
+      opacity: 0;
+      transform: translateY(25px);
+      filter: blur(6px);
+      animation: aboutTextIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.7s forwards;
+    }
+
+    @keyframes aboutTextIn {
+      0% {
+        opacity: 0;
+        transform: translateY(35px);
+        filter: blur(8px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+      }
+    }
+
+    /* ACCESSIBILITY */
+    @media (prefers-reduced-motion: reduce) {
+      .about-photo,
+      .about-ring,
+      .about-heading,
+      .about-description {
+        opacity: 1;
+        transform: none;
+        filter: none;
+        animation: none;
+      }
+    }
+  `}</style>
+</section>
 
         {/* =========================
             INTRO
