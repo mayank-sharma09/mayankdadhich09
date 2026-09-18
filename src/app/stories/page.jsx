@@ -231,12 +231,12 @@ export default function StoriesPage() {
     </Link>
 
     {/* SMALL STORIES */}
-    <div className="grid gap-6 md:grid-cols-3">
+    <div className="grid gap-6 md:grid-cols-3 ">
 
       {/* Character Story */}
       <Link
         href="#"
-        className="group relative max-w-[260px] overflow-hidden rounded-[28px] bg-[#1A1A1A]"
+        className="group relative mx-auto w-[260px]  overflow-hidden rounded-[28px] bg-[#1A1A1A]"
       >
         <div className="relative aspect-[9/16] overflow-hidden bg-[#222222]">
 
@@ -274,9 +274,9 @@ export default function StoriesPage() {
       {/* Narrative */}
       <Link
         href="#"
-        className="group relative max-w-[260px] overflow-hidden rounded-[28px] bg-[#1A1A1A]"
+        className="group relative mx-auto w-[260px]  overflow-hidden rounded-[28px] bg-[#1A1A1A]"
       >
-        <div className="relative aspect-[9/16] overflow-hidden bg-[#222222]">
+        <div className="relative aspect-[9/16] overflow-hidden bg-[#222222] ">
 
           {/* VIDEO */}
           <video
