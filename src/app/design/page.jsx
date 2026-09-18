@@ -41,7 +41,7 @@ export default function DesignPage() {
   </div> */}
 
   {/* TEXT */}
-  <div className="relative z-10 mx-auto w-full max-w-[1600px] px-6 py-20 sm:px-10 md:px-12 lg:px-16">
+  <div className="relative z-10 mx-auto w-full font-sans  max-w-[1600px] px-6 py-20 sm:px-10 md:px-12 lg:px-16">
     <div className="mx-auto max-w-6xl text-center">
 
       {/* Small intro */}
@@ -211,7 +211,7 @@ export default function DesignPage() {
                 <div className="flex items-center gap-2">
                   {/* Instagram */}
                   <a
-                    href="https://www.instagram.com/YOUR_USERNAME"
+                    href="https://www.instagram.com/mayankdadhich._?stkn=a2p4b2c1ZWhwMzlo"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram"
@@ -225,7 +225,7 @@ export default function DesignPage() {
             
                   {/* LinkedIn */}
                   <a
-                   href="https://www.instagram.com/mayankdadhich._?stkn=a2p4b2c1ZWhwMzlo"
+                href="https://www.linkedin.com/in/mayank-sharma-ab0a9b226/"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="LinkedIn"

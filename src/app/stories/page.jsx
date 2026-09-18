@@ -74,7 +74,7 @@ export default function StoriesPage() {
 </div>
 
   {/* TEXT CONTENT */}
-  <div className="relative z-10 w-full px-6 py-20 md:px-10 lg:px-16">
+  <div className="relative z-10 w-full px-6 py-20 md:px-10 lg:px-16 font-serif ">
 
     <div className="mx-auto max-w-7xl text-center">
 
@@ -97,13 +97,7 @@ export default function StoriesPage() {
       </h1>
 
       {/* Description */}
-      <p
-        className="stories-text-up mx-auto mt-9 max-w-xl text-base leading-7 text-white/55 md:text-lg"
-        style={{ animationDelay: "240ms" }}
-      >
-        I like turning ideas into visual experiences through
-        storytelling, motion, sound, characters, and product films.
-      </p>
+    
 
       {/* Scroll hint */}
       <div
@@ -389,29 +383,29 @@ export default function StoriesPage() {
       </section>
 
       {/* PHILOSOPHY */}
-      <section className="border-t border-white/10 px-6 py-28 md:px-10 lg:px-16">
-        <div className="mx-auto max-w-7xl">
-          <div className="rounded-[36px] bg-[#E7E7E7] px-6 py-20 text-black md:px-12 md:py-28">
-            <p className="text-xs font-medium uppercase tracking-[0.2em] text-black/30">
-              My Approach
-            </p>
+     <section className="border-t border-white/10 px-5 py-20 sm:px-6 sm:py-24 md:px-10 md:py-28 lg:px-16">
+  <div className="mx-auto max-w-7xl leading-normal    // 1.5">
+    <div className="rounded-[28px] bg-[#E7E7E7] text-black px-6 py-12 sm:px-8 sm:py-16 md:rounded-[36px] md:px-12 md:py-28">
+      
+      <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-black/30 sm:text-xs">
+        My Approach
+      </p>
 
-            <h2 className="mt-8 max-w-5xl text-4xl font-semibold leading-[1.02] tracking-[-0.045em] md:text-6xl">
-              I don't just want to show
-              <br className="hidden md:block" />
-              something beautiful.
-              <br />
-              I want to make people feel something.
-            </h2>
+      <h2 className="mt-6 max-w-5xl text-[36px] font-semibold leading-[1.02] tracking-[-0.045em] sm:text-4xl md:mt-8 md:text-6xl">
+        I don't just want to show something beautiful.
+       
+        I want to make people feel something.
+      </h2>
 
-            <p className="mt-8 max-w-xl text-sm leading-6 text-black/45 md:text-base">
-              Whether it is a product advertisement, a character
-              conversation, or a personal story, I care about the idea
-              behind the visuals and the emotion they leave behind.
-            </p>
-          </div>
-        </div>
-      </section>
+      <p className="mt-6 max-w-xl text-sm leading-6 text-black/45 sm:mt-8 sm:text-base sm:leading-7">
+        Whether it is a product advertisement, a character
+        conversation, or a personal story, I care about the idea
+        behind the visuals and the emotion they leave behind.
+      </p>
+
+    </div>
+  </div>
+</section>
 
       {/* CTA */}
       <section className="px-6 pb-24 md:px-10 lg:px-26">
