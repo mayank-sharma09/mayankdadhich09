@@ -10,83 +10,118 @@ export default function DesignPage() {
           HERO
       ================================================= */}
 
-     <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#F7F7F5]">
+      <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#F7F7F5]">
 
-  {/* DESKTOP VIDEO */}
- <div className="absolute inset-0 hidden md:block">
-    <video
-      src="/designPage.mp4"
-      autoPlay
-      loop
-      muted
-      playsInline
-      preload="metadata"
-      aria-hidden="true"
-      className="h-full w-full object-cover"
-    />
-  </div>
+        {/* DESKTOP VIDEO */}
+        <div className="absolute inset-0 hidden md:block">
+          <video
+            src="/designPage.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata"
+            aria-hidden="true"
+            className="h-full w-full object-cover"
+          />
+        </div>
 
-  {/* MOBILE VIDEO 
-  <div className="absolute inset-0 block md:hidden">
-    <video
-      src="/designPage.mp4"
-      autoPlay
-      loop
-      muted
-      playsInline
-      preload="metadata"
-      aria-hidden="true"
-      className="h-full w-full object-cover"
-    />
-  </div> */}
+        {/* MOBILE VIDEO  */}
 
-  {/* TEXT */}
-  <div className="relative z-10 mx-auto w-full font-sans  max-w-[1600px] px-6 py-20 sm:px-10 md:px-12 lg:px-16">
-    <div className="mx-auto max-w-6xl text-center">
 
-      {/* Small intro */}
-      <p
-        className="mayank-hero-text-up mb-5 text-[10px] font-medium uppercase leading-[1.6] tracking-[0.16em] text-black/40 sm:mb-7 sm:text-xs sm:tracking-[0.18em] md:text-sm"
-        style={{ animationDelay: "0ms" }}
-      >
-        Product Design
-      </p>
+        {/* TEXT */}
+        <div className="relative z-10 mx-auto w-full font-sans  max-w-[1600px] px-6 py-20 sm:px-10 md:px-12 lg:px-16">
+          <div className="mx-auto max-w-6xl text-center">
 
-      {/* Main heading */}
-      <h1
-        className="mayank-hero-text-up mx-auto max-w-5xl text-[42px] font-semibold leading-[0.98] tracking-[-0.055em] text-black sm:text-[52px] md:text-7xl lg:text-[76px] xl:text-[88px]"
-        style={{ animationDelay: "120ms" }}
-      >
-        Designing things
-        <br />
-        Worth experiencing.
-      </h1>
+            {/* Small intro */}
+            <p
+              className="mayank-hero-text-up mb-5 text-[10px] font-medium uppercase leading-[1.6] tracking-[0.16em] text-black/40 sm:mb-7 sm:text-xs sm:tracking-[0.18em] md:text-sm"
+              style={{ animationDelay: "0ms" }}
+            >
+              Product Design
+            </p>
 
-      {/* Buttons */}
-      <div
-        className="mayank-hero-text-up mt-8 flex flex-wrap items-center justify-center gap-3 sm:mt-10"
-        style={{ animationDelay: "240ms" }}
-      >
-        <a
-          href="#work"
-          className="rounded-full bg-[#111111] px-5 py-3 text-xs font-medium text-white transition-all duration-300 hover:-translate-y-1 sm:px-6 sm:py-3.5 sm:text-sm"
-        >
-          Explore my work ↓
-        </a>
+            {/* Main heading */}
+            {/* MAIN HEADING + MOBILE SHAPES */}
+            <div className="relative mx-auto max-w-5xl">
 
-        <a
-          href="/about"
-          className="rounded-full border border-black/10 bg-white/30 px-5 py-3 text-xs font-medium text-black/60 backdrop-blur-md transition-all duration-300 hover:border-black/20 hover:bg-white/60 hover:text-black sm:px-6 sm:py-3.5 sm:text-sm"
-        >
-          More about me ↗
-        </a>
-      </div>
+              {/* MOBILE FLOATING SHAPES */}
+              <div className="pointer-events-none absolute inset-0 md:hidden">
 
-    </div>
-  </div>
+                {/* Top left circle */}
+                <span className="hero-shape hero-shape-1 absolute left-[4%] top-[8%] h-3 w-3 rounded-full bg-black/10" />
 
-  {/* HERO-ONLY ANIMATION */}
-  <style>{`
+                {/* Top right ring */}
+                <span className="hero-shape hero-shape-2 absolute right-[5%] top-[18%] h-8 w-8 rounded-full border border-black/10" />
+
+                {/* Left small square */}
+                <span className="hero-shape hero-shape-3 absolute left-[10%] top-[48%] h-5 w-5 rotate-12 rounded-[6px] border border-black/10" />
+
+                {/* Right diamond */}
+                <span className="hero-shape hero-shape-4 absolute right-[7%] top-[55%] h-4 w-4 rotate-45 bg-black/[0.06]" />
+
+                {/* Bottom left ring */}
+                <span className="hero-shape hero-shape-5 absolute bottom-[4%] left-[20%] h-6 w-6 rounded-full border border-black/10" />
+
+                {/* Bottom right dot */}
+                <span className="hero-shape hero-shape-6 absolute bottom-[10%] right-[22%] h-2 w-2 rounded-full bg-black/15" />
+
+              </div>
+
+              <h1
+                className="mayank-hero-text-up relative z-10 text-[42px] font-semibold leading-[0.98] tracking-[-0.055em] text-black sm:text-[52px] md:text-7xl lg:text-[76px] xl:text-[88px]"
+                style={{ animationDelay: "120ms" }}
+              >
+                Designing things
+                <br />
+                Worth experiencing.
+              </h1>
+
+            </div>
+
+          </div>
+        </div>
+
+        {/* HERO-ONLY ANIMATION */}
+        <style>{`
+  .hero-shape {
+  animation: heroShapeFloat 5s ease-in-out infinite;
+}
+
+.hero-shape-1 {
+  animation-delay: 0s;
+}
+
+.hero-shape-2 {
+  animation-delay: 1s;
+}
+
+.hero-shape-3 {
+  animation-delay: 2s;
+}
+
+.hero-shape-4 {
+  animation-delay: 0.7s;
+}
+
+.hero-shape-5 {
+  animation-delay: 1.5s;
+}
+
+.hero-shape-6 {
+  animation-delay: 2.5s;
+}
+
+@keyframes heroShapeFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate3d(0, -12px, 0) rotate(8deg);
+  }
+}
     .mayank-hero-text-up {
       opacity: 0;
       transform: translateY(20px);
@@ -114,7 +149,7 @@ export default function DesignPage() {
     }
   `}</style>
 
-</section>
+      </section>
 
       {/* =================================================
           SELECTED WORK
@@ -196,48 +231,48 @@ export default function DesignPage() {
             </h2>
 
             <div className="flex items-center gap-4">
-                {/* Let's Talk */}
+              {/* Let's Talk */}
+              <a
+                href="mailto:dadhichmayank09@gmail.com"
+                className="group flex w-fit items-center gap-3 rounded-full bg-white px-6 py-3 text-sm font-medium text-black transition-transform duration-300 hover:scale-105"
+              >
+                Let's talk
+                <span className="transition-transform duration-300 group-hover:translate-x-1">
+                  ↗
+                </span>
+              </a>
+
+              {/* Social Icons */}
+              <div className="flex items-center gap-2">
+                {/* Instagram */}
                 <a
-                  href="mailto:dadhichmayank09@gmail.com"
-                  className="group flex w-fit items-center gap-3 rounded-full bg-white px-6 py-3 text-sm font-medium text-black transition-transform duration-300 hover:scale-105"
+                  href="https://www.instagram.com/mayankdadhich._?stkn=a2p4b2c1ZWhwMzlo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="group flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-white/40 transition-all duration-300 hover:border-transparent hover:bg-gradient-to-br hover:from-[#f58529] hover:via-[#dd2a7b] hover:to-[#8134af] hover:text-white"
                 >
-                  Let's talk
-                  <span className="transition-transform duration-300 group-hover:translate-x-1">
-                    ↗
-                  </span>
+                  <FaInstagram
+                    size={17}
+                    className="transition-transform duration-300 group-hover:scale-110"
+                  />
                 </a>
-            
-                {/* Social Icons */}
-                <div className="flex items-center gap-2">
-                  {/* Instagram */}
-                  <a
-                    href="https://www.instagram.com/mayankdadhich._?stkn=a2p4b2c1ZWhwMzlo"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Instagram"
-                    className="group flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-white/40 transition-all duration-300 hover:border-transparent hover:bg-gradient-to-br hover:from-[#f58529] hover:via-[#dd2a7b] hover:to-[#8134af] hover:text-white"
-                  >
-                    <FaInstagram
-                      size={17}
-                      className="transition-transform duration-300 group-hover:scale-110"
-                    />
-                  </a>
-            
-                  {/* LinkedIn */}
-                  <a
-                href="https://www.linkedin.com/in/mayank-sharma-ab0a9b226/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="LinkedIn"
-                    className="group flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-white/40 transition-all duration-300 hover:border-[#0A66C2] hover:bg-[#0A66C2] hover:text-white"
-                  >
-                    <FaLinkedinIn
-                      size={17}
-                      className="transition-transform duration-300 group-hover:scale-110"
-                    />
-                  </a>
-                </div>
+
+                {/* LinkedIn */}
+                <a
+                  href="https://www.linkedin.com/in/mayank-sharma-ab0a9b226/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="group flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-white/40 transition-all duration-300 hover:border-[#0A66C2] hover:bg-[#0A66C2] hover:text-white"
+                >
+                  <FaLinkedinIn
+                    size={17}
+                    className="transition-transform duration-300 group-hover:scale-110"
+                  />
+                </a>
               </div>
+            </div>
           </div>
         </div>
       </section>
@@ -247,11 +282,11 @@ export default function DesignPage() {
       ================================================= */}
 
       <footer className="px-6 pb-28 md:px-10 md:pb-10 lg:px-16 ">
-       <div className="mx-auto flex max-w-7xl flex-col gap-4 border-t border-white/10 pt-6 text-sm text-white/30 sm:flex-row sm:items-center sm:justify-between">
-            <p>© {new Date().getFullYear()} Mayank Dadhich.</p>
+        <div className="mx-auto flex max-w-7xl flex-col gap-4 border-t border-white/10 pt-6 text-sm text-white/30 sm:flex-row sm:items-center sm:justify-between">
+          <p>© {new Date().getFullYear()} Mayank Dadhich.</p>
 
-            <p>Designed & built by Mayank Dadhich.</p>
-          </div>
+          <p>Designed & built by Mayank Dadhich.</p>
+        </div>
       </footer>
     </main>
   );
