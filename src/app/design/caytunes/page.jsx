@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import { useState } from "react";
 
 const researchMethods = [
@@ -58,49 +58,31 @@ const opportunityAreas = [
   },
 ];
 
-const informationArchitecture = [
-  {
-    title: "Home",
-    items: ["Trending", "Recommendations", "Artists", "Albums"],
-  },
-  {
-    title: "Search",
-    items: ["Songs", "Artists", "Albums"],
-  },
-  {
-    title: "Messages",
-    items: ["Conversations", "Music Notes", "Music Rooms"],
-  },
-  {
-    title: "Library",
-    items: ["Playlists", "Albums", "Saved Music"],
-  },
-  {
-    title: "Profile",
-    items: ["Music Identity", "Preferences"],
-  },
-];
 
 const flows = [
   {
     number: "01",
     title: "Discover & Play",
     flow: "Home → Album → Music Player",
+    image: "/IA.jpg",
   },
   {
     number: "02",
     title: "Find Music",
     flow: "Search → Artist / Song → Album → Player",
+    image: "/profilepic.jpg",
   },
   {
     number: "03",
     title: "Share Music",
     flow: "Chat → Music Note → Select Lyric → Share",
+    image: "/IA.jpg",
   },
   {
     number: "04",
     title: "Listen Together",
     flow: "Chat → Music Room → Invite → Shared Listening",
+    image: "/IA.jpg",
   },
 ];
 
@@ -125,32 +107,71 @@ const designPrinciples = [
 const prototypeScreens = [
   {
     title: "Home",
-    description: "Personalized discovery and trending music.",
+
+    image: "/userFlows/homePage.jpg"
   },
   {
     title: "Music Player",
-    description: "Focused playback experience.",
+
+    image: "/userFlows/mobilePlayer.jpg"
   },
   {
-    title: "Search",
-    description: "A simple way to find your vibe.",
+    title: "Music Room",
+
+    image: "/userFlows/room.jpg"
   },
   {
     title: "Library",
-    description: "Saved music and playlists in one place.",
+
+    image: "/userFlows/library.jpg"
   },
   {
     title: "Profile",
-    description: "A personal space for your music identity.",
+
+    image: "/userFlows/profile.jpg"
   },
   {
-    title: "Dream / Rise",
-    description: "Two visual modes for different moods.",
+    title: "Messages",
+
+    image: "/userFlows/messages.jpg"
+  },
+];
+const finalUI = [
+  {
+    title: "Home",
+
+    image: "/finalUI/home.jpg"
+  },
+  {
+    title: "Music Player",
+
+    image: "/finalUI/musicplayer.jpg"
+  },
+  {
+    title: "Music Room",
+
+    image: "/finalUI/musicRoom.jpg"
+  },
+  {
+    title: "Library",
+
+    image: "/finalUI/library.jpg"
+  },
+  {
+    title: "Profile",
+
+    image: "/finalUI/profile.jpg"
+  },
+  {
+    title: "Messages",
+
+    image: "/finalUI/messages.jpg"
   },
 ];
 
 export default function CayTunesCaseStudy() {
   const [videoPlaying, setVideoPlaying] = useState(false);
+  const [selectedFlow, setSelectedFlow] = useState(null);
 
   return (
     <main
@@ -444,11 +465,10 @@ export default function CayTunesCaseStudy() {
             {researchMethods.map((method, index) => (
               <div
                 key={method}
-                className={`min-h-[180px] p-7 ${
-                  index !== researchMethods.length - 1
-                    ? "border-b border-black/10 md:border-b-0 md:border-r"
-                    : ""
-                }`}
+                className={`min-h-[180px] p-7 ${index !== researchMethods.length - 1
+                  ? "border-b border-black/10 md:border-b-0 md:border-r"
+                  : ""
+                  }`}
               >
 
                 <span className="text-xs text-black/35">
@@ -615,42 +635,21 @@ export default function CayTunesCaseStudy() {
             light
           />
 
-          <div className="mx-auto mb-12 flex h-[70px] w-[180px] items-center justify-center rounded-[14px] border border-white/15 text-sm font-medium">
-            CAYTUNES
+          {/* IA IMAGE PLACEHOLDER */}
+          <div className="mt-16 overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.02]">
+            <div className=" overflow-hidden rounded-[24px] border border-white/10">
+              <img
+                src="/IA.jpg"
+                alt="CayTunes information architecture"
+                width={1600}
+                height={1000}
+                className="h-auto w-full"
+              />
+            </div>
           </div>
 
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
-
-            {informationArchitecture.map((section) => (
-              <div
-                key={section.title}
-                className="min-h-[240px] rounded-[20px] border border-white/10 p-6"
-              >
-
-                <h3 className="text-lg">
-                  {section.title}
-                </h3>
-
-                <div className="mt-8 flex flex-col gap-3">
-
-                  {section.items.map((item) => (
-                    <span
-                      key={item}
-                      className="text-sm text-white/40"
-                    >
-                      {item}
-                    </span>
-                  ))}
-
-                </div>
-
-              </div>
-            ))}
-
-          </div>
-
-          <div className="mt-12 max-w-[600px] text-sm leading-[1.6] text-white/40">
-
+          {/* DESCRIPTION */}
+          <div className="mt-10 max-w-[600px] text-sm leading-[1.6] text-white/40">
             <strong className="text-white/70">
               Conceptual architecture
             </strong>
@@ -660,7 +659,6 @@ export default function CayTunesCaseStudy() {
               product concept. The current prototype focuses on the
               core listening experience.
             </p>
-
           </div>
 
         </div>
@@ -672,7 +670,7 @@ export default function CayTunesCaseStudy() {
       ========================================================== */}
 
       <section className="px-4 py-24 sm:px-6 md:px-8 md:py-36">
-        <div className="mx-auto max-w-[1180px]">
+        <div className="mx-auto max-w-[1180px] cursor-pointer">
 
           <SectionHeading
             number="06"
@@ -680,21 +678,39 @@ export default function CayTunesCaseStudy() {
             title="Designing the paths between moments."
           />
 
-          <div className="border-t border-black/10">
+          <div className="border-t border-black/10 ">
 
             {flows.map((flow) => (
-              <div
+              <button
                 key={flow.number}
-                className="grid grid-cols-[45px_1fr_30px] items-center border-b border-black/10 py-8 md:grid-cols-[80px_1fr_50px]"
+                type="button"
+                onClick={() => setSelectedFlow(flow)}
+                className="
+            group
+            grid
+            w-full
+            grid-cols-[45px_1fr_30px]
+            items-center
+            border-b
+            border-black/10
+            py-8
+            text-left
+            transition-colors
+            duration-300
+            hover:bg-black/[0.02]
+            md:grid-cols-[80px_1fr_50px]
+          "
               >
 
+                {/* NUMBER */}
                 <span className="text-xs text-black/35">
                   {flow.number}
                 </span>
 
+                {/* CONTENT */}
                 <div>
 
-                  <h3 className="text-xl tracking-[-0.03em] md:text-[25px]">
+                  <h3 className="text-xl tracking-[-0.03em] md:text-[25px] cursor-pointer">
                     {flow.title}
                   </h3>
 
@@ -704,16 +720,130 @@ export default function CayTunesCaseStudy() {
 
                 </div>
 
-                <span className="text-xl">
+                {/* ARROW */}
+                <span
+                  className="
+              text-xl
+              transition-transform
+              duration-300
+              group-hover:translate-x-1
+            "
+                >
                   →
                 </span>
 
-              </div>
+              </button>
             ))}
 
           </div>
 
         </div>
+
+        {/* ================= USER FLOW MODAL ================= */}
+
+        {selectedFlow && (
+          <div
+            className="
+        fixed
+        inset-0
+        z-[999]
+        flex
+        items-center
+        justify-center
+        bg-black/60
+        px-4
+        py-6
+        backdrop-blur-md
+      "
+            onClick={() => setSelectedFlow(null)}
+          >
+
+            {/* MODAL */}
+            <div
+              className="
+          relative
+          max-h-[90vh]
+          w-full
+          max-w-[1100px]
+          overflow-auto
+          rounded-[28px]
+          bg-[#F7F7F5]
+          p-5
+          shadow-2xl
+          sm:p-8
+          md:p-10
+        "
+              onClick={(e) => e.stopPropagation()}
+            >
+
+              {/* CLOSE */}
+              <button
+                type="button"
+                onClick={() => setSelectedFlow(null)}
+                className="
+            absolute
+            right-5
+            top-5
+            z-20
+            flex
+            h-10
+            w-10
+            items-center
+            justify-center
+            rounded-full
+            bg-black/[0.05]
+            text-xl
+            text-black/50
+            transition
+            hover:bg-black
+            hover:text-white
+          "
+                aria-label="Close"
+              >
+                ×
+              </button>
+
+              {/* HEADER */}
+              <div className="pr-14">
+
+                <p className="text-xs font-medium uppercase tracking-[0.15em] text-black/35">
+                  User Flow
+                </p>
+
+                <h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em] md:text-4xl">
+                  {selectedFlow.title}
+                </h2>
+
+                <p className="mt-2 text-sm text-black/45">
+                  {selectedFlow.flow}
+                </p>
+
+              </div>
+
+              {/* IMAGE PLACEHOLDER */}
+              <div
+                className="
+    mt-8
+    overflow-hidden
+    rounded-[20px]
+    border
+    border-black/10
+    bg-white
+  "
+              >
+                <Image
+                  src={selectedFlow.image}
+                  alt={`${selectedFlow.title} user flow`}
+                  width={1600}
+                  height={1000}
+                  className="h-auto w-full"
+                />
+              </div>
+
+            </div>
+          </div>
+        )}
+
       </section>
 
 
@@ -736,16 +866,32 @@ export default function CayTunesCaseStudy() {
           </p>
 
           <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-5">
-
-            {[1, 2, 3, 4, 5, 6].map((item) => (
+            {prototypeScreens.map((screen) => (
               <div
-                key={item}
-                className="flex aspect-[4/5] items-center justify-center rounded-[20px] bg-[#DCDCDD] text-xs text-black/30 md:rounded-[24px]"
+                key={screen.title}
+                className="group overflow-hidden rounded-[20px] bg-[#DCDCDD] md:rounded-[24px]"
               >
-                Wireframe {String(item).padStart(2, "0")}
+                {/* IMAGE */}
+                <div className="aspect-[4/5] overflow-hidden">
+                  <img
+                    src={screen.image}
+                    alt={screen.title}
+                    className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                  />
+                </div>
+
+                {/* TEXT */}
+                <div className="px-4 py-4">
+                  <h3 className="text-sm font-medium text-black">
+                    {screen.title}
+                  </h3>
+
+                  <p className="mt-1 text-xs leading-5 text-black/40">
+                    {screen.description}
+                  </p>
+                </div>
               </div>
             ))}
-
           </div>
 
         </div>
@@ -756,65 +902,7 @@ export default function CayTunesCaseStudy() {
           VISUAL DIRECTION
       ========================================================== */}
 
-      <section className="px-4 py-24 sm:px-6 md:px-8 md:py-36">
-        <div className="mx-auto max-w-[1180px]">
 
-          <SectionHeading
-            number="08"
-            label="Visual Direction"
-            title="A visual language shaped by mood."
-          />
-
-          <div className="grid gap-4 md:grid-cols-2">
-
-            {/* Dream */}
-
-            <div className="rounded-[28px] bg-[#ECEAF6] p-8 md:p-12">
-
-              <span className="text-xs tracking-[0.08em] text-black/40">
-                DREAM MODE
-              </span>
-
-              <h3 className="mt-20 text-[30px] tracking-[-0.04em]">
-                Softer. Calmer. More immersive.
-              </h3>
-
-              <p className="mt-4 max-w-[450px] leading-[1.5] text-black/50">
-                A softer visual atmosphere designed for relaxed
-                listening and slower moments.
-              </p>
-
-            </div>
-
-            {/* Rise */}
-
-            <div className="rounded-[28px] bg-[#E8F0FF] p-8 md:p-12">
-
-              <span className="text-xs tracking-[0.08em] text-black/40">
-                RISE MODE
-              </span>
-
-              <h3 className="mt-20 text-[30px] tracking-[-0.04em]">
-                Brighter. Energetic. Expressive.
-              </h3>
-
-              <p className="mt-4 max-w-[450px] leading-[1.5] text-black/50">
-                A brighter atmosphere designed to create a more
-                energetic listening experience.
-              </p>
-
-            </div>
-
-          </div>
-
-          {/* Moodboard placeholder */}
-
-          <div className="mt-5 flex min-h-[480px] items-center justify-center overflow-hidden rounded-[28px] bg-[radial-gradient(circle_at_30%_30%,rgba(130,112,255,0.22),transparent_35%),#E8E8EA] text-xs text-black/35">
-            VISUAL DIRECTION / MOODBOARD PLACEHOLDER
-          </div>
-
-        </div>
-      </section>
 
 
       {/* =========================================================
@@ -825,7 +913,7 @@ export default function CayTunesCaseStudy() {
         <div className="mx-auto max-w-[1180px]">
 
           <SectionHeading
-            number="09"
+            number="08"
             label="Design Principles"
             title="Keeping the experience focused."
             light
@@ -868,7 +956,7 @@ export default function CayTunesCaseStudy() {
         <div className="mx-auto max-w-[1180px]">
 
           <SectionHeading
-            number="10"
+            number="09"
             label="Key Experiences"
             title="Designing moments that make CayTunes feel different."
           />
@@ -902,7 +990,7 @@ export default function CayTunesCaseStudy() {
         <div className="mx-auto max-w-[1180px]">
 
           <SectionHeading
-            number="11"
+            number="10"
             label="Final UI"
             title="From structure to experience."
           />
@@ -912,30 +1000,30 @@ export default function CayTunesCaseStudy() {
             personalization, and mood-driven visual design.
           </p>
 
-          <div className="grid grid-cols-2 gap-x-3 gap-y-10 md:grid-cols-3 md:gap-x-5 md:gap-y-14">
-
-            {prototypeScreens.map((screen, index) => (
-              <article key={screen.title}>
-
-                <div className="flex aspect-[9/16] items-center justify-center rounded-[22px] bg-[#E2E2E4] text-xs text-black/30 md:rounded-[25px]">
-                  SCREEN {String(index + 1).padStart(2, "0")}
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-5">
+            {finalUI.map((screen) => (
+              <div
+                key={screen.title}
+                className="group overflow-hidden rounded-[20px] bg-[#DCDCDD] md:rounded-[24px]"
+              >
+                {/* IMAGE */}
+                <div className="aspect-[4/5] overflow-hidden">
+                  <img
+                    src={screen.image}
+                    alt={screen.title}
+                    className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                  />
                 </div>
 
-                <div className="px-1 pt-5">
-
-                  <h3 className="text-lg tracking-[-0.03em]">
+                {/* TEXT */}
+                <div className="px-4 py-4">
+                  <h3 className="text-sm font-medium text-black">
                     {screen.title}
                   </h3>
 
-                  <p className="mt-1 text-sm leading-[1.4] text-black/45">
-                    {screen.description}
-                  </p>
-
                 </div>
-
-              </article>
+              </div>
             ))}
-
           </div>
 
         </div>
@@ -950,7 +1038,7 @@ export default function CayTunesCaseStudy() {
         <div className="mx-auto max-w-[1180px]">
 
           <SectionHeading
-            number="12"
+            number="11"
             label="Prototype"
             title="Putting the experience together."
             light
@@ -1004,7 +1092,7 @@ export default function CayTunesCaseStudy() {
         <div className="mx-auto max-w-[1180px]">
 
           <SectionHeading
-            number="13"
+            number="12"
             label="Learnings"
             title="What this project taught me."
           />
@@ -1043,7 +1131,7 @@ export default function CayTunesCaseStudy() {
         <div className="mx-auto max-w-[1180px]">
 
           <SectionHeading
-            number="14"
+            number="13"
             label="Next Steps"
             title="Where CayTunes could go next."
           />
@@ -1167,15 +1255,13 @@ function FeatureSection({
 }) {
   return (
     <div
-      className={`mb-32 grid items-center gap-12 md:mb-40 md:grid-cols-[1.4fr_0.7fr] md:gap-20 ${
-        reverse ? "md:grid-cols-[0.7fr_1.4fr]" : ""
-      }`}
+      className={`mb-32 grid items-center gap-12 md:mb-40 md:grid-cols-[1.4fr_0.7fr] md:gap-20 ${reverse ? "md:grid-cols-[0.7fr_1.4fr]" : ""
+        }`}
     >
 
       <div
-        className={`flex aspect-[16/10] items-center justify-center rounded-[28px] bg-[#E4E4E6] text-xs text-black/30 ${
-          reverse ? "md:order-2" : ""
-        }`}
+        className={`flex aspect-[16/10] items-center justify-center rounded-[28px] bg-[#E4E4E6] text-xs text-black/30 ${reverse ? "md:order-2" : ""
+          }`}
       >
         SCREEN / FEATURE PLACEHOLDER
       </div>
