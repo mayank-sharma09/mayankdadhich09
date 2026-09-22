@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useRef, useState } from "react";
 import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import BackToTop from "../components/BackToTop";
 
 
 
@@ -41,6 +42,7 @@ export default function StoriesPage() {
   };
   return (
     <main className="min-h-screen bg-[#000000] text-white">
+      <BackToTop />
       {/* HERO */}
      <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
 

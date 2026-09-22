@@ -2,10 +2,12 @@
 import Link from "next/link";
 import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import SelectedWork from "../components/SelectedWork";
+import BackToTop from "../components/BackToTop";
 
 export default function DesignPage() {
   return (
     <main className="min-h-screen bg-[#000000] text-[#111111]">
+      <BackToTop />
       {/* =================================================
           HERO
       ================================================= */}

@@ -4,6 +4,7 @@ import { ArrowUpRight, Mail } from "lucide-react";
 import ScrollProgress from "../components/ScrollProgress";
 import Skills from "../components/Skills";
 import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import BackToTop from "../components/BackToTop";
 
 export default function Page() {
   return (
@@ -11,6 +12,7 @@ export default function Page() {
       <ScrollProgress />
 
       <main className="min-h-screen bg-[#F7F7F5] text-[#111111]" >
+        <BackToTop />
         {/* =========================
             HERO 
         ========================== */}

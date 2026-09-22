@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import BackToTop from "./components/BackToTop";
 
 export default function Home() {
   const [notification, setNotification] = useState("");
@@ -55,6 +56,7 @@ export default function Home() {
   }
   return (
     <main className="min-h-screen bg-[#F7F7F5] text-[#111111]">
+      <BackToTop />
 
       {/* =========================
           HERO
