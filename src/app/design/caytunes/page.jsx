@@ -965,22 +965,328 @@ export default function CayTunesCaseStudy() {
 
           <FeatureSection
             number="01"
-            title="Music Notes"
+            title="Lyric Notes"
             description="A way to share a specific lyric or moment from a song as a more expressive form of communication."
+            image="/userFlows/Sharing.jpg"
+          
           />
 
           {/* Music Rooms */}
 
           <FeatureSection
             number="02"
-            title="Music Rooms"
+            title="Music Room"
             description="A shared listening space where friends can listen, react, add songs, and shape the queue together."
+            image="/userFlows/musicRoom.jpg"
             reverse
           />
 
         </div>
       </section>
+         
+        {/* Design System  */}
+        
+        {/* DESIGN SYSTEM */}
+<section className="bg-[#111111] px-4 py-24 text-white sm:px-6 md:px-8 md:py-36">
+  <div className="mx-auto max-w-[1180px]">
 
+    <SectionHeading
+      number="10"
+      label="Design System"
+      title="Creating a visual language for CayTunes."
+      light
+    />
+
+    {/* INTRO */}
+    <div className="mt-12 max-w-[620px]">
+      <p className="text-base leading-[1.7] text-white/45 md:text-lg">
+        The visual system was designed to keep CayTunes expressive,
+        playful, and consistent across the listening experience.
+        I focused on a small set of colors, typography, and reusable
+        interface patterns rather than designing every screen from scratch.
+      </p>
+    </div>
+
+
+    {/* COLORS */}
+    <div className="mt-20">
+      <p className="text-xs font-medium uppercase tracking-[0.16em] text-white/30">
+        01 · Colors
+      </p>
+
+      <h3 className="mt-4 text-2xl font-medium tracking-[-0.03em] md:text-3xl">
+        A calm foundation with expressive accents.
+      </h3>
+
+      <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+
+        {/* Primary */}
+        <div className="overflow-hidden rounded-[22px] border border-white/10 bg-white/[0.04]">
+          <div className="h-36 bg-[#F6F6F6]" />
+          <div className="p-5">
+            <p className="text-sm font-medium text-white">
+              Background
+            </p>
+            <p className="mt-1 text-xs text-white/35">
+              #F6F6F6
+            </p>
+          </div>
+        </div>
+
+        {/* Surface */}
+        <div className="overflow-hidden rounded-[22px] border border-white/10 bg-white/[0.04]">
+          <div className="h-36 bg-white" />
+          <div className="p-5">
+            <p className="text-sm font-medium text-white">
+              Surface
+            </p>
+            <p className="mt-1 text-xs text-white/35">
+              #FFFFFF
+            </p>
+          </div>
+        </div>
+
+        {/* Text */}
+        <div className="overflow-hidden rounded-[22px] border border-white/10 bg-white/[0.04]">
+          <div className="h-36 bg-[#111111]" />
+          <div className="p-5">
+            <p className="text-sm font-medium text-white">
+              Primary Text
+            </p>
+            <p className="mt-1 text-xs text-white/35">
+              #111111
+            </p>
+          </div>
+        </div>
+
+        {/* Accent */}
+        <div className="overflow-hidden rounded-[22px] border border-white/10 bg-white/[0.04]">
+          <div className="h-36 bg-[#7567FF]" />
+          <div className="p-5">
+            <p className="text-sm font-medium text-white">
+              Accent
+            </p>
+            <p className="mt-1 text-xs text-white/35">
+              #7567FF
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    {/* TYPOGRAPHY */}
+    <div className="mt-24 border-t border-white/10 pt-20">
+
+      <p className="text-xs font-medium uppercase tracking-[0.16em] text-white/30">
+        02 · Typography
+      </p>
+
+      <div className="mt-10 grid gap-12 md:grid-cols-[1fr_0.7fr]">
+
+        <div>
+          <p className="text-6xl font-semibold tracking-[-0.06em] sm:text-7xl md:text-8xl">
+            CayTunes
+          </p>
+
+          <p className="mt-6 text-2xl tracking-[-0.03em] text-white/60 md:text-3xl">
+            Music feels different when you experience it together.
+          </p>
+        </div>
+
+        <div className="self-end text-sm text-white/40">
+          <div className="border-t border-white/10 py-4">
+            <div className="flex justify-between">
+              <span>Display</span>
+              <span>Semibold</span>
+            </div>
+          </div>
+
+          <div className="border-t border-white/10 py-4">
+            <div className="flex justify-between">
+              <span>Body</span>
+              <span>Regular</span>
+            </div>
+          </div>
+
+          <div className="border-t border-white/10 py-4">
+            <div className="flex justify-between">
+              <span>Radius</span>
+              <span>16–28px</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    {/* COMPONENTS */}
+    <div className="mt-24 border-t border-white/10 pt-20">
+
+      <p className="text-xs font-medium uppercase tracking-[0.16em] text-white/30">
+        03 · Components
+      </p>
+
+      <h3 className="mt-4 text-2xl font-medium tracking-[-0.03em] md:text-3xl">
+        Reusable patterns for the core experience.
+      </h3>
+
+      <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+
+        {/* CayTab */}
+        <div className="rounded-[28px] border border-white/10 bg-white/[0.04] p-6">
+          <p className="text-sm text-white/35">Navigation</p>
+
+          <div className="mt-8 flex items-center justify-center rounded-[22px] bg-[#F6F6F6] p-5">
+            <div className="flex items-center gap-2 rounded-[18px] bg-white p-2 shadow-lg">
+
+              <div className="flex h-11 w-11 items-center justify-center rounded-[14px] text-black/35">
+                ⌂
+              </div>
+
+              <div className="flex h-11 w-11 items-center justify-center rounded-[14px] bg-black text-white">
+                ♫
+              </div>
+
+              <div className="flex h-11 w-11 items-center justify-center rounded-[14px] text-black/35">
+                ◌
+              </div>
+
+              <div className="flex h-11 w-11 items-center justify-center rounded-[14px] text-black/35">
+                ♡
+              </div>
+
+            </div>
+          </div>
+
+          <h4 className="mt-5 text-lg font-medium">
+            CayTab
+          </h4>
+
+          <p className="mt-2 text-sm leading-relaxed text-white/35">
+            A fixed navigation pattern designed to keep the main listening
+            experience accessible.
+          </p>
+        </div>
+
+
+        {/* Button */}
+        <div className="rounded-[28px] border border-white/10 bg-white/[0.04] p-6">
+          <p className="text-sm text-white/35">Actions</p>
+
+          <div className="mt-8 flex items-center justify-center rounded-[22px] bg-[#F6F6F6] p-8">
+            <button className="rounded-full bg-black px-7 py-3 text-sm font-medium text-white">
+              Add to playlist
+            </button>
+          </div>
+
+          <h4 className="mt-5 text-lg font-medium">
+            Primary Action
+          </h4>
+
+          <p className="mt-2 text-sm leading-relaxed text-white/35">
+            Clear, high-contrast actions for important moments in the flow.
+          </p>
+        </div>
+
+
+        {/* Music Note */}
+        <div className="rounded-[28px] border border-white/10 bg-white/[0.04] p-6">
+          <p className="text-sm text-white/35">Content</p>
+
+          <div className="mt-8 rounded-[22px] bg-[#F6F6F6] p-5">
+            <div className="rounded-[18px] bg-white p-5 shadow-sm">
+              <p className="text-xs text-black/35">
+                MUSIC NOTE
+              </p>
+
+              <p className="mt-3 text-sm font-medium text-black">
+                “This part hits different.”
+              </p>
+
+              <div className="mt-4 flex items-center justify-between">
+                <span className="text-xs text-black/35">
+                  01:42
+                </span>
+
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-black text-xs text-white">
+                  ▶
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <h4 className="mt-5 text-lg font-medium">
+            Music Note
+          </h4>
+
+          <p className="mt-2 text-sm leading-relaxed text-white/35">
+            A product-specific component for sharing meaningful moments from a song.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+
+    {/* INTERFACE */}
+    <div className="mt-24 border-t border-white/10 pt-20">
+
+      <p className="text-xs font-medium uppercase tracking-[0.16em] text-white/30">
+        04 · Interface
+      </p>
+
+      <h3 className="mt-4 max-w-xl text-2xl font-medium tracking-[-0.03em] md:text-3xl">
+        Bringing the system together across the experience.
+      </h3>
+
+      <div className="mt-10 grid gap-4 md:grid-cols-3">
+
+        {/* SCREEN 1 */}
+        <div className="overflow-hidden rounded-[28px] bg-[#F6F6F6]">
+          <div className="aspect-[4/5]">
+            <img
+              src="/caytunes/home.png"
+              alt="CayTunes home interface"
+              className="h-full w-full object-cover"
+            />
+          </div>
+        </div>
+
+        {/* SCREEN 2 */}
+        <div className="overflow-hidden rounded-[28px] bg-[#F6F6F6]">
+          <div className="aspect-[4/5]">
+            <img
+              src="/caytunes/music-room.png"
+              alt="CayTunes music room interface"
+              className="h-full w-full object-cover"
+            />
+          </div>
+        </div>
+
+        {/* SCREEN 3 */}
+        <div className="overflow-hidden rounded-[28px] bg-[#F6F6F6]">
+          <div className="aspect-[4/5]">
+            <img
+              src="/caytunes/player.png"
+              alt="CayTunes player interface"
+              className="h-full w-full object-cover"
+            />
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+        {/* end design system section here */}
 
       {/* =========================================================
           FINAL UI
@@ -990,7 +1296,7 @@ export default function CayTunesCaseStudy() {
         <div className="mx-auto max-w-[1180px]">
 
           <SectionHeading
-            number="10"
+            number="11"
             label="Final UI"
             title="From structure to experience."
           />
@@ -1034,54 +1340,33 @@ export default function CayTunesCaseStudy() {
           PROTOTYPE
       ========================================================== */}
 
-      <section className="bg-[#111111] px-4 py-24 text-white sm:px-6 md:px-8 md:py-36">
-        <div className="mx-auto max-w-[1180px]">
+     <section className="bg-[#111111] px-4 py-20 text-white sm:px-6 md:px-8 md:py-32">
+  <div className="mx-auto max-w-[1180px]">
 
-          <SectionHeading
-            number="11"
-            label="Prototype"
-            title="Putting the experience together."
-            light
-          />
+    <SectionHeading
+      number="12"
+      label="Prototype"
+      title="Putting the experience together."
+      light
+    />
 
-          <div className="flex aspect-video items-center justify-center rounded-[28px] bg-[#1D1D1D] text-center">
+    {/* PROTOTYPE VIDEO */}
+    <div className="mt-12 overflow-hidden rounded-[28px] bg-[#1D1D1D]">
+      <video
+        src="/finalUI/finalVideo.mp4"
+        controls
+        playsInline
+        preload="metadata"
+        className="aspect-video h-full w-full object-cover"
+      >
+        Your browser does not support the video tag.
+      </video>
+    </div>
 
-            <div>
+    
 
-              <div className="mx-auto mb-5 flex h-[65px] w-[65px] items-center justify-center rounded-full bg-white pl-1 text-black">
-                ▶
-              </div>
-
-              <span className="text-xs tracking-[0.08em] text-white/35">
-                PROTOTYPE VIDEO
-              </span>
-
-              <p className="mt-2 text-sm text-white/30">
-                Add your Figma prototype recording here.
-              </p>
-
-            </div>
-
-          </div>
-
-          <div className="mt-6 flex items-center justify-between text-sm">
-
-            <span className="text-white/35">
-              Interactive prototype
-            </span>
-
-            <a
-              href="#"
-              onClick={(event) => event.preventDefault()}
-              className="text-white transition-opacity hover:opacity-60"
-            >
-              View prototype ↗
-            </a>
-
-          </div>
-
-        </div>
-      </section>
+  </div>
+</section>
 
 
       {/* =========================================================
@@ -1092,7 +1377,7 @@ export default function CayTunesCaseStudy() {
         <div className="mx-auto max-w-[1180px]">
 
           <SectionHeading
-            number="12"
+            number="13"
             label="Learnings"
             title="What this project taught me."
           />
@@ -1131,7 +1416,7 @@ export default function CayTunesCaseStudy() {
         <div className="mx-auto max-w-[1180px]">
 
           <SectionHeading
-            number="13"
+            number="14"
             label="Next Steps"
             title="Where CayTunes could go next."
           />
@@ -1205,6 +1490,7 @@ function SectionHeading({
   label,
   title,
   light = false,
+  
 }) {
   return (
     <div className={`mb-16 md:mb-20 ${light ? "text-white" : ""}`}>
@@ -1224,7 +1510,7 @@ function SectionHeading({
       <h2 className="max-w-[900px] text-[42px] font-medium leading-[1] tracking-[-0.055em] sm:text-[52px] md:text-[72px]">
         {title}
       </h2>
-
+     
     </div>
   );
 }
@@ -1251,6 +1537,7 @@ function FeatureSection({
   number,
   title,
   description,
+  image,
   reverse = false,
 }) {
   return (
@@ -1259,11 +1546,14 @@ function FeatureSection({
         }`}
     >
 
-      <div
-        className={`flex aspect-[16/10] items-center justify-center rounded-[28px] bg-[#E4E4E6] text-xs text-black/30 ${reverse ? "md:order-2" : ""
-          }`}
-      >
-        SCREEN / FEATURE PLACEHOLDER
+      <div className="overflow-hidden rounded-[28px] bg-[#EEEEEC] shadow-[0_20px_50px_rgba(0,0,0,0.10)]">
+        <div className="">
+          <img
+            src={image}
+            alt={title}
+            className="h-full w-full object-contain"
+          />
+        </div>
       </div>
 
       <div className={reverse ? "md:order-1" : ""}>
