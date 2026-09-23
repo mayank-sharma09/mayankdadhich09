@@ -281,7 +281,7 @@ export default function CayTunesCaseStudy() {
 
               <InfoRow
                 label="Timeline"
-                value="2026"
+                value="August, 2026"
               />
 
               <InfoRow
