@@ -107,7 +107,7 @@ export default function Home() {
         hero-fade-up
         mb-5
         max-w-[340px]
-        text-[10px]
+        text-[16px]
         font-medium
         uppercase
         leading-[1.6]
@@ -115,9 +115,9 @@ export default function Home() {
         text-black/40
         sm:mb-7
         sm:max-w-xl
-        sm:text-xs
+        sm:text-[14px]
         sm:tracking-[0.18em]
-        md:text-sm
+        md:text-[18px]
       "
               >
                 MAYANK DADHICH
@@ -354,9 +354,30 @@ export default function Home() {
                   listening, chatting and sharing moments together.
                 </p>
 
-                <span className="mt-8 inline-block text-sm font-medium">
-                  View case study ↗
-                </span>
+                              <div className="mt-8 flex flex-wrap gap-3">
+  {/* VIEW DEMO */}
+    <a
+    href="design/caytunes"
+    target="_self"
+    rel="noopener noreferrer"
+    className="inline-flex items-center gap-2 rounded-full bg-black px-5 py-2.5 text-sm font-medium text-white transition-all duration-300 hover:scale-[1.03] hover:bg-black/85"
+  >
+    {/* Play / Video Icon */}
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      className="h-4 w-4"
+      aria-hidden="true"
+    >
+      <rect x="3" y="5" width="18" height="14" rx="3" />
+      <path d="m10 9 5 3-5 3V9Z" fill="currentColor" stroke="none" />
+    </svg>
+
+    View Demo
+  </a>
+  </div>
               </div>
 
               {/* IMAGE */}
@@ -430,7 +451,7 @@ export default function Home() {
 
           {/* FOCUSLIST */}
           <a
-            href="/design/focuslist"
+           
             className="group mt-16 block overflow-hidden rounded-[32px] bg-[#EDEDE9]"
           >
             <div className="grid min-h-[500px] items-stretch md:grid-cols-2">
@@ -450,9 +471,52 @@ export default function Home() {
                   prioritizing and getting things done.
                 </p>
 
-                <span className="mt-8 inline-block text-sm font-medium">
-                  View case study ↗
-                </span>
+<div className="mt-8 flex flex-wrap gap-3">
+  {/* VIEW DEMO */}
+  <a
+    href="https://task-list-theta-amber.vercel.app/"
+    target="_self"
+    rel="noopener noreferrer"
+    className="inline-flex items-center gap-2 rounded-full bg-black px-5 py-2.5 text-sm font-medium text-white transition-all duration-300 hover:scale-[1.03] hover:bg-black/85"
+  >
+    {/* Play / Video Icon */}
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      className="h-4 w-4"
+      aria-hidden="true"
+    >
+      <rect x="3" y="5" width="18" height="14" rx="3" />
+      <path d="m10 9 5 3-5 3V9Z" fill="currentColor" stroke="none" />
+    </svg>
+
+    View Demo
+  </a>
+
+  {/* GITHUB */}
+  <a
+    href="https://github.com/thedevmayank/FocusList"
+    target="_self"
+    rel="noopener noreferrer"
+    className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/50 px-5 py-2.5 text-sm font-medium text-black/60 backdrop-blur-sm transition-all duration-300 hover:scale-[1.03] hover:border-black/20 hover:bg-white hover:text-black"
+  >
+    {/* GitHub Icon */}
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className="h-4 w-4"
+      aria-hidden="true"
+    >
+      <path d="M12 2C6.48 2 2 6.58 2 12.22c0 4.51 2.87 8.34 6.84 9.69.5.1.68-.22.68-.49v-1.72c-2.78.62-3.37-1.22-3.37-1.22-.46-1.19-1.11-1.51-1.11-1.51-.91-.64.07-.63.07-.63 1.01.07 1.54 1.07 1.54 1.07.9 1.58 2.36 1.12 2.94.86.09-.67.35-1.12.64-1.38-2.22-.26-4.56-1.14-4.56-5.05 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05A9.2 9.2 0 0 1 12 8.9c.85 0 1.7.12 2.49.37 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.63 1.03 2.75 0 3.92-2.34 4.78-4.57 5.04.36.32.68.95.68 1.92v2.85c0 .27.18.6.69.49A10.22 10.22 0 0 0 22 12.22C22 6.58 17.52 2 12 2Z"
+    />
+  </svg>
+
+    GitHub
+  </a>
+</div>
+
               </div>
 
               {/* IMAGE */}
@@ -601,9 +665,27 @@ export default function Home() {
         a smarter way to manage private libraries.
       </p>
 
-      <span className="mt-8 inline-block text-sm font-medium text-white">
-        View case study ↗
-      </span>
+    
+ <div className="mt-8 flex flex-wrap gap-3">
+  {/* VIEW DEMO */}
+  <a
+    href="/stories"
+    target="_self"
+    rel="noopener noreferrer"
+    className="inline-flex items-center gap-2 rounded-full bg-black px-5 py-2.5 text-sm font-medium text-white transition-all duration-300 hover:scale-[1.03] hover:bg-black/85"
+  >
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className="h-4 w-4"
+      aria-hidden="true"
+    >
+      <path d="M8 5.14v13.72a1 1 0 0 0 1.54.84l10.3-6.86a1 1 0 0 0 0-1.68L9.54 4.3A1 1 0 0 0 8 5.14Z" />
+    </svg>
+
+    View Demo
+  </a>
+</div>
     </div>
 
     {/* IMAGE */}

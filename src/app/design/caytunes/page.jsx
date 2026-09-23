@@ -64,26 +64,26 @@ const flows = [
   {
     number: "01",
     title: "Discover & Play",
-    flow: "Home → Album → Music Player",
-    image: "/IA.jpg",
+    flow: "Home → Search → Album → Music Player",
+    image: "/userFlows/discoverMusic.png",
   },
   {
     number: "02",
     title: "Find Music",
     flow: "Search → Artist / Song → Album → Player",
-    image: "/profilepic.jpg",
+    image: "/userFlows/playsong.png",
   },
   {
     number: "03",
     title: "Share Music",
     flow: "Chat → Music Note → Select Lyric → Share",
-    image: "/IA.jpg",
+    image: "/userFlows/shareMusic.png",
   },
   {
     number: "04",
     title: "Listen Together",
     flow: "Chat → Music Room → Invite → Shared Listening",
-    image: "/IA.jpg",
+    image: "/userFlows/musicRoom.png",
   },
 ];
 
@@ -179,7 +179,7 @@ export default function CayTunesCaseStudy() {
       id="top"
       className="overflow-hidden bg-[#F7F7F5] text-[#111111]"
     >
-<BackToTop />
+      <BackToTop />
       {/* =========================================================
           HERO
       ========================================================== */}
@@ -212,17 +212,17 @@ export default function CayTunesCaseStudy() {
           </div>
 
           {/* Video placeholder */}
-<div className="relative aspect-video overflow-hidden rounded-[22px] bg-[#E6E6E8] md:rounded-[30px]">
-  <video
-    src="/preview.mp4"
-    autoPlay
-    loop
-    muted
-    playsInline
-    preload="metadata"
-    className="h-full w-full object-cover"
-  />
-</div>
+          <div className="relative aspect-video overflow-hidden rounded-[22px] bg-[#E6E6E8] md:rounded-[30px]">
+            <video
+              src="/preview.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              className="h-full w-full object-cover"
+            />
+          </div>
 
           {/* Hero metadata */}
 
@@ -428,98 +428,97 @@ export default function CayTunesCaseStudy() {
           RESEARCH
       ========================================================== */}
 
-     <section className="px-4 py-24 sm:px-6 md:px-8 md:py-36">
-  <div className="mx-auto max-w-[1180px]">
+      <section className="px-4 py-24 sm:px-6 md:px-8 md:py-36">
+        <div className="mx-auto max-w-[1180px]">
 
-```
-<SectionHeading
-  number="02"
-  label="Research"
-  title="Understanding how people share and experience music."
-/>
+          ```
+          <SectionHeading
+            number="02"
+            label="Research"
+            title="Understanding how people share and experience music."
+          />
 
-<div className="grid border-y border-black/10 md:grid-cols-3">
+          <div className="grid border-y border-black/10 md:grid-cols-3">
 
-  {[
-    "Informal conversations",
-    "Music sharing habits",
-    "Listening together",
-  ].map((method, index) => (
-    <div
-      key={method}
-      className={`min-h-[180px] p-7 ${
-        index !== 2
-          ? "border-b border-black/10 md:border-b-0 md:border-r"
-          : ""
-      }`}
-    >
-      <span className="text-xs text-black/35">
-        0{index + 1}
-      </span>
+            {[
+              "Informal conversations",
+              "Music sharing habits",
+              "Listening together",
+            ].map((method, index) => (
+              <div
+                key={method}
+                className={`min-h-[180px] p-7 ${index !== 2
+                    ? "border-b border-black/10 md:border-b-0 md:border-r"
+                    : ""
+                  }`}
+              >
+                <span className="text-xs text-black/35">
+                  0{index + 1}
+                </span>
 
-      <h3 className="mt-16 text-[21px] tracking-[-0.03em]">
-        {method}
-      </h3>
-    </div>
-  ))}
+                <h3 className="mt-16 text-[21px] tracking-[-0.03em]">
+                  {method}
+                </h3>
+              </div>
+            ))}
 
-</div>
+          </div>
 
-<div className="mt-14 rounded-[28px] bg-[#E6E6E8] px-6 py-12 sm:px-10 md:px-16 md:py-16">
-  <span className="text-xs tracking-[0.08em] text-black/35">
-    WHAT I HEARD
-  </span>
+          <div className="mt-14 rounded-[28px] bg-[#E6E6E8] px-6 py-12 sm:px-10 md:px-16 md:py-16">
+            <span className="text-xs tracking-[0.08em] text-black/35">
+              WHAT I HEARD
+            </span>
 
-  <div className="mt-8 grid gap-10 md:grid-cols-3">
+            <div className="mt-8 grid gap-10 md:grid-cols-3">
 
-    <div>
-      <p className="text-3xl font-medium tracking-[-0.04em]">
-        Switching apps
-      </p>
-      <p className="mt-3 text-sm leading-6 text-black/50">
-        The people I spoke with found it inconvenient to move between
-        different apps when sharing music with friends.
-      </p>
-    </div>
+              <div>
+                <p className="text-3xl font-medium tracking-[-0.04em]">
+                  Switching apps
+                </p>
+                <p className="mt-3 text-sm leading-6 text-black/50">
+                  The people I spoke with found it inconvenient to move between
+                  different apps when sharing music with friends.
+                </p>
+              </div>
 
-    <div>
-      <p className="text-3xl font-medium tracking-[-0.04em]">
-        Lyric Notes
-      </p>
-      <p className="mt-3 text-sm leading-6 text-black/50">
-        The idea of sharing a specific lyric stood out as a useful way
-        to share a feeling or moment from a song.
-      </p>
-    </div>
+              <div>
+                <p className="text-3xl font-medium tracking-[-0.04em]">
+                  Lyric Notes
+                </p>
+                <p className="mt-3 text-sm leading-6 text-black/50">
+                  The idea of sharing a specific lyric stood out as a useful way
+                  to share a feeling or moment from a song.
+                </p>
+              </div>
 
-    <div>
-      <p className="text-3xl font-medium tracking-[-0.04em]">
-        Listening together
-      </p>
-      <p className="mt-3 text-sm leading-6 text-black/50">
-        Having music, conversations, and shared listening in one place
-        was seen as a more convenient experience.
-      </p>
-    </div>
+              <div>
+                <p className="text-3xl font-medium tracking-[-0.04em]">
+                  Listening together
+                </p>
+                <p className="mt-3 text-sm leading-6 text-black/50">
+                  Having music, conversations, and shared listening in one place
+                  was seen as a more convenient experience.
+                </p>
+              </div>
 
-  </div>
-</div>
+            </div>
+          </div>
 
-<div className="mt-8 grid gap-4 md:grid-cols-[180px_1fr]">
-  <span className="text-xs text-black/40">
-    Key takeaway
-  </span>
+          <div className="mt-8 grid gap-4 md:grid-cols-[180px_1fr]">
+            <span className="text-xs text-black/40">
+              Key takeaway
+            </span>
 
-  <p className="max-w-[650px] text-sm leading-[1.6] text-black/50">
-    These conversations helped shape the core direction of CayTunes:
-    reducing the need to switch between apps while making it easier to
-    share songs, specific lyrics, and listening experiences with friends.
-  </p>
-</div>
-```
+            <p className="max-w-[650px] text-sm leading-[1.6] text-black/50">
+              These conversations helped shape the core direction of CayTunes:
+              reducing the need to switch between apps while making it easier to
+              share songs, specific lyrics, and listening experiences with friends.
+            </p>
+          </div>
+          ```
 
-  </div>
-</section>
+        </div>
+      </section>
 
 
 
@@ -623,6 +622,197 @@ export default function CayTunesCaseStudy() {
         </div>
       </section>
 
+      {/* USER PERSONA */}
+      <section className="bg-[#F7F7F5] px-4 py-24 sm:px-6 md:px-8 md:py-36">
+        <div className="mx-auto max-w-[1180px]">
+
+          {/* SECTION HEADING */}
+          <div className="mb-16 grid gap-8 md:grid-cols-[0.4fr_1.6fr] md:items-end">
+            <div>
+              <span className="text-xs font-medium tracking-[0.12em] text-black/35">
+                03
+              </span>
+              <span className="mt-3 text-xs font-medium uppercase tracking-[0.16em] text-black/40">
+                User Persona
+              </span>
+            </div>
+
+            <div>
+              <h2 className="max-w-3xl text-[34px] font-medium leading-[1.05] tracking-[-0.04em] sm:text-[44px] md:text-[56px]">
+                Meet Aarav, a student who experiences music socially.
+              </h2>
+
+              <p className="mt-6 max-w-2xl text-sm leading-[1.7] text-black/45 sm:text-base">
+                A simple persona representing the kind of college student
+                CayTunes is designed around.
+              </p>
+            </div>
+          </div>
+
+          {/* PERSONA CARD */}
+          <div className="overflow-hidden rounded-[30px] border border-black/10 bg-white">
+
+            {/* TOP */}
+            <div className="grid md:grid-cols-[0.65fr_1.35fr]">
+
+              {/* PROFILE */}
+              <div className="border-b border-black/10 p-7 sm:p-10 md:border-b-0 md:border-r md:p-12">
+
+                {/* PHOTO PLACEHOLDER */}
+                <div className="mx-auto flex aspect-square max-w-[260px] items-center justify-center overflow-hidden rounded-[28px] bg-[#E7E7E5]">
+                  <img src= "/userFlows/user.jpg" alt="Aarav Mehta" width={260} height={260} className="h-full w-full object-cover" />  
+                </div>
+
+                <div className="mt-8">
+                  <h3 className="text-2xl font-medium tracking-[-0.03em]">
+                    Aarav Mehta
+                  </h3>
+
+                  <p className="mt-2 text-sm text-black/45">
+                    20 · B.Tech Computer Science · 2nd Year
+                  </p>
+
+                  <p className="mt-1 text-sm text-black/45">
+                    Jaipur, India
+                  </p>
+                </div>
+
+                {/* QUICK INFO */}
+                <div className="mt-8 border-t border-black/10 pt-6">
+                  <div className="grid grid-cols-2 gap-y-5">
+
+                    <div>
+                      <span className="text-[12px] uppercase tracking-[0.12em] text-black/30">
+                        Device
+                      </span>
+                      <p className="mt-1 text-sm">Smartphone</p>
+                    </div>
+
+                    <div>
+                      <span className="text-[12px] uppercase tracking-[0.12em] text-black/30">
+                        Music
+                      </span>
+                      <p className="mt-1 text-sm">Daily</p>
+                    </div>
+
+                    <div>
+                      <span className="text-[12px] uppercase tracking-[0.12em] text-black/30">
+                        Sharing
+                      </span>
+                      <p className="mt-1 text-sm">Frequent</p>
+                    </div>
+
+                    <div>
+                      <span className="text-[12px] uppercase tracking-[0.12em] text-black/30">
+                        Tech Comfort
+                      </span>
+                      <p className="mt-1 text-sm">High</p>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              {/* RIGHT CONTENT */}
+              <div className="p-7 sm:p-10 md:p-12">
+
+                {/* BIO */}
+                <div>
+                  <span className="text-[12px] font-medium uppercase tracking-[0.14em] text-black/30">
+                    About
+                  </span>
+
+                  <p className="mt-4 max-w-2xl text-base leading-[1.7] text-black/65">
+                    Aarav is a social and tech-savvy college student who
+                    listens to music throughout the day — while travelling
+                    to college, studying, coding, and hanging out with friends.
+                    He frequently discovers songs through social media and
+                    shares music with his friends through messaging apps.
+                  </p>
+                </div>
+
+                {/* GOALS + FRUSTRATIONS */}
+                <div className="mt-12 grid gap-10 sm:grid-cols-2">
+
+                  <div>
+                    <span className="text-[12px] font-medium uppercase tracking-[0.14em] text-black/30">
+                      Goals
+                    </span>
+
+                    <ul className="mt-5 space-y-3 text-sm leading-[1.6] text-black/60">
+                      <li>Discover new music easily</li>
+                      <li>Share songs with friends quickly</li>
+                      <li>Listen to music together</li>
+                      <li>Save songs and create playlists</li>
+                      <li>Share specific lyrics or moments</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <span className="text-[12px] font-medium uppercase tracking-[0.14em] text-black/30">
+                      Frustrations
+                    </span>
+
+                    <ul className="mt-5 space-y-3 text-sm leading-[1.6] text-black/60">
+                      <li>Switching between music and chat apps</li>
+                      <li>Difficulty sharing a specific lyric</li>
+                      <li>Music sharing feels disconnected</li>
+                      <li>Conversations get separated from music</li>
+                    </ul>
+                  </div>
+
+                </div>
+
+                {/* BEHAVIOURS */}
+                <div className="mt-12 border-t border-black/10 pt-10">
+
+                  <span className="text-[12px] font-medium uppercase tracking-[0.14em] text-black/30">
+                    Behaviours
+                  </span>
+
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {[
+                      "Listens daily",
+                      "Shares songs",
+                      "Discovers through social media",
+                      "Uses messaging apps",
+                      "Creates playlists",
+                      "Listens while studying",
+                    ].map((item) => (
+                      <span
+                        key={item}
+                        className="rounded-full border border-black/10 px-4 py-2 text-xs text-black/55"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
+            {/* QUOTE */}
+           
+
+          </div>
+
+          {/* PERSONA TAKEAWAY */}
+          <div className="mt-10 grid gap-6 md:grid-cols-[180px_1fr]">
+            <span className="text-[12px] text-black/35">
+              Key takeaway
+            </span>
+
+            <p className="max-w-2xl text-sm leading-[1.7] text-black/55 sm:text-base">
+              Aarav doesn't just want to listen to music. He wants an easier
+              way to discover, share, and experience music with the people
+              around him.
+            </p>
+          </div>
+
+        </div>
+      </section>
 
       {/* =========================================================
           INFORMATION ARCHITECTURE
@@ -1165,7 +1355,7 @@ export default function CayTunesCaseStudy() {
               <div className="rounded-[28px] border border-white/10 bg-white/[0.04] p-6">
                 <p className="text-sm text-white/35">Actions</p>
 
-               <div className="mt-8 overflow-hidden rounded-[22px] bg-[#F6F6F6]">
+                <div className="mt-8 overflow-hidden rounded-[22px] bg-[#F6F6F6]">
                   <img
                     src="/userFlows/primaryActions.jpg"
                     alt="Primary action"
@@ -1187,7 +1377,7 @@ export default function CayTunesCaseStudy() {
               <div className="rounded-[28px] border border-white/10 bg-white/[0.04] p-6">
                 <p className="text-sm text-white/35">Content</p>
 
-          <div className="mt-8 overflow-hidden rounded-[22px] bg-[#F6F6F6]">
+                <div className="mt-8 overflow-hidden rounded-[22px] bg-[#F6F6F6]">
                   <img
                     src="/userFlows/lyricComp.jpg"
                     alt="CayTab navigation"
@@ -1208,7 +1398,7 @@ export default function CayTunesCaseStudy() {
           </div>
 
 
-         
+
 
         </div>
       </section>
