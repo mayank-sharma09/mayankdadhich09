@@ -229,7 +229,7 @@ export default function CayTunesCaseStudy() {
           <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-xs text-black/45">
             <span>Self-initiated project</span>
             <span>Mobile</span>
-            <span>2026</span>
+            <span>August, 2026</span>
           </div>
 
           <div className="mt-16 flex items-center gap-2 text-xs text-black/40">
