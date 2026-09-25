@@ -630,7 +630,7 @@ export default function CayTunesCaseStudy() {
           <div className="mb-16 grid gap-8 md:grid-cols-[0.4fr_1.6fr] md:items-end">
             <div>
               <span className="text-xs font-medium tracking-[0.12em] text-black/35">
-                03
+                05
               </span>
               <span className="mt-3 text-xs font-medium uppercase tracking-[0.16em] text-black/40">
                 User Persona
@@ -822,7 +822,7 @@ export default function CayTunesCaseStudy() {
         <div className="mx-auto max-w-[1180px]">
 
           <SectionHeading
-            number="05"
+            number="06"
             label="Information Architecture"
             title="Structuring the experience."
             light
@@ -866,7 +866,7 @@ export default function CayTunesCaseStudy() {
         <div className="mx-auto max-w-[1180px] cursor-pointer">
 
           <SectionHeading
-            number="06"
+            number="07"
             label="User Flows"
             title="Designing the paths between moments."
           />
@@ -1048,7 +1048,7 @@ export default function CayTunesCaseStudy() {
         <div className="mx-auto max-w-[1180px]">
 
           <SectionHeading
-            number="07"
+            number="08"
             label="Wireframes"
             title="Starting with structure, not decoration."
           />
@@ -1106,7 +1106,7 @@ export default function CayTunesCaseStudy() {
         <div className="mx-auto max-w-[1180px]">
 
           <SectionHeading
-            number="08"
+            number="09"
             label="Design Principles"
             title="Keeping the experience focused."
             light
@@ -1149,7 +1149,7 @@ export default function CayTunesCaseStudy() {
         <div className="mx-auto max-w-[1180px]">
 
           <SectionHeading
-            number="09"
+            number="10"
             label="Key Experiences"
             title="Designing moments that make CayTunes feel different."
           />
@@ -1184,7 +1184,7 @@ export default function CayTunesCaseStudy() {
         <div className="mx-auto max-w-[1180px]">
 
           <SectionHeading
-            number="10"
+            number="11"
             label="Design System"
             title="Creating a visual language for CayTunes."
             light
@@ -1415,7 +1415,7 @@ export default function CayTunesCaseStudy() {
         <div className="mx-auto max-w-[1180px]">
 
           <SectionHeading
-            number="11"
+            number="12"
             label="Final UI"
             title="From structure to experience."
           />
@@ -1463,7 +1463,7 @@ export default function CayTunesCaseStudy() {
         <div className="mx-auto max-w-[1180px]">
 
           <SectionHeading
-            number="12"
+            number="13"
             label="Prototype"
             title="Putting the experience together."
             light
@@ -1496,7 +1496,7 @@ export default function CayTunesCaseStudy() {
         <div className="mx-auto max-w-[1180px]">
 
           <SectionHeading
-            number="13"
+            number="14"
             label="Learnings"
             title="What this project taught me."
           />
@@ -1535,7 +1535,7 @@ export default function CayTunesCaseStudy() {
         <div className="mx-auto max-w-[1180px]">
 
           <SectionHeading
-            number="14"
+            number="15"
             label="Next Steps"
             title="Where CayTunes could go next."
           />
@@ -1578,7 +1578,7 @@ export default function CayTunesCaseStudy() {
             CayTunes
           </span>
 
-          <h2 className="mt-8 text-[58px] font-medium leading-[0.92] tracking-[-0.07em] sm:text-[76px] md:text-[110px]">
+          <h2 className="mt-8 text-[48px] font-medium leading-[0.92] tracking-[-0.07em] sm:text-[56px] md:text-[96px]">
             Music is better
             <br />
             when it's shared.
