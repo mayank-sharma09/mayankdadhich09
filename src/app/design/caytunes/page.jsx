@@ -431,7 +431,7 @@ export default function CayTunesCaseStudy() {
       <section className="px-4 py-24 sm:px-6 md:px-8 md:py-36">
         <div className="mx-auto max-w-[1180px]">
 
-          ```
+          
           <SectionHeading
             number="02"
             label="Research"
@@ -515,7 +515,7 @@ export default function CayTunesCaseStudy() {
               share songs, specific lyrics, and listening experiences with friends.
             </p>
           </div>
-          ```
+         
 
         </div>
       </section>
@@ -630,7 +630,7 @@ export default function CayTunesCaseStudy() {
           <div className="mb-16 grid gap-8 md:grid-cols-[0.4fr_1.6fr] md:items-end">
             <div>
               <span className="text-xs font-medium tracking-[0.12em] text-black/35">
-                05
+                05 &nbsp; 
               </span>
               <span className="mt-3 text-xs font-medium uppercase tracking-[0.16em] text-black/40">
                 User Persona

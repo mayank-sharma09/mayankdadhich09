@@ -46,9 +46,9 @@ export default function Page() {
     {/* HEADING */}
     <div className="about-heading mx-auto max-w-5xl text-center">
       <h1 className="text-5xl font-semibold leading-[0.98] tracking-[-0.055em] sm:text-6xl md:text-7xl lg:text-[92px]">
-        I've always been curious
+        I've always been curious &nbsp;
         <br className="hidden md:block" />
-        about how things
+        about how things &nbsp;
         <br className="hidden md:block" />
         <span className="text-black/30">
           come together.
