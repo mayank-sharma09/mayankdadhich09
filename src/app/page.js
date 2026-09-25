@@ -130,7 +130,7 @@ export default function Home() {
                   className="hero-line"
                   style={{ animationDelay: "120ms" }}
                 >
-                 I'm a Product Designer & Developer,
+                  I'm a Product Designer & Developer,
                 </span>
 
                 <br />
@@ -139,12 +139,12 @@ export default function Home() {
                   className="hero-line"
                   style={{ animationDelay: "220ms" }}
                 >
-                 Visual Storyteller
+                  Visual Storyteller
                 </span>
 
-             
 
-               
+
+
 
               </h1>
 
@@ -354,30 +354,30 @@ export default function Home() {
                   listening, chatting and sharing moments together.
                 </p>
 
-                              <div className="mt-8 flex flex-wrap gap-3">
-  {/* VIEW DEMO */}
-    <a
-    href="design/caytunes"
-    target="_self"
-    rel="noopener noreferrer"
-    className="inline-flex items-center gap-2 rounded-full bg-black px-5 py-2.5 text-sm font-medium text-white transition-all duration-300 hover:scale-[1.03] hover:bg-black/85"
-  >
-    {/* Play / Video Icon */}
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      className="h-4 w-4"
-      aria-hidden="true"
-    >
-      <rect x="3" y="5" width="18" height="14" rx="3" />
-      <path d="m10 9 5 3-5 3V9Z" fill="currentColor" stroke="none" />
-    </svg>
+                <div className="mt-8 flex flex-wrap gap-3">
+                  {/* VIEW DEMO */}
+                  <a
+                    href="design/caytunes"
+                    target="_self"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full bg-black px-5 py-2.5 text-sm font-medium text-white transition-all duration-300 hover:scale-[1.03] hover:bg-black/85"
+                  >
+                    {/* Play / Video Icon */}
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      className="h-4 w-4"
+                      aria-hidden="true"
+                    >
+                      <rect x="3" y="5" width="18" height="14" rx="3" />
+                      <path d="m10 9 5 3-5 3V9Z" fill="currentColor" stroke="none" />
+                    </svg>
 
-    View Demo
-  </a>
-  </div>
+                    View Demo
+                  </a>
+                </div>
               </div>
 
               {/* IMAGE */}
@@ -451,7 +451,7 @@ export default function Home() {
 
           {/* FOCUSLIST */}
           <a
-           
+
             className="group mt-16 block overflow-hidden rounded-[32px] bg-[#EDEDE9]"
           >
             <div className="grid min-h-[500px] items-stretch md:grid-cols-2">
@@ -471,51 +471,51 @@ export default function Home() {
                   prioritizing and getting things done.
                 </p>
 
-<div className="mt-8 flex flex-wrap gap-3">
-  {/* VIEW DEMO */}
-  <a
-    href="https://task-list-theta-amber.vercel.app/"
-    target="_self"
-    rel="noopener noreferrer"
-    className="inline-flex items-center gap-2 rounded-full bg-black px-5 py-2.5 text-sm font-medium text-white transition-all duration-300 hover:scale-[1.03] hover:bg-black/85"
-  >
-    {/* Play / Video Icon */}
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      className="h-4 w-4"
-      aria-hidden="true"
-    >
-      <rect x="3" y="5" width="18" height="14" rx="3" />
-      <path d="m10 9 5 3-5 3V9Z" fill="currentColor" stroke="none" />
-    </svg>
+                <div className="mt-8 flex flex-wrap gap-3">
+                  {/* VIEW DEMO */}
+                  <a
+                    href="https://task-list-theta-amber.vercel.app/"
+                    target="_self"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full bg-black px-5 py-2.5 text-sm font-medium text-white transition-all duration-300 hover:scale-[1.03] hover:bg-black/85"
+                  >
+                    {/* Play / Video Icon */}
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      className="h-4 w-4"
+                      aria-hidden="true"
+                    >
+                      <rect x="3" y="5" width="18" height="14" rx="3" />
+                      <path d="m10 9 5 3-5 3V9Z" fill="currentColor" stroke="none" />
+                    </svg>
 
-    View Demo
-  </a>
+                    View Demo
+                  </a>
 
-  {/* GITHUB */}
-  <a
-    href="https://github.com/thedevmayank/FocusList"
-    target="_self"
-    rel="noopener noreferrer"
-    className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/50 px-5 py-2.5 text-sm font-medium text-black/60 backdrop-blur-sm transition-all duration-300 hover:scale-[1.03] hover:border-black/20 hover:bg-white hover:text-black"
-  >
-    {/* GitHub Icon */}
-    <svg
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      className="h-4 w-4"
-      aria-hidden="true"
-    >
-      <path d="M12 2C6.48 2 2 6.58 2 12.22c0 4.51 2.87 8.34 6.84 9.69.5.1.68-.22.68-.49v-1.72c-2.78.62-3.37-1.22-3.37-1.22-.46-1.19-1.11-1.51-1.11-1.51-.91-.64.07-.63.07-.63 1.01.07 1.54 1.07 1.54 1.07.9 1.58 2.36 1.12 2.94.86.09-.67.35-1.12.64-1.38-2.22-.26-4.56-1.14-4.56-5.05 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05A9.2 9.2 0 0 1 12 8.9c.85 0 1.7.12 2.49.37 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.63 1.03 2.75 0 3.92-2.34 4.78-4.57 5.04.36.32.68.95.68 1.92v2.85c0 .27.18.6.69.49A10.22 10.22 0 0 0 22 12.22C22 6.58 17.52 2 12 2Z"
-    />
-  </svg>
+                  {/* GITHUB */}
+                  <a
+                    href="https://github.com/thedevmayank/FocusList"
+                    target="_self"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/50 px-5 py-2.5 text-sm font-medium text-black/60 backdrop-blur-sm transition-all duration-300 hover:scale-[1.03] hover:border-black/20 hover:bg-white hover:text-black"
+                  >
+                    {/* GitHub Icon */}
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      className="h-4 w-4"
+                      aria-hidden="true"
+                    >
+                      <path d="M12 2C6.48 2 2 6.58 2 12.22c0 4.51 2.87 8.34 6.84 9.69.5.1.68-.22.68-.49v-1.72c-2.78.62-3.37-1.22-3.37-1.22-.46-1.19-1.11-1.51-1.11-1.51-.91-.64.07-.63.07-.63 1.01.07 1.54 1.07 1.54 1.07.9 1.58 2.36 1.12 2.94.86.09-.67.35-1.12.64-1.38-2.22-.26-4.56-1.14-4.56-5.05 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05A9.2 9.2 0 0 1 12 8.9c.85 0 1.7.12 2.49.37 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.63 1.03 2.75 0 3.92-2.34 4.78-4.57 5.04.36.32.68.95.68 1.92v2.85c0 .27.18.6.69.49A10.22 10.22 0 0 0 22 12.22C22 6.58 17.52 2 12 2Z"
+                      />
+                    </svg>
 
-    GitHub
-  </a>
-</div>
+                    GitHub
+                  </a>
+                </div>
 
               </div>
 
@@ -645,69 +645,69 @@ export default function Home() {
 
           {/* BRIDGR */}
           <a
-  href="/stories"
-  className="group mt-16 block overflow-hidden rounded-[32px] bg-[#393F4B]"
->
-  <div className="grid min-h-[500px] items-stretch md:grid-cols-2">
+            href="/stories"
+            className="group mt-16 block overflow-hidden rounded-[32px] bg-[#393F4B]"
+          >
+            <div className="grid min-h-[500px] items-stretch md:grid-cols-2">
 
-    {/* TEXT */}
-    <div className="relative z-20 flex flex-col justify-end p-8 sm:p-12 lg:p-16">
-      <p className="text-sm uppercase text-white/50">
-        03 · Visual Story
-      </p>
+              {/* TEXT */}
+              <div className="relative z-20 flex flex-col justify-end p-8 sm:p-12 lg:p-16">
+                <p className="text-sm uppercase text-white/50">
+                  03 · Visual Story
+                </p>
 
-      <h3 className="mt-6 text-5xl font-semibold tracking-[-0.05em] text-white sm:text-6xl">
-        BridgR
-      </h3>
+                <h3 className="mt-6 text-5xl font-semibold tracking-[-0.05em] text-white sm:text-6xl">
+                  BridgR
+                </h3>
 
-      <p className="mt-5 max-w-md text-white/70">
-        A short product advertisement created to communicate
-        a smarter way to manage private libraries.
-      </p>
+                <p className="mt-5 max-w-md text-white/70">
+                  A short product advertisement created to communicate
+                  a smarter way to manage private libraries.
+                </p>
 
-    
- <div className="mt-8 flex flex-wrap gap-3">
-  {/* VIEW DEMO */}
-  <a
-    href="/stories"
-    target="_self"
-    rel="noopener noreferrer"
-    className="inline-flex items-center gap-2 rounded-full bg-black px-5 py-2.5 text-sm font-medium text-white transition-all duration-300 hover:scale-[1.03] hover:bg-black/85"
-  >
-    <svg
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      className="h-4 w-4"
-      aria-hidden="true"
-    >
-      <path d="M8 5.14v13.72a1 1 0 0 0 1.54.84l10.3-6.86a1 1 0 0 0 0-1.68L9.54 4.3A1 1 0 0 0 8 5.14Z" />
-    </svg>
 
-    View Demo
-  </a>
-</div>
-    </div>
+                <div className="mt-8 flex flex-wrap gap-3">
+                  {/* VIEW DEMO */}
+                  <a
+                    href="/stories"
+                    target="_self"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full bg-black px-5 py-2.5 text-sm font-medium text-white transition-all duration-300 hover:scale-[1.03] hover:bg-black/85"
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      className="h-4 w-4"
+                      aria-hidden="true"
+                    >
+                      <path d="M8 5.14v13.72a1 1 0 0 0 1.54.84l10.3-6.86a1 1 0 0 0 0-1.68L9.54 4.3A1 1 0 0 0 8 5.14Z" />
+                    </svg>
 
-    {/* IMAGE */}
-    <div className="relative min-h-[300px] overflow-hidden md:min-h-[500px]">
+                    View Demo
+                  </a>
+                </div>
+              </div>
 
-      <Image
-        src="/bridgr.png"
-        alt="BridgR visual story"
-        fill
-        priority
-        className="
+              {/* IMAGE */}
+              <div className="relative min-h-[300px] overflow-hidden md:min-h-[500px]">
+
+                <Image
+                  src="/bridgr.png"
+                  alt="BridgR visual story"
+                  fill
+                  priority
+                  className="
           object-cover
           transition-transform
           duration-700
           ease-out
           group-hover:scale-[1.03]
         "
-      />
+                />
 
-      {/* DESKTOP — SMOOTH LEFT BLEND */}
-      <div
-        className="
+                {/* DESKTOP — SMOOTH LEFT BLEND */}
+                <div
+                  className="
           pointer-events-none
           absolute
           inset-y-0
@@ -717,8 +717,8 @@ export default function Home() {
           w-72
           md:block
         "
-        style={{
-          background: `
+                  style={{
+                    background: `
             linear-gradient(
               to right,
               #393F4B 0%,
@@ -731,12 +731,12 @@ export default function Home() {
               transparent 100%
             )
           `,
-        }}
-      />
+                  }}
+                />
 
-      {/* DESKTOP — SUBTLE IMAGE BLUR */}
-      <div
-        className="
+                {/* DESKTOP — SUBTLE IMAGE BLUR */}
+                <div
+                  className="
           pointer-events-none
           absolute
           inset-y-0
@@ -746,19 +746,19 @@ export default function Home() {
           w-36
           md:block
         "
-        style={{
-          backdropFilter: "blur(12px)",
-          WebkitBackdropFilter: "blur(12px)",
-          maskImage:
-            "linear-gradient(to right, black 0%, rgba(0,0,0,0.55) 35%, transparent 100%)",
-          WebkitMaskImage:
-            "linear-gradient(to right, black 0%, rgba(0,0,0,0.55) 35%, transparent 100%)",
-        }}
-      />
+                  style={{
+                    backdropFilter: "blur(12px)",
+                    WebkitBackdropFilter: "blur(12px)",
+                    maskImage:
+                      "linear-gradient(to right, black 0%, rgba(0,0,0,0.55) 35%, transparent 100%)",
+                    WebkitMaskImage:
+                      "linear-gradient(to right, black 0%, rgba(0,0,0,0.55) 35%, transparent 100%)",
+                  }}
+                />
 
-      {/* MOBILE — SMOOTH TOP BLEND */}
-      <div
-        className="
+                {/* MOBILE — SMOOTH TOP BLEND */}
+                <div
+                  className="
           pointer-events-none
           absolute
           left-0
@@ -768,8 +768,8 @@ export default function Home() {
           w-full
           md:hidden
         "
-        style={{
-          background: `
+                  style={{
+                    background: `
             linear-gradient(
               to bottom,
               #393F4B 0%,
@@ -782,12 +782,12 @@ export default function Home() {
               transparent 100%
             )
           `,
-        }}
-      />
+                  }}
+                />
 
-      {/* MOBILE — SUBTLE IMAGE BLUR */}
-      <div
-        className="
+                {/* MOBILE — SUBTLE IMAGE BLUR */}
+                <div
+                  className="
           pointer-events-none
           absolute
           left-0
@@ -797,19 +797,19 @@ export default function Home() {
           w-full
           md:hidden
         "
-        style={{
-          backdropFilter: "blur(12px)",
-          WebkitBackdropFilter: "blur(12px)",
-          maskImage:
-            "linear-gradient(to bottom, black 0%, rgba(0,0,0,0.55) 35%, transparent 100%)",
-          WebkitMaskImage:
-            "linear-gradient(to bottom, black 0%, rgba(0,0,0,0.55) 35%, transparent 100%)",
-        }}
-      />
+                  style={{
+                    backdropFilter: "blur(12px)",
+                    WebkitBackdropFilter: "blur(12px)",
+                    maskImage:
+                      "linear-gradient(to bottom, black 0%, rgba(0,0,0,0.55) 35%, transparent 100%)",
+                    WebkitMaskImage:
+                      "linear-gradient(to bottom, black 0%, rgba(0,0,0,0.55) 35%, transparent 100%)",
+                  }}
+                />
 
-    </div>
-  </div>
-</a>
+              </div>
+            </div>
+          </a>
 
         </div>
       </section>
@@ -872,42 +872,42 @@ export default function Home() {
 
               </p>
               <div className="flex items-center gap-4">
-   
-    
 
-    {/* Social Icons */}
-    <div className="flex items-center gap-2 mt-10">
-      {/* Instagram */}
-      <a
-        href="https://www.instagram.com/mayankdadhich._?stkn=a2p4b2c1ZWhwMzlo"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Instagram"
-        className="group flex h-11 w-11 items-center justify-center rounded-full border border-gray/500 text-gray/500 transition-all duration-300 hover:border-transparent hover:bg-gradient-to-br hover:from-[#f58529] hover:via-[#dd2a7b] hover:to-[#8134af] hover:text-white"
-      >
-        <FaInstagram
-          size={17}
-          className="transition-transform duration-300 group-hover:scale-110"
-        />
-      </a>
 
-      {/* LinkedIn */}
-      <a
-        href="https://www.linkedin.com/in/mayank-sharma-ab0a9b226/"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="LinkedIn"
-        className="group flex h-11 w-11 items-center justify-center rounded-full border border-gray/500 text-gray/500 transition-all duration-300 hover:border-[#0A66C2] hover:bg-[#0A66C2] hover:text-white"
-      >
-        <FaLinkedinIn
-          size={17}
-          className="transition-transform duration-300 group-hover:scale-110"
-        />
-      </a>
-    </div>
-  </div>
+
+                {/* Social Icons */}
+                <div className="flex items-center gap-2 mt-10">
+                  {/* Instagram */}
+                  <a
+                    href="https://www.instagram.com/mayankdadhich._?stkn=a2p4b2c1ZWhwMzlo"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                    className="group flex h-11 w-11 items-center justify-center rounded-full border border-gray/500 text-gray/500 transition-all duration-300 hover:border-transparent hover:bg-gradient-to-br hover:from-[#f58529] hover:via-[#dd2a7b] hover:to-[#8134af] hover:text-white"
+                  >
+                    <FaInstagram
+                      size={17}
+                      className="transition-transform duration-300 group-hover:scale-110"
+                    />
+                  </a>
+
+                  {/* LinkedIn */}
+                  <a
+                    href="https://www.linkedin.com/in/mayank-sharma-ab0a9b226/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                    className="group flex h-11 w-11 items-center justify-center rounded-full border border-gray/500 text-gray/500 transition-all duration-300 hover:border-[#0A66C2] hover:bg-[#0A66C2] hover:text-white"
+                  >
+                    <FaLinkedinIn
+                      size={17}
+                      className="transition-transform duration-300 group-hover:scale-110"
+                    />
+                  </a>
+                </div>
+              </div>
             </div>
-            
+
             {/* FORM */}
 
             <form onSubmit={handleSubmit} className="space-y-8">
@@ -963,7 +963,16 @@ export default function Home() {
                   id="phone"
                   name="phone"
                   type="tel"
+                  inputMode="numeric"
+                  autoComplete="tel"
+                  maxLength={10}
                   placeholder="+91 98765 43210"
+                  onInput={(e) => {
+                    e.currentTarget.value = e.currentTarget.value
+                      .replace(/[^\d+]/g, "")
+                      .replace(/(?!^)\+/g, "")
+                      .slice(0, 14);
+                  }}
                   className="mt-3 w-full border-b border-black/15 bg-transparent pb-3 text-lg outline-none placeholder:text-black/20 focus:border-black"
                 />
               </div>
@@ -1007,12 +1016,12 @@ export default function Home() {
       {/* =========================
           FOOTER
       ========================== */}
-       <footer className="px-6 pb-28 md:px-10 md:pb-10 lg:px-16 ">
-       <div className="mx-auto flex max-w-7xl flex-col gap-4 border-t border-white/10 pt-6 text-sm text-gray-500 sm:flex-row sm:items-center sm:justify-between">
-            <p>© {new Date().getFullYear()} Mayank Dadhich.</p>
+      <footer className="px-6 pb-28 md:px-10 md:pb-10 lg:px-16 ">
+        <div className="mx-auto flex max-w-7xl flex-col gap-4 border-t border-white/10 pt-6 text-sm text-gray-500 sm:flex-row sm:items-center sm:justify-between">
+          <p>© {new Date().getFullYear()} Mayank Dadhich.</p>
 
-            <p>Designed & built by Mayank Dadhich.</p>
-          </div>
+          <p>Designed & built by Mayank Dadhich.</p>
+        </div>
       </footer>
       {notification && (
         <div className="fixed bottom-6 left-1/2 z-[999] -translate-x-1/2 px-6">
