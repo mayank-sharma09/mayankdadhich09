@@ -46,78 +46,73 @@ export default function StoriesPage() {
       {/* HERO */}
       <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
 
-        {/* VIDEO BACKGROUND */}
-        {/* MOBILE VIDEO */}
-        <div className="absolute inset-0 md:hidden">
-          <video
-            src="/blackholemobile.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="metadata"
-            aria-hidden="true"
-            className="h-full w-full object-cover"
-          />
-        </div>
+  {/* MOBILE VIDEO */}
 
-        {/* DESKTOP VIDEO */}
-        <div className="absolute inset-0 hidden md:block">
-          <video
-            src="/visual.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="metadata"
-            aria-hidden="true"
-            className="h-full w-full object-cover"
-          />
-        </div>
+<div className="absolute inset-0 md:hidden">
+  <video
+    src="/blackholemobile.mp4"
+    autoPlay
+    loop
+    muted
+    playsInline
+    preload="metadata"
+    aria-hidden="true"
+    className="stories-video h-full w-full object-cover"
+  />
+</div>
 
+{/* DESKTOP VIDEO */}
+<div className="absolute inset-0 hidden md:block">
+  <video
+    src="/visual.mp4"
+    autoPlay
+    loop
+    muted
+    playsInline
+    preload="metadata"
+    aria-hidden="true"
+    className="stories-video h-full w-full object-cover"
+  />
+</div>
 
+  {/* SUBTLE VIDEO FADE-IN */}
+  <div className="stories-video-fade pointer-events-none absolute inset-0 z-[5] bg-black" />
 
-        {/* TEXT CONTENT */}
-        <div className="relative z-10 w-full px-6 py-20 md:px-10 lg:px-16 font-serif ">
+  {/* TEXT CONTENT */}
+  <div className="relative z-10 w-full px-6 py-20 font-serif md:px-10 lg:px-16">
 
-          <div className="mx-auto max-w-7xl text-center">
+    <div className="mx-auto max-w-7xl text-center">
 
-            {/* Small intro */}
-            <p
-              className="stories-text-up mb-7 text-xs font-medium uppercase tracking-[0.2em] text-white/50"
-              style={{ animationDelay: "0ms" }}
-            >
-              Visual Storyteller
-            </p>
+      <p
+        className="stories-text-up mb-7 text-xs font-medium uppercase tracking-[0.2em] text-white/50"
+        style={{ animationDelay: "0ms" }}
+      >
+        Visual Storyteller
+      </p>
 
-            {/* Main heading */}
-            <h1
-              className="stories-text-up mx-auto max-w-5xl text-5xl font-semibold leading-[0.92] tracking-[-0.055em] text-white md:text-7xl lg:text-[100px]"
-              style={{ animationDelay: "120ms" }}
-            >
-              Stories made
-              <br />
-              to be felt.
-            </h1>
+      <h1
+        className="stories-text-up mx-auto max-w-5xl text-5xl font-semibold leading-[0.92] tracking-[-0.055em] text-white md:text-7xl lg:text-[100px]"
+        style={{ animationDelay: "120ms" }}
+      >
+        Stories made
+        <br />
+        to be felt.
+      </h1>
 
-            {/* Description */}
+      <div
+        className="stories-text-up mt-16 flex items-center justify-center gap-3 text-xs uppercase tracking-[0.18em] text-white/35"
+        style={{ animationDelay: "360ms" }}
+      >
+        <span className="h-px w-10 bg-white/30" />
+        Scroll to explore
+      </div>
 
+    </div>
 
-            {/* Scroll hint */}
-            <div
-              className="stories-text-up mt-16 flex items-center justify-center gap-3 text-xs uppercase tracking-[0.18em] text-white/35"
-              style={{ animationDelay: "360ms" }}
-            >
-              <span className="h-px w-10 bg-white/30" />
-              Scroll to explore
-            </div>
+  </div>
 
-          </div>
-
-        </div>
-
-        {/* SECTION ANIMATION */}
-        <style>{`
+  {/* SECTION ANIMATION */}
+  <style>{`
     .stories-text-up {
       opacity: 0;
       transform: translateY(24px);
@@ -136,18 +131,39 @@ export default function StoriesPage() {
       }
     }
 
+    .stories-video-fade {
+      opacity: 1;
+      animation: storiesVideoFade 1.4s ease-out 0.1s forwards;
+    }
+
+    @keyframes storiesVideoFade {
+      from {
+        opacity: 1;
+      }
+
+      to {
+        opacity: 0;
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       .stories-text-up {
         opacity: 1;
         transform: none;
         animation: none;
       }
+
+      .stories-video-fade {
+        opacity: 0;
+        animation: none;
+      }
     }
   `}</style>
-{/* BOTTOM BLACK BLUR */}
-<div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-48 bg-gradient-to-t from-black via-black/95 to-transparent" />
-      </section>
 
+  {/* BOTTOM BLACK FADE */}
+  <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-48 bg-gradient-to-t from-black via-black/95 to-transparent" />
+
+</section>
       {/* SELECTED STORIES */}
       {/* SELECTED STORIES */}
       <section className="relative overflow-hidden px-6 pb-28 pt-8 md:px-10 lg:px-16">
