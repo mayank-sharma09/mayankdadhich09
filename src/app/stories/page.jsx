@@ -44,43 +44,38 @@ export default function StoriesPage() {
     <main className="min-h-screen bg-[#000000] text-white">
       <BackToTop />
       {/* HERO */}
-      <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
+   <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
 
   {/* MOBILE VIDEO */}
+  <div className="absolute inset-0 md:hidden">
+    <video
+      src="/blackholemobile.mp4"
+      autoPlay
+      loop
+      muted
+      playsInline
+      preload="metadata"
+      aria-hidden="true"
+      className="h-full w-full object-cover"
+    />
+  </div>
 
-<div className="absolute inset-0 md:hidden">
-  <video
-    src="/blackholemobile.mp4"
-    autoPlay
-    loop
-    muted
-    playsInline
-    preload="metadata"
-    aria-hidden="true"
-    className="stories-video h-full w-full object-cover"
-  />
-</div>
+  {/* DESKTOP VIDEO */}
+  <div className="absolute inset-0 hidden md:block">
+    <video
+      src="/visual.mp4"
+      autoPlay
+      loop
+      muted
+      playsInline
+      preload="metadata"
+      aria-hidden="true"
+      className="h-full w-full object-cover"
+    />
+  </div>
 
-{/* DESKTOP VIDEO */}
-<div className="absolute inset-0 hidden md:block">
-  <video
-    src="/visual.mp4"
-    autoPlay
-    loop
-    muted
-    playsInline
-    preload="metadata"
-    aria-hidden="true"
-    className="stories-video h-full w-full object-cover"
-  />
-</div>
-
-  {/* SUBTLE VIDEO FADE-IN */}
-  <div className="stories-video-fade pointer-events-none absolute inset-0 z-[5] bg-black" />
-
-  {/* TEXT CONTENT */}
+  {/* TEXT */}
   <div className="relative z-10 w-full px-6 py-20 font-serif md:px-10 lg:px-16">
-
     <div className="mx-auto max-w-7xl text-center">
 
       <p
@@ -108,41 +103,25 @@ export default function StoriesPage() {
       </div>
 
     </div>
-
   </div>
 
-  {/* SECTION ANIMATION */}
+  {/* TEXT ANIMATION */}
   <style>{`
     .stories-text-up {
       opacity: 0;
-      transform: translateY(24px);
-      animation: storiesTextUp 0.8s ease-out forwards;
+      transform: translateY(20px);
+      animation: storiesTextUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
     }
 
     @keyframes storiesTextUp {
       from {
         opacity: 0;
-        transform: translateY(24px);
+        transform: translateY(20px);
       }
 
       to {
         opacity: 1;
         transform: translateY(0);
-      }
-    }
-
-    .stories-video-fade {
-      opacity: 1;
-      animation: storiesVideoFade 1.4s ease-out 0.1s forwards;
-    }
-
-    @keyframes storiesVideoFade {
-      from {
-        opacity: 1;
-      }
-
-      to {
-        opacity: 0;
       }
     }
 
@@ -152,16 +131,11 @@ export default function StoriesPage() {
         transform: none;
         animation: none;
       }
-
-      .stories-video-fade {
-        opacity: 0;
-        animation: none;
-      }
     }
   `}</style>
 
-  {/* BOTTOM BLACK FADE */}
-  <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-48 bg-gradient-to-t from-black via-black/95 to-transparent" />
+  {/* BOTTOM FADE */}
+  <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-40 bg-gradient-to-t from-black via-black/80 to-transparent" />
 
 </section>
       {/* SELECTED STORIES */}
@@ -206,7 +180,7 @@ export default function StoriesPage() {
                 preload="metadata"
                 poster="/bridgr.png"
                 aria-hidden="true"
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                className="absolute inset-0 h-full w-full object-cover"
               />
 
               {/* Gradient */}
@@ -259,7 +233,7 @@ export default function StoriesPage() {
                   preload="metadata"
                   poster="/bridr-poster.png"
                   aria-hidden="true"
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                  className="absolute inset-0 h-full w-full object-cover"
                 />
 
                 {/* Gradient */}
@@ -308,7 +282,7 @@ export default function StoriesPage() {
                   preload="metadata"
                   poster="/bride-poster.png"
                   aria-hidden="true"
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                  className="absolute inset-0 h-full w-full object-cover"
                 />
 
                 {/* Gradient */}
