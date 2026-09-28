@@ -431,7 +431,7 @@ export default function StoriesPage() {
             <div className="flex items-center gap-2">
               {/* Instagram */}
               <a
-                href="https://www.instagram.com/mayankdadhich._?stkn=a2p4b2c1ZWhwMzlo"
+                href="https://www.instagram.com/bymaynk?stkn=YzgxanV5eHpkMTVt"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
